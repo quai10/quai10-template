@@ -2,13 +2,20 @@
  * Header Less file
  * */
 
+
+/** HEADER BOX **/
+
 .header-box {
   margin-top: @large-value;
+  overflow: hidden;
   background: @secondary-background;
   border: 0;
   border-radius: @tiny-value;
   color: @secondary-color;
 }
+
+
+/** NAVIGATION **/
 
 .nav-box {
   padding: @small-value 0;
@@ -56,4 +63,37 @@
       }
     }
   }
+}
+
+.nav-logo:hover ~ .nav-list .menu-item:first-child a {
+  border-color: @secondary-color;
+}
+
+
+/** HEADER CONTENT **/
+
+.home .header-container {
+  padding: @extra-large-value 0;
+
+  & .header-icon {
+    min-height: @maxi-large-value;
+    text-align: right;
+
+    & svg {
+      height: @maxi-large-value - @small-value;
+      max-width: 75%;
+      fill: @secondary-color;
+      opacity: .5;
+    }
+  }
+}
+
+
+/** HEADER BACKGROUNDS **/
+
+.home .header-box {
+  background-image: url('../img/icone-quai10.svg');
+  background-position: -50rem -25rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
