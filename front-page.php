@@ -2,7 +2,11 @@
   <header class="header-box container" id="top">
     <nav class="nav-box grid-1-4">
       <div class="nav-logo">
-        <svg role="img" aria-labelledby="title-logo-quai10"><use xlink:href="#icon-logo-quai10"></use></svg>
+        <a href="<?php echo home_url(); ?>">
+          <svg role="img" aria-labelledby="title-logo-quai10">
+            <use xlink:href="#icon-logo-quai10"></use>
+          </svg>
+        </a>
       </div><!-- .nav-logo -->
       <?php
       $args = array(
