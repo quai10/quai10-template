@@ -1,0 +1,59 @@
+/**
+ * Header Less file
+ * */
+
+.header-box {
+  margin-top: @large-value;
+  background: @secondary-background;
+  border: 0;
+  border-radius: @tiny-value;
+  color: @secondary-color;
+}
+
+.nav-box {
+  padding: @small-value 0;
+
+  & .nav-logo {
+    & svg {
+      display: block;
+      height: 7rem;
+      margin: auto;
+      max-width: 13rem;
+      fill: @secondary-color;
+    }
+  }
+
+  & .nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  & .menu-item {
+    display: inline-block;
+
+    body:not(.home) &.current_page_item a {
+      border-color: @secondary-color-fade;
+    }
+
+    & a {
+      display: block;
+      padding: @small-value @small-value+@tiny-value;
+      border: .2rem solid;
+      border-color: transparent;
+      border-radius: @extra-large-value;
+      color: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all @transition;
+
+      &:hover,
+      &:focus {
+        border-color: @secondary-color;
+      }
+    }
+  }
+}
