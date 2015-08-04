@@ -6,7 +6,7 @@
   ],
   "description": "Quai10 wordpress template",
   "main": "index.html",
-  "license": "GNU GPL v2",
+  "license": "GNU GPL v3",
   "homepage": "https://quai10.org/",
   "ignore": [
     "**/.*",

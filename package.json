@@ -8,7 +8,7 @@
     "url": "git@bitbucket.org:quai10/quai10.git"
   },
   "author": "Damien Senger <hi@hiwelo.co>",
-  "license": "GNU GPL v2",
+  "license": "GNU GPL v3",
   "devDependencies": {
     "bower": "^1.4.1",
     "gulp": "latest",
