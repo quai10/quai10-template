@@ -1,0 +1,23 @@
+{
+  "name": "Quai10",
+  "version": "1.0.0",
+  "authors": [
+    "Damien Senger <hi@hiwelo.co>"
+  ],
+  "description": "Quai10 wordpress template",
+  "main": "index.html",
+  "license": "GNU GPL v2",
+  "homepage": "https://quai10.org/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/src/vendor/",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "knacss": "~4.3.2",
+    "jquery": "~2.1.4"
+  }
+}

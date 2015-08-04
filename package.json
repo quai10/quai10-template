@@ -1,0 +1,24 @@
+{
+  "name": "Quai10",
+  "version": "1.0.0",
+  "description": "Quai10 wordpress template",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:quai10/quai10.git"
+  },
+  "author": "Damien Senger <hi@hiwelo.co>",
+  "license": "GNU GPL v2",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "gulp": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-rename": "latest",
+    "gulp-csso": "latest",
+    "gulp-less": "latest",
+    "gulp-concat": "latest",
+    "gulp-uglify": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-imagemin": "latest"
+  }
+}
