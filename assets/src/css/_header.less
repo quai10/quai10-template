@@ -12,6 +12,7 @@
   border: 0;
   border-radius: @tiny-value;
   color: @secondary-color;
+  font-family: @font-stack-headings;
 }
 
 
@@ -84,6 +85,17 @@
       max-width: 75%;
       fill: @secondary-color;
       opacity: .5;
+    }
+  }
+
+  & .header-title {
+    margin-top: 1em;
+    font-size: 2.5rem;
+    font-weight: 300;
+
+    &:first-line {
+      font-size: 5.5rem;
+      font-weight: 400;
     }
   }
 }
