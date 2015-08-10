@@ -16,19 +16,17 @@
     position: absolute;
       top: 0; right: 3.3rem;
     height: ~"calc(100% - 2rem)";
-    margin: 1rem 0;
+    margin: @small-value 0;
     width: 0;
     content: "";
-    border-right: 1px dotted @base-light-gray;
-
-    // @TODO remplacer la border-right par l'asset de la maquette
+    border-right: .2rem dotted @base-light-gray;
   }
 
   & svg {
     float: left;
-    height: 9rem;
-    padding: .5rem 1rem .5rem 0;
-    width: 7rem;
+    height: @extra-large-value;
+    padding: @tiny-value @small-value @tiny-value 0;
+    width: @extra-large-value - @medium-value;
     fill: @primary-color;
   }
 }
