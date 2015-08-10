@@ -28,7 +28,8 @@
   <div class="content-box container margin-large grid-2 no-padding-left">
     <?php
       $args = array(
-        'page_id' => 20
+        'post_type' => 'page',
+        'post_parent' => get_the_ID()
       );
       $loop = new WP_Query($args);
       if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
