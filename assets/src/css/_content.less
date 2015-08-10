@@ -9,6 +9,21 @@
 }
 
 .asso-box {
+  position: relative;
+  padding-right: 10.2rem;
+
+  &::after {
+    position: absolute;
+      top: 0; bottom: 0; right: 3.3rem;
+    height: 100%;
+    margin: 1rem 0;
+    width: 0;
+    content: "";
+    border-right: 1px dotted @base-light-gray;
+
+    // @TODO remplacer la border-right par l'asset de la maquette
+  }
+
   & svg {
     float: left;
     height: 9rem;
