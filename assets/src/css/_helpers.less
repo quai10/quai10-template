@@ -2,7 +2,22 @@
  * Helpers Less file
  * */
 
+
+/** generic classes **/
+
 .container {
   margin: 0 auto;
+  padding: 0 @extra-large-value;
   width: 1280px;
+
+  &.margin-large {
+    margin: @extra-large-value auto;
+  }
+}
+
+
+/** markup **/
+
+h2, .h2-like {
+  color: @primary-color;
 }

@@ -25,3 +25,17 @@
       <h1 class="header-title"><?php the_title(); ?></h1>
     </div><!-- .header-container -->
   </header><!-- .header-box -->
+  <div class="content-box container margin-large grid-2 no-padding-left">
+    <?php
+      $args = array(
+        'page_id' => 20
+      );
+      $loop = new WP_Query($args);
+      if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
+    ?>
+    <section class="asso-box">
+      <h2 class="asso-title"><?php the_title(); ?></h2>
+      <?php the_content(); ?>
+    </section>
+    <?php endwhile; endif; ?>
+  </div><!-- .presentation-box -->
