@@ -10,11 +10,11 @@
 
 .asso-box {
   position: relative;
-  padding-right: 10.2rem;
+  padding-right: 8rem;
 
   &::after {
     position: absolute;
-      top: 0; right: 3.3rem;
+      top: 0; right: 5rem;
     height: ~"calc(100% - 2rem)";
     margin: @small-value 0;
     width: 0;
@@ -28,5 +28,91 @@
     padding: @tiny-value @small-value @tiny-value 0;
     width: @extra-large-value - @medium-value;
     fill: @primary-color;
+  }
+}
+
+
+//
+// Coworkers box
+
+.coworkers-box {
+  flex: 1 0 auto;
+
+  & .coworkers-list {
+    padding-left: 0;
+  }
+
+  & .coworkers-element {
+    margin-bottom: @large-value + @medium-value;
+    text-align: center;
+
+    &:hover .coworkers-element-image {
+      &::before {
+        top: @medium-value;
+        right: @medium-value;
+        bottom: @medium-value;
+        left: @medium-value;
+      }
+
+      & img {
+        filter: saturate(100%);
+      }
+    }
+
+    &:hover .coworkers-element-image img {
+      filter: saturate(100%);
+    }
+  }
+
+  & .coworkers-element-image {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100%;
+
+    &::before {
+      position: absolute;
+        top: -@medium-value;
+        right: -@medium-value;
+        bottom: -@medium-value;
+        left: -@medium-value;
+      box-sizing: border-box;
+      content: "";
+      border: @medium-value solid @primary-color;
+      border-radius: 50%;
+      opacity: .7;
+      transition: all @transition;
+      z-index: 1;
+    }
+
+    & img {
+      height: auto;
+      width: 100%;
+      filter: saturate(0%);
+      transition: filter @transition;
+    }
+  }
+
+  & .coworkers-element-name {
+    position: relative;
+    margin-top: @grid-value;
+    font-size: 1.8rem;
+    line-height: 1.35;
+
+    &::after {
+      display: block;
+      height: .3rem;
+      margin: 1.3rem auto 1.5rem;
+      width: 1.8rem;
+      content: "";
+      background: @primary-color;
+      border-radius: .2rem;
+    }
+  }
+
+  & .coworkers-element-work {
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 300;
   }
 }
