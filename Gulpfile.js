@@ -16,6 +16,7 @@ var source = './assets/src',
 // CSS Task = LESS & CSSO & autoprefixer
 gulp.task('css', function () {
   return gulp.src(source + '/css/styles.less')
+    .pipe(plugins.plumber())
     .pipe(plugins.less())
     .pipe(plugins.autoprefixer())
     .pipe(plugins.csso())
@@ -31,6 +32,7 @@ gulp.task('js', function () {
     source + '/js/*.js',
     source + '/vendor/jquery/dist/jquery.min.js' // jQuery vendor
   ])
+    .pipe(plugins.plumber())
     .pipe(plugins.concat('global.min.js'))
     .pipe(plugins.uglify())
     .pipe(gulp.dest(prod + '/js/'));

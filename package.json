@@ -10,15 +10,16 @@
   "author": "Damien Senger <hi@hiwelo.co>",
   "license": "GNU GPL v3",
   "devDependencies": {
-    "bower": "^1.4.1",
+    "bower": "latest",
     "gulp": "latest",
-    "gulp-load-plugins": "latest",
-    "gulp-rename": "latest",
-    "gulp-csso": "latest",
-    "gulp-less": "latest",
-    "gulp-concat": "latest",
-    "gulp-uglify": "latest",
     "gulp-autoprefixer": "latest",
-    "gulp-imagemin": "latest"
+    "gulp-concat": "latest",
+    "gulp-csso": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-less": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-uglify": "latest"
   }
 }
