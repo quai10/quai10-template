@@ -42,9 +42,9 @@ gulp.task('js', function () {
     source + '/js/*.js',
     source + '/vendor/jquery/dist/jquery.min.js' // jQuery vendor
   ])
-    .on('error', onError)
     .pipe(plugins.concat('global.min.js'))
     .pipe(plugins.uglify())
+    .on('error', onError)
     .pipe(gulp.dest(prod + '/js/'));
 });
 
