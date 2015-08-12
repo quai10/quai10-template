@@ -9,6 +9,16 @@ var source = './assets/src',
     prod = './assets/dist';
 
 
+// ----------
+// ERROR TASK
+// ----------
+
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
+
+
 // -----------------------------
 // Build task : css js img fonts
 // -----------------------------
@@ -16,8 +26,8 @@ var source = './assets/src',
 // CSS Task = LESS & CSSO & autoprefixer
 gulp.task('css', function () {
   return gulp.src(source + '/css/styles.less')
-    .pipe(plugins.plumber())
     .pipe(plugins.less())
+    .on('error', onError)
     .pipe(plugins.autoprefixer())
     .pipe(plugins.csso())
     .pipe(plugins.rename({
@@ -32,7 +42,7 @@ gulp.task('js', function () {
     source + '/js/*.js',
     source + '/vendor/jquery/dist/jquery.min.js' // jQuery vendor
   ])
-    .pipe(plugins.plumber())
+    .on('error', onError)
     .pipe(plugins.concat('global.min.js'))
     .pipe(plugins.uglify())
     .pipe(gulp.dest(prod + '/js/'));
@@ -48,6 +58,7 @@ gulp.task('img', function () {
         cleanupIDs: false
       }]
     }))
+    .on('error', onError)
     .pipe(gulp.dest(prod + '/img'));
 });
 
