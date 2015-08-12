@@ -15,7 +15,6 @@ var source = './assets/src',
 
 function onError(err) {
   console.log(err);
-  plugins.notify('Erreur de compilation :)');
   this.emit('end');
 }
 
