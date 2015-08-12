@@ -31,6 +31,7 @@ function quai10_setup() {
    * @source http://codex.wordpress.org/Post_Thumbnails
    * */
   add_theme_support('post-thumbnails');
+  set_post_thumbnail_size(250, 250);
 
   /**
    * Add post formats
