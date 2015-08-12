@@ -19,7 +19,6 @@
     "gulp-less": "latest",
     "gulp-load-plugins": "latest",
     "gulp-notify": "^2.2.0",
-    "gulp-plumber": "latest",
     "gulp-rename": "latest",
     "gulp-uglify": "latest"
   }
