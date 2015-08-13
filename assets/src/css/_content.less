@@ -29,6 +29,10 @@
     width: @extra-large-value - @medium-value;
     fill: @primary-color;
   }
+
+  & .btn {
+    margin-top: @large-value + @small-value;
+  }
 }
 
 
@@ -43,8 +47,12 @@
   }
 
   & .coworkers-element {
-    margin-bottom: @large-value + @medium-value;
+    margin-bottom: 0;
     text-align: center;
+
+    &:nth-of-type(-n + 3) {
+      margin-bottom: @large-value + @medium-value;
+    }
 
     &:hover .coworkers-element-image {
       &::before {
