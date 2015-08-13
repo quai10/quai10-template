@@ -28,25 +28,33 @@
   </header><!-- .header-box -->
   <div class="content-box container margin-large grid-2 no-padding-left">
     <?php
-      $args = array(
-        'post_type' => 'page',
-        'post_parent' => get_the_ID()
-      );
-      $loop = new WP_Query($args);
-      if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
+    $bloc_association = get_field('description_association')[0];
+    $cta = array(
+      'href' => get_field('cta_social_href'),
+      'label' => get_field('cta_social_label')
+    );
+    $args = array(
+      'post_type' => 'page',
+      'page_id' => $bloc_association->ID
+    );
+    $loop = new WP_Query($args);
+    if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
     ?>
     <section class="asso-box">
       <h2><?php the_title(); ?></h2>
       <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
       <?php the_content(); ?>
-      <a href="<?php echo get_post_meta(get_the_ID(), 'button_url', true); ?>" class="btn"><?php echo get_post_meta(get_the_ID(), 'button_label', true); ?></a>
+      <a href="<?php echo $cta['href']; ?>>" class="btn"><?php echo $cta['label']; ?></a>
     </section>
-  <?php endwhile; endif; unset($loop, $args); wp_reset_postdata(); ?>
+    <?php
+    endwhile; endif; unset($loop, $args); wp_reset_postdata();
+    $bloc_coworkers = get_field('emplacement_des_voyageurs');
+    ?>
     <section class="coworkers-box">
-      <h2><?php echo get_post_meta(get_the_ID(), 'coworkers_title', true); ?></h2>
+      <h2><?php echo $bloc_coworkers->name; ?></h2>
       <?php
       $args = array(
-        'category_name' => get_post_meta(get_the_ID(), 'coworkers_category', true),
+        'category_name' => $bloc_coworkers->slug,
         'orderby' => 'rand'
       );
       $loop = new WP_Query($args);
