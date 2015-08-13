@@ -15,6 +15,30 @@
   }
 }
 
+.btn {
+  display: inline-block;
+  border: .2rem solid @primary-color;
+  border-radius: @extra-large-value;
+  color: @primary-color;
+  font-family: @font-stack-headings;
+  font-size: @h5-size;
+  padding: @small-value+@tiny-value @large-value;
+  text-decoration: none;
+  transition: all @transition;
+
+  &:hover,
+  &:focus {
+    background-color: @primary-color;
+    color: @secondary-color;
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+  }
+}
+
 
 /** markup **/
 
@@ -32,4 +56,8 @@ h5,
 h6,
 .h6-like {
   font-family: @font-stack-headings;
+}
+
+p {
+  margin-bottom: 1.5em;
 }

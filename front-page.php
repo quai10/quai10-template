@@ -37,7 +37,9 @@
     ?>
     <section class="asso-box">
       <h2><?php the_title(); ?></h2>
+      <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
       <?php the_content(); ?>
+      <a href="<?php echo get_post_meta(get_the_ID(), 'button_url', true); ?>" class="btn"><?php echo get_post_meta(get_the_ID(), 'button_label', true); ?></a>
     </section>
   <?php endwhile; endif; unset($loop, $args); wp_reset_postdata(); ?>
     <section class="coworkers-box">

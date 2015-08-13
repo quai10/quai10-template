@@ -72,10 +72,10 @@
 
     &::before {
       position: absolute;
-        top: -@medium-value;
-        right: -@medium-value;
-        bottom: -@medium-value;
-        left: -@medium-value;
+        top: -@medium-value - @tiny-value;
+        right: -@medium-value - @tiny-value;
+        bottom: -@medium-value - @tiny-value;
+        left: -@medium-value - @tiny-value;
       box-sizing: border-box;
       content: "";
       border: @medium-value solid @primary-color;
@@ -97,7 +97,7 @@
     position: relative;
     margin-top: @grid-value;
     font-size: 1.8rem;
-    line-height: 1.35;
+    line-height: @line-height;
 
     &::after {
       display: block;
@@ -111,7 +111,7 @@
   }
 
   & .coworkers-element-work {
-    font-size: 1.6rem;
+    font-size: @base-font-size;
     font-style: italic;
     font-weight: 300;
   }
