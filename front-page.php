@@ -9,14 +9,14 @@
         </a>
       </div><!-- .nav-logo -->
       <?php
-      $args = array(
-        'theme_location' => 'primary_navigation',
-        'container' => false,
-        'menu_class' => 'nav-list',
-        'menu_id' => 'navigation'
-      );
-      wp_nav_menu($args);
-      unset($args);
+        $args = array(
+          'theme_location' => 'primary_navigation',
+          'container' => false,
+          'menu_class' => 'nav-list',
+          'menu_id' => 'navigation'
+        );
+        wp_nav_menu($args);
+        unset($args);
       ?>
     </nav><!-- .nav-box -->
     <div class="header-container grid-1-4">
@@ -28,20 +28,20 @@
   </header><!-- .header-box -->
   <div class="content-box container margin-large grid-2 no-padding-left">
     <?php
-    $bloc_association = get_field('description_association')[0];
-    $cta = array(
-      'href' => get_field('cta_social_href'),
-      'label' => get_field('cta_social_label')
-    );
-    $args = array(
-      'post_type' => 'page',
-      'page_id' => $bloc_association->ID
-    );
-    $loop = new WP_Query($args);
-    if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
+      $bloc_association = get_field('description_association')[0];
+      $cta = array(
+        'href' => get_field('cta_social_href'),
+        'label' => get_field('cta_social_label')
+      );
+      $args = array(
+        'post_type' => 'page',
+        'page_id' => $bloc_association->ID
+      );
+      $loop = new WP_Query($args);
+      if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
     ?>
-    <section class="asso-box">
-      <h2><?php the_title(); ?></h2>
+    <section class="asso-box border-left">
+      <h2 class="asso-title"><?php the_title(); ?></h2>
       <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
       <?php the_content(); ?>
       <a href="<?php echo $cta['href']; ?>>" class="btn"><?php echo $cta['label']; ?></a>
@@ -51,14 +51,14 @@
     $bloc_coworkers = get_field('emplacement_des_voyageurs');
     ?>
     <section class="coworkers-box">
-      <h2><?php echo $bloc_coworkers->name; ?></h2>
+      <h2 class="coworkers-title"><?php echo $bloc_coworkers->name; ?></h2>
       <?php
-      $args = array(
-        'category_name' => $bloc_coworkers->slug,
-        'orderby' => 'rand'
-      );
-      $loop = new WP_Query($args);
-      if ($loop->have_posts()) :
+        $args = array(
+          'category_name' => $bloc_coworkers->slug,
+          'orderby' => 'rand'
+        );
+        $loop = new WP_Query($args);
+        if ($loop->have_posts()) :
       ?>
       <ul class="coworkers-list grid-3">
         <?php while ($loop->have_posts()) : $loop->the_post(); ?>
@@ -80,19 +80,50 @@
   <div class="content-box container margin-large grid no-padding-left no-padding">
     <section class="espace-box">
       <?php
-      $contenu_espace = get_field('contenu_espace');
-      $args = array(
-        'post_type' => 'page',
-        'page_id' => $contenu_espace->ID
-      );
-      $loop = new WP_Query($args);
-      if ($loop->have_posts()) : $loop->the_post();
-      $title = str_replace('Quai Numéro Dix', '<svg role="img" aria-labelledby="title-logo-quai10-vert"><use xlink:href="#icon-logo-quai10-vert"></use></svg>', get_the_title());
+        $contenu_espace = get_field('contenu_espace');
+        $args = array(
+          'post_type' => 'page',
+          'page_id' => $contenu_espace[0]->ID
+        );
+        $loop = new WP_Query($args);
+        if ($loop->have_posts()) : $loop->the_post();
+        $title = str_replace('Quai Numéro Dix', '<svg role="img" aria-labelledby="title-logo-quai10-vert"><use xlink:href="#icon-logo-quai10-vert"></use></svg>', get_the_title());
       ?>
-      <h2><?php echo $title; ?></h2>
+      <h2 class="espace-title"><?php echo $title; ?></h2>
       <div class="espace-list">
         <?php the_content(); ?>
       </div><!-- .espace-list -->
     <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
     </section><!-- .espace-box -->
+  </div><!-- .content-box -->
+  <div class="content-box container margin-large grid-2 no-padding-left">
+    <section class="entrepot-box border-left">
+      <?php
+        $photos = get_field('photographies');
+        $args = array(
+          'post_type' => 'post',
+          'category_name' => 'chantier'
+        );
+        $loop = new WP_Query($args);
+      ?>
+      <h2 class="entrepot-title"><?php echo $photos->name; ?></h2>
+      <?php unset($loop, $args); wp_reset_postdata(); ?>
+    </section><!-- .entrepot-box -->
+    <section class="projet-box">
+      <?php
+        $projet = get_field('projet');
+        $projet_btn = get_field('link_coworking');
+        $projet_btn_label = get_field('link_coworking_label');
+        $args = array(
+          'post_type' => 'page',
+          'page_id' => $projet->ID
+        );
+        $loop = new WP_Query($args);
+        if ($loop->have_posts()) : $loop->the_post();
+      ?>
+      <h2 class="projet-title"><?php the_title(); ?></h2>
+      <?php the_content(); ?>
+      <a class="btn" href="<?php echo $projet_btn; ?>"><?php echo $projet_btn_label; ?></a>
+      <?php endif; unset($loop, $args); wp_reset_postdata ?>
+    </section><!-- .projet-box -->
   </div><!-- .content-box -->

@@ -13,7 +13,7 @@
   }
 }
 
-.asso-box {
+.border-left {
   position: relative;
   padding-right: 8rem;
 
@@ -25,6 +25,12 @@
     width: 0;
     content: "";
     border-right: .2rem dotted @base-light-gray;
+  }
+}
+
+.asso-box {
+  & .asso-title {
+    .h2-like;
   }
 
   & svg {
@@ -46,6 +52,10 @@
 
 .coworkers-box {
   flex: 1 0 auto;
+
+  & .coworkers-title {
+    .h2-like;
+  }
 
   & .coworkers-list {
     padding-left: 0;
@@ -152,7 +162,8 @@
     background: url('../img/logo-bkgnd.png') center center no-repeat;
   }
 
-  & h2 {
+  & .espace-title {
+    .h2-like;
     position: absolute;
       top: -12.2rem; left: ~"calc(50% - 17.5rem)";
     color: @base-color;
@@ -203,5 +214,15 @@
         border-radius: 50%;
       }
     }
+  }
+}
+
+
+//
+// Projet box block
+
+.projet-box {
+  & .btn {
+    margin-top: @grid-value;
   }
 }

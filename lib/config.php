@@ -37,7 +37,7 @@ function quai10_setup() {
    * Add post formats
    * @source http://codex.wordpress.org/Post_Formats
    * */
-  //add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
+  add_theme_support('post-formats', [/*'aside', 'gallery', 'link', */'image'/*, 'quote', 'video', 'audio'*/]);
 
   /**
    * Add HTML5 Markup for captions
