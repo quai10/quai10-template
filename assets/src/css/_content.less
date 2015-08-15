@@ -6,6 +6,11 @@
   &.no-padding-left > * {
     margin-left: 0;
   }
+
+  &.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .asso-box {
@@ -123,5 +128,80 @@
     font-size: @base-font-size;
     font-style: italic;
     font-weight: 300;
+  }
+}
+
+
+//
+// Espace box
+
+.espace-box {
+  position: relative;
+  background: @primary-background;
+  border: 0;
+  border-radius: @tiny-value;
+  margin-top: @maxi-large-value;
+  padding: 15rem @extra-large-value;
+
+  &::before {
+    display: block;
+    position: absolute;
+      top: -12.5rem; bottom: -12.5rem;
+    width: ~"calc(100% - 15rem)";
+    content: "";
+    background: url('../img/logo-bkgnd.png') center center no-repeat;
+  }
+
+  & h2 {
+    position: absolute;
+      top: -12.2rem; left: ~"calc(50% - 17.5rem)";
+    color: @base-color;
+    font-size: @h3-size;
+    line-height: @h2-size;
+    text-align: center;
+    text-transform: lowercase;
+
+    & svg {
+      display: block;
+      height: 26rem;
+      width: 35rem;
+      margin: -5rem auto;
+      fill: @primary-color;
+    }
+  }
+
+  & .espace-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+
+    & li {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 1.33em;
+      padding-left: 2rem;
+      width: 33%;
+      font-size: @h4-size;
+      line-height: 1.33;
+
+      &:nth-last-of-type(-n+3) {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        display: inline-block;
+        position: absolute;
+          bottom: 1rem; left: 0;
+        box-sizing: border-box;
+        height: 1rem;
+        width: 1rem;
+        content: "";
+        background: transparent;
+        border: .3rem solid @primary-color;
+        border-radius: 50%;
+      }
+    }
   }
 }

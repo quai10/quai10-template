@@ -76,4 +76,23 @@
         <p>Aucun voyageur n'a pris place dans le train actuellement.</p>
       <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
     </section><!-- .coworkers-box -->
-  </div><!-- .presentation-box -->
+  </div><!-- .content-box -->
+  <div class="content-box container margin-large grid no-padding-left no-padding">
+    <section class="espace-box">
+      <?php
+      $contenu_espace = get_field('contenu_espace');
+      $args = array(
+        'post_type' => 'page',
+        'page_id' => $contenu_espace->ID
+      );
+      $loop = new WP_Query($args);
+      if ($loop->have_posts()) : $loop->the_post();
+      $title = str_replace('Quai Numéro Dix', '<svg role="img" aria-labelledby="title-logo-quai10-vert"><use xlink:href="#icon-logo-quai10-vert"></use></svg>', get_the_title());
+      ?>
+      <h2><?php echo $title; ?></h2>
+      <div class="espace-list">
+        <?php the_content(); ?>
+      </div><!-- .espace-list -->
+    <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
+    </section><!-- .espace-box -->
+  </div><!-- .content-box -->
