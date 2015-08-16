@@ -96,7 +96,7 @@
     <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
     </section><!-- .espace-box -->
   </div><!-- .content-box -->
-  <div class="content-box container margin-large grid-2 no-padding-left">
+  <div class="content-box container margin-large grid-3-2 no-padding-left">
     <section class="entrepot-box border-left">
       <?php
         $photos = get_field('photographies');
@@ -107,6 +107,16 @@
         $loop = new WP_Query($args);
       ?>
       <h2 class="entrepot-title"><?php echo $photos->name; ?></h2>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <?php while ($loop->have_posts()) : $loop->the_post(); $photo = get_field('photographie'); ?>
+          <div class="swiper-slide">
+            <div class="slide-photographie" style="background-image: url(<?php echo $photo['url']; ?>);"></div>
+            <strong class="slide-title"><?php the_title(); ?></strong>
+          </div><!-- .swiper-slide -->
+          <?php endwhile; ?>
+        </div><!-- .swiper-wrapper -->
+      </div><!-- .swiper-container -->
       <?php unset($loop, $args); wp_reset_postdata(); ?>
     </section><!-- .entrepot-box -->
     <section class="projet-box">

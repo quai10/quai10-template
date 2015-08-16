@@ -227,3 +227,39 @@
     margin-top: @grid-value;
   }
 }
+
+
+//
+// Entrepot box
+
+.entrepot-box {
+  &::after {
+    right: 3.75rem;
+  }
+}
+
+
+//
+// Slider photos
+
+.swiper-container {
+  & .swiper-slide {
+    & .slide-photographie {
+      height: @height-slider;
+      width: 100%;
+      background-color: @base-color;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    & .slide-title {
+      display: block;
+      margin-top: @grid-value;
+      color: @base-verylight-gray;
+      font-size: @h5-size;
+      font-style: italic;
+      font-weight: 400;
+    }
+  }
+}
