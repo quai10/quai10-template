@@ -40,7 +40,8 @@ gulp.task('css', function () {
 gulp.task('js', function () {
   return gulp.src([
     source + '/js/*.js',
-    source + '/vendor/jquery/dist/jquery.min.js' // jQuery vendor
+    source + '/vendor/jquery/dist/jquery.min.js', // jQuery vendor
+    source + '/vendor/swiper/dist/css/swiper.min.css' // swiperJS
   ])
     .pipe(plugins.concat('global.min.js'))
     .pipe(plugins.uglify())
