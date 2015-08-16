@@ -243,6 +243,24 @@
 // Slider photos
 
 .swiper-container {
+  overflow: hidden;
+
+  & .swiper-pagination {
+    position: absolute;
+      bottom: @large-value + @grid-value; right: 0;
+    padding: @small-value @large-value;
+    text-align: right;
+
+    & .swiper-prev-btn {
+      padding-right: @large-value + @medium-value;
+    }
+
+    & .swiper-prev-btn img {
+      transform: rotate(180deg);
+    }
+
+  }
+
   & .swiper-slide {
     & .slide-photographie {
       height: @height-slider;
@@ -260,6 +278,34 @@
       font-size: @h5-size;
       font-style: italic;
       font-weight: 400;
+      line-height: @large-value - @small-value;
+    }
+  }
+
+  & .social-icons {
+    position: absolute;
+      bottom: 0; right: 0;
+    background: @secondary-color;
+    list-style: none;
+    padding-left: 0;
+    z-index: 1;
+  }
+
+  & .social-icon {
+    display: inline-block;
+    padding-left: 5.3rem;
+    color: @primary-color;
+    font-size: @h5-size;
+    font-weight: 700;
+    line-height: @large-value - @small-value;
+
+    &:first-of-type {
+      padding-left: @small-value;
+    }
+
+    & img {
+      padding-right: @small-value;
+      vertical-align: top;
     }
   }
 }

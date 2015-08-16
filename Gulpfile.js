@@ -39,9 +39,9 @@ gulp.task('css', function () {
 // JS Task = concatenation and copying, don't forget to add vendors
 gulp.task('js', function () {
   return gulp.src([
-    source + '/js/*.js',
     source + '/vendor/jquery/dist/jquery.min.js', // jQuery vendor
-    source + '/vendor/swiper/dist/js/swiper.min.js' // swiperJS
+    source + '/vendor/swiper/dist/js/swiper.min.js', // swiperJS
+    source + '/js/*.js' // scripts du thème
   ])
     .pipe(plugins.concat('global.min.js'))
     .pipe(plugins.uglify())

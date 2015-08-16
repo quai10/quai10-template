@@ -42,6 +42,18 @@
 
 /** markup **/
 
+a {
+  &.no-style {
+    color: inherit;
+    text-decoration: inherit;
+
+    &:hover {
+      color: inherit;
+      text-decoration: inherit;
+    }
+  }
+}
+
 h2,
 .h2-like {
   color: @primary-color;
