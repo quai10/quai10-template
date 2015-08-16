@@ -159,3 +159,4 @@
       <?php endif; unset($loop, $args); wp_reset_postdata ?>
     </section><!-- .projet-box -->
   </div><!-- .content-box -->
+<?php get_footer(); ?>
