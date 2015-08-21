@@ -31,8 +31,10 @@
         <div class="footer-col footer-col-newsletter">
           <h5 class="footer-title"><a class="no-style" href="#">Newsletter</a></h5>
           <form action="#" method="post">
-            <span class="icon-email"><input type="email" placeholder="Renseigne ton email"></span>
-            <input type="submit" value="OK">
+            <div class="icon-email">
+              <input type="email" placeholder="Renseigne ton email" required>
+              <input type="submit" value="OK">
+            </div><!-- .icon-email -->
           </form>
         </div><!-- .footer-col -->
       </div><!-- .footer-content -->

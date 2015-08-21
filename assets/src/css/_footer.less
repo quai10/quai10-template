@@ -83,7 +83,7 @@
     background: transparent;
     border: 0;
     color: @secondary-color;
-    transition: color @transition;
+    transition: all @transition;
   }
 
   & input[type="email"] {
@@ -91,8 +91,17 @@
     width: 65%;
     border-bottom: 2px solid;
 
-    &::placeholder, {
+    &::placeholder {
       font-style: italic;
+    }
+
+    &:invalid {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &:not(:focus):invalid {
+      border-bottom: 4px solid @error-color;
     }
   }
 
@@ -103,6 +112,15 @@
     &:hover,
     &:focus {
       color: @primary-color;
+    }
+  }
+
+  & input[type="email"]:invalid ~ input[type="submit"] {
+    opacity: .15;
+    pointer-events: none;
+
+    &:focus {
+      color: @secondary-color;
     }
   }
 }
