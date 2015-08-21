@@ -78,22 +78,31 @@
     }
   }
 
-  & input[type="email"] {
+  & input {
     padding-bottom: @small-value + @tiny-value;
-    padding-left: @large-value;
-    width: 65%;
-    background-color: transparent;
-    border: 0;
-    border-bottom: 2px solid;
-    color: @secondary-color;
-    font-style: italic;
-  }
-
-  & input[type="submit"] {
     background: transparent;
     border: 0;
     color: @secondary-color;
+    transition: color @transition;
+  }
+
+  & input[type="email"] {
+    padding-left: @large-value;
+    width: 65%;
+    border-bottom: 2px solid;
+
+    &::placeholder, {
+      font-style: italic;
+    }
+  }
+
+  & input[type="submit"] {
     font-family: @font-stack-headings;
     margin-left: @medium-value - @tiny-value;
+
+    &:hover,
+    &:focus {
+      color: @primary-color;
+    }
   }
 }
