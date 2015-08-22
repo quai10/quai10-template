@@ -32,7 +32,7 @@
           <h5 class="footer-title"><a class="no-style" href="#">Newsletter</a></h5>
           <form action="#" method="post">
             <div class="icon-email">
-              <input type="email" placeholder="Renseigne ton email" required>
+              <input type="email" placeholder="Renseigne ton email" required value="">
               <input type="submit" value="OK">
             </div><!-- .icon-email -->
           </form>
