@@ -168,15 +168,15 @@
     $loop = new WP_Query($args);
     $loop->the_post();
   ?>
-  <section class="contact-box content-box container margin-large contrast-box grid-2-1 no-padding-left" style="background-image: url(<?php echo get_field('cta_background')->url; ?>);">
-    <div>
-      <h2><?php the_title(); ?></h2>
+  <section class="cta-box content-box container margin-large contrast-box grid-2-1 no-padding-left" style="background-image: url(<?php echo get_field('cta_background')['url']; ?>);">
+    <div class="cta-content border-left">
+      <h2 class="cta-title"><?php the_title(); ?></h2>
       <?php the_content(); ?>
-    </div>
-    <div>
-      <p class="cta-contenu"><?php echo get_field('cta_contenu'); ?></p>
-      <a href="<?php echo get_field('cta_destination')->guid; ?>" class="btn"><?php echo get_field('cta_titre'); ?></a>
-    </div>
-  </section><!-- .contact-box -->
+    </div><!-- .cta-content -->
+    <aside class="cta-aside">
+      <p class="cta-aside-content"><?php echo get_field('cta_contenu'); ?></p>
+      <a class="btn cta-aside-btn" href="<?php echo get_field('cta_destination')->guid; ?>"><?php echo get_field('cta_titre'); ?></a>
+    </aside><!-- .cta-aside -->
+  </section><!-- .cta-box -->
   <?php unset($loop, $args); wp_reset_postdata(); ?>
 <?php get_footer(); ?>

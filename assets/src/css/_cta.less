@@ -1,0 +1,56 @@
+/**
+ * CTA Less file
+ * */
+
+.cta-box {
+  padding-bottom: @large-value + @small-value;
+  padding-top: @large-value + @small-value;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  & .cta-content,
+  & .cta-aside {
+    align-items: center;
+    padding-bottom: @large-value;
+    padding-top: @extra-large-value - @medium-value;
+  }
+
+  & .cta-content {
+    flex: 2 1 auto;
+    padding-right: 10rem;
+  }
+
+  & .border-left::after {
+    opacity: .5;
+  }
+
+  & .cta-title {
+    margin-bottom: @large-value;
+    color: @secondary-color;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  & .cta-content {
+    font-size: @h3-size;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+
+  & .cta-aside-content {
+    margin-bottom: @large-value;
+    font-family: @font-stack-headings;
+    font-size: @h2-size;
+    text-align: center;
+  }
+
+  & .cta-aside-btn {
+    border-color: @secondary-color;
+    color: @secondary-color;
+
+    &:hover {
+      background-color: @secondary-color;
+      color: @primary-color;
+    }
+  }
+}
