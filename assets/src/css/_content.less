@@ -15,6 +15,17 @@
   &.contrast-box {
     background-color: @primary-color;
     color: @secondary-color;
+
+    & .btn {
+      border-color: @secondary-color;
+      color: @secondary-color;
+
+      &:hover,
+      &:focus {
+        background-color: @secondary-color;
+        color: @primary-color;
+      }
+    }
   }
 }
 
