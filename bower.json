@@ -19,6 +19,7 @@
   "devDependencies": {
     "knacss": "~4.3.2",
     "jquery": "~2.1.4",
-    "swiper": "~3.1.0"
+    "swiper": "~3.1.0",
+    "leaflet": "~0.7.3"
   }
 }

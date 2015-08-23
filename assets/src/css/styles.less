@@ -2,7 +2,7 @@
 // -----------------
 
 // import configuration & variables
-@import "./_config";
+@import (reference) "./_config";
 
 // normalize include
 @import "../vendor/knacss/less/_01a-normalize"; // normalize
@@ -33,6 +33,7 @@
 
 // Styles des scripts JS
 @import "../vendor/swiper/src/less/swiper";
+@import (inline) "../vendor/leaflet/dist/leaflet.css";
 
 // Styles du thème
 @import "./_fonts";
