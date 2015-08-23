@@ -24,3 +24,21 @@ $(document).ready(function () {
     prevButton: '.swiper-prev-btn'
   });
 });
+
+
+/**
+ * Initialisation des maps
+ * */
+
+$(document).ready(function () {
+  var container = document.getElementById('map');
+
+  var map = L.map('map').setView([
+    container.dataset.lat,
+    container.dataset.lng
+  ], container.dataset.zoom);
+
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+});

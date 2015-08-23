@@ -5,7 +5,8 @@
   <h2 class="tpl_localisation-title content-title"><?php the_title(); ?></h2>
   <div class="grid-2">
     <aside class="tpl_localisation-aside">
-      <?php var_dump(get_field('map')); ?>
+      <?php $map_data = get_field('map'); ?>
+      <div id="map" data-lat="<?php echo $map_data['lat']; ?>" data-lng="<?php echo $map_data['lng']; ?>" data-zoom="17"></div>
     </aside><!-- .tpl_localisation-aside -->
     <div class="tpl_localisation-content">
       <?php the_content(); ?>

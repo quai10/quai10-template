@@ -45,7 +45,7 @@ gulp.task('js', function () {
     source + '/js/*.js' // scripts du thème
   ])
     .pipe(plugins.concat('global.min.js'))
-    .pipe(plugins.uglify())
+    //.pipe(plugins.uglify())
     .on('error', onError)
     .pipe(gulp.dest(prod + '/js/'));
 });
