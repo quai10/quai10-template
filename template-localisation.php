@@ -1,0 +1,17 @@
+<?php
+/* Template Name: Localisation */
+?>
+<section class="tpl_localisation container content-box contrast-box margin-large grid no-padding-left no-padding">
+  <h2 class="tpl_localisation-title content-title"><?php the_title(); ?></h2>
+  <div class="grid-2">
+    <aside class="tpl_localisation-aside">
+      <?php var_dump(get_field('map')); ?>
+    </aside><!-- .tpl_localisation-aside -->
+    <div class="tpl_localisation-content">
+      <?php the_content(); ?>
+      <a class="btn" href="<?php echo get_field('cta_destination'); ?>">
+        <?php echo get_field('cta_label'); ?>
+      </a><!-- .btn -->
+    </div><!-- .tpl_localisation-content -->
+  </div><!-- .grid-2 -->
+</section><!-- .tpl_localisation -->
