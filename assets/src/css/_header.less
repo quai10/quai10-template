@@ -46,6 +46,7 @@
 
   & .menu-item {
     display: inline-block;
+    margin-right: @small-value;
 
     body:not(.home) &.current_page_item a {
       border-color: @secondary-color-fade;
@@ -78,7 +79,7 @@
 
 /** HEADER CONTENT **/
 
-.home .header-container {
+.header-container {
   padding: @extra-large-value 0;
 
   & .header-icon {
@@ -104,6 +105,18 @@
       font-weight: 400;
     }
   }
+}
+
+
+/** NOT HOME HEADER CONTENT **/
+
+:not(.home) .header-box {
+  margin-bottom: @large-value;
+}
+
+:not(.home) .header-container {
+  min-height: @maxi-large-value + @ultra-large-value;
+  padding: @large-value + @medium-value 0;
 }
 
 
