@@ -156,7 +156,27 @@
       <h2 class="projet-title"><?php the_title(); ?></h2>
       <?php the_content(); ?>
       <a class="btn" href="<?php echo $projet_btn; ?>"><?php echo $projet_btn_label; ?></a>
-      <?php endif; unset($loop, $args); wp_reset_postdata ?>
+      <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
     </section><!-- .projet-box -->
   </div><!-- .content-box -->
+  <?php
+    $contact = get_field('section_contact');
+    $args = array(
+      'post_type' => 'page',
+      'page_id' => $contact->ID
+    );
+    $loop = new WP_Query($args);
+    $loop->the_post();
+  ?>
+  <section class="contact-box content-box container margin-large contrast-box grid-2-1 no-padding-left" style="background-image: url(<?php echo get_field('cta_background')->url; ?>);">
+    <div>
+      <h2><?php the_title(); ?></h2>
+      <?php the_content(); ?>
+    </div>
+    <div>
+      <p class="cta-contenu"><?php echo get_field('cta_contenu'); ?></p>
+      <a href="<?php echo get_field('cta_destination')->guid; ?>" class="btn"><?php echo get_field('cta_titre'); ?></a>
+    </div>
+  </section><!-- .contact-box -->
+  <?php unset($loop, $args); wp_reset_postdata(); ?>
 <?php get_footer(); ?>
