@@ -1,29 +1,37 @@
-<?php get_header(); ?>
-  <header class="header-box container" id="top">
-    <nav class="nav-box grid-1-4">
-      <div class="nav-logo">
-        <a href="<?php echo home_url(); ?>">
-          <svg role="img" aria-labelledby="title-logo-quai10">
-            <use xlink:href="#icon-logo-quai10"></use>
-          </svg>
-        </a>
-      </div><!-- .nav-logo -->
-      <?php
-        $args = array(
-          'theme_location' => 'primary_navigation',
-          'container' => false,
-          'menu_class' => 'nav-list',
-          'menu_id' => 'navigation'
-        );
-        wp_nav_menu($args);
-        unset($args);
-      ?>
-    </nav><!-- .nav-box -->
-    <div class="header-container grid-1-4">
-      <div class="header-icon">
-        <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
-      </div><!-- .header-icon -->
-      <h1 class="header-title"><?php the_title(); ?></h1>
-    </div><!-- .header-container -->
-  </header><!-- .header-box -->
-<?php get_footer(); ?>
+<?php
+get_header();
+get_header('page');
+
+// on récupère les variables nécessaires
+$page_id = get_queried_object_id();
+
+// we made a loop with each child of this page
+$args = array(
+  'post_type' => 'page',
+  'post_parent' => $page_id,
+  'order' => 'ASC',
+  'orderby' => 'menu_order'
+);
+$loop = new WP_Query($args);
+
+// we check if we have children
+if ($loop->have_posts()) :
+  // we loop each child
+  while ($loop->have_posts()) :
+    // we load all child page's informations
+    $loop->the_post();
+    // we search the template name
+    $template = get_page_template_slug();
+    $template = explode('.', $template)[0];
+    $template = explode('-', $template, 2);
+    // we call the asked template
+    get_template_part($template[0], $template[1]);
+    // we unset useless vars
+    unset($template);
+  endwhile;
+  // we unset useless vars
+  unset($loop, $args);
+  wp_reset_postdata();
+endif;
+
+get_footer();
