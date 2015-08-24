@@ -1,0 +1,26 @@
+{
+    "name": "quai10/quai10-template",
+    "description": "Quai10 WordPress Template",
+    "keywords": [
+        "wordpress",
+        "theme"
+    ],
+    "homepage": "https://quai10.org/",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Pierre Rudloff",
+            "email": "contact@rudloff.pro",
+            "homepage": "https://www.rudloff.pro/"
+        },
+        {
+            "name": "Damien Senger",
+            "email": "hi@hiwelo.co",
+            "homepage": "http://hiwelo.fr/"
+        }
+    ],
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "~1.0.21"
+    }
+}
