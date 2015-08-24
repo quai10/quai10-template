@@ -11,7 +11,7 @@ This README explains every steps which are necessary to get this template runnin
 ### How do I get set up? ###
 
 ```
-$ git clone git@bitbucket.org:quai10/quai10.git
+$ git clone git@bitbucket.org:quai10/quai10-template.git
 $ npm install
 $ bower install
 $ gulp
