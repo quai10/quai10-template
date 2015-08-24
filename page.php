@@ -32,6 +32,8 @@ if ($loop->have_posts()) :
   // we unset useless vars
   unset($loop, $args);
   wp_reset_postdata();
+else:
+    the_content();
 endif;
 
 get_footer();
