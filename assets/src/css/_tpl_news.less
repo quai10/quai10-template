@@ -1,0 +1,34 @@
+/**
+ * Template News Less file
+ * */
+
+.tpl_news {
+  & .tpl_news-aside {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background: @primary-color center center no-repeat;
+    background-size: cover;
+    border-radius: @tiny-value;
+    color: @secondary-color;
+    transition: all @transition;
+
+    &:hover {
+      filter: saturate(115%);
+    }
+  }
+
+  & .tpl_news-aside-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: @font-stack-headings;
+    font-size: @h2-size;
+    text-align: center;
+
+    & > p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
