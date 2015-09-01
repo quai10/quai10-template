@@ -21,3 +21,39 @@ foreach ($includes as $inc) {
     include_once locate_template($inc);
 }
 unset($inc);
+
+function getFutureEvents()
+{
+    return EM_Events::output(
+        array(
+            'format_header'=>'<ul>',
+            'format'=>'<li>
+                <div>#_{j M Y}</div>
+                <h3>#_EVENTNAME</h3>
+                <div>#_EVENTNOTES</div>
+                <a href="#_EVENTURL">En savoir plus</a>
+            </li>',
+            'format_footer'=>'</ul>'
+        )
+    );
+}
+
+function getPastEvents()
+{
+    return EM_Events::output(
+        array(
+            'format_header'=>'<ul>',
+            'format'=>'<li>
+                <div>#_{j M Y}</div>
+                <h3>#_EVENTNAME</h3>
+                <div>#_EVENTNOTES</div>
+                <a href="#_EVENTURL">En savoir plus</a>
+            </li>',
+            'format_footer'=>'</ul>',
+            'scope'=>'past',
+            'order'=>'DESC',
+            'limit'=>3,
+            'pagination'=>true
+        )
+    );
+}

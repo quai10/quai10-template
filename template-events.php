@@ -17,37 +17,11 @@ get_header('page');
 ?>
 <h2>Les prochains événements</h2>
 <?php
-em_events(
-    array(
-        'format_header'=>'<ul>',
-        'format'=>'<li>
-            <div>#_{j M Y}</div>
-            <h3>#_EVENTNAME</h3>
-            <div>#_EVENTNOTES</div>
-            <a href="#_EVENTURL">En savoir plus</a>
-        </li>',
-        'format_footer'=>'</ul>'
-    )
-);
+echo getFutureEvents();
 the_post();
 the_content();
 ?>
 <h2>Les événements passés</h2>
 <?php
-em_events(
-    array(
-        'format_header'=>'<ul>',
-        'format'=>'<li>
-            <div>#_{j M Y}</div>
-            <h3>#_EVENTNAME</h3>
-            <div>#_EVENTNOTES</div>
-            <a href="#_EVENTURL">En savoir plus</a>
-        </li>',
-        'format_footer'=>'</ul>',
-        'scope'=>'past',
-        'order'=>'DESC',
-        'limit'=>3,
-        'pagination'=>true
-    )
-);
+echo getPastEvents();
 get_footer();
