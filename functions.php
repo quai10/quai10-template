@@ -22,6 +22,10 @@ foreach ($includes as $inc) {
 }
 unset($inc);
 
+/**
+ * Get future events
+ * @return string HTML
+ */
 function getFutureEvents()
 {
     return EM_Events::output(
@@ -38,6 +42,10 @@ function getFutureEvents()
     );
 }
 
+/**
+ * Get past events
+ * @return string HTML
+ */
 function getPastEvents()
 {
     return EM_Events::output(
