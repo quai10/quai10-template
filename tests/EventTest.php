@@ -11,7 +11,6 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
-require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/EM_EventsMock.php';
 require_once __DIR__.'/../lib/Event.php';
 use Quai10\Event;
