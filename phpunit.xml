@@ -2,6 +2,10 @@
     <filter>
         <whitelist>
             <directory>lib/</directory>
+            <exclude>
+                <file>lib/cleanup.php</file>
+                <file>lib/config.php</file>
+            </exclude>
         </whitelist>
     </filter>
     <testsuites>

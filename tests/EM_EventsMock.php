@@ -1,6 +1,6 @@
 <?php
 /**
- * EventTest class
+ * Mock EM_Events class
  *
  * PHP version 5
  *
@@ -11,12 +11,8 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
-require_once __DIR__.'/../vendor/autoload.php';
-require_once __DIR__.'/EM_EventsMock.php';
-require_once __DIR__.'/../lib/Event.php';
-use Quai10\Event;
 /**
- * Unit tests for Event class
+ * Mock EM_Events class
  *
  * PHP version 5
  *
@@ -27,15 +23,14 @@ use Quai10\Event;
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
-class EventTest extends PHPUnit_Framework_TestCase
+class EM_Events
 {
     /**
-     * Unit tests for events functions
-     * @return void
+     * Mock output function
+     * @return string
      */
-    public function testGetEvents()
+    static function output()
     {
-        $this->assertStringStartsWith('<ul><li>', Event::getFutureEvents());
-        $this->assertStringStartsWith('<ul><li>', Event::getPastEvents());
+        return '<ul><li>Foo</li><li>Bar</li>';
     }
 }
