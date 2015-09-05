@@ -17,11 +17,11 @@ get_header('page');
 ?>
 <h2>Les prochains événements</h2>
 <?php
-echo getFutureEvents();
+echo Event::getFutureEvents();
 the_post();
 the_content();
 ?>
 <h2>Les événements passés</h2>
 <?php
-echo getPastEvents();
+echo Event::getPastEvents();
 get_footer();

@@ -14,54 +14,11 @@
  */
 $includes = array(
   'lib/cleanup.php',
-  'lib/config.php'
+  'lib/config.php',
+  'lib/Event.php'
 );
 
 foreach ($includes as $inc) {
     include_once locate_template($inc);
 }
 unset($inc);
-
-/**
- * Get future events
- * @return string HTML
- */
-function getFutureEvents()
-{
-    return EM_Events::output(
-        array(
-            'format_header'=>'<ul>',
-            'format'=>'<li>
-                <div>#_{j M Y}</div>
-                <h3>#_EVENTNAME</h3>
-                <div>#_EVENTNOTES</div>
-                <a href="#_EVENTURL">En savoir plus</a>
-            </li>',
-            'format_footer'=>'</ul>'
-        )
-    );
-}
-
-/**
- * Get past events
- * @return string HTML
- */
-function getPastEvents()
-{
-    return EM_Events::output(
-        array(
-            'format_header'=>'<ul>',
-            'format'=>'<li>
-                <div>#_{j M Y}</div>
-                <h3>#_EVENTNAME</h3>
-                <div>#_EVENTNOTES</div>
-                <a href="#_EVENTURL">En savoir plus</a>
-            </li>',
-            'format_footer'=>'</ul>',
-            'scope'=>'past',
-            'order'=>'DESC',
-            'limit'=>3,
-            'pagination'=>true
-        )
-    );
-}

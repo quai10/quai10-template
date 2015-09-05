@@ -1,6 +1,6 @@
 <?php
 /**
- * FunctionsTest class
+ * EventTest class
  *
  * PHP version 5
  *
@@ -14,7 +14,7 @@
 require_once __DIR__.'/../../../../wp/wp-load.php';
 require_once __DIR__.'/../functions.php';
 /**
- * Unit tests for functions.php
+ * Unit tests for Event class
  *
  * PHP version 5
  *
@@ -25,7 +25,7 @@ require_once __DIR__.'/../functions.php';
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
-class FunctionsTest extends PHPUnit_Framework_TestCase
+class EventTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Unit tests for events functions
@@ -33,7 +33,7 @@ class FunctionsTest extends PHPUnit_Framework_TestCase
      */
     public function testGetEvents()
     {
-        $this->assertStringStartsWith('<ul><li>', getFutureEvents());
-        $this->assertStringStartsWith('<ul><li>', getPastEvents());
+        $this->assertStringStartsWith('<ul><li>', Event::getFutureEvents());
+        $this->assertStringStartsWith('<ul><li>', Event::getPastEvents());
     }
 }

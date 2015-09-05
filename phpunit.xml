@@ -1,7 +1,7 @@
 <phpunit>
     <filter>
         <whitelist>
-            <file>functions.php</file>
+            <directory>lib/</directory>
         </whitelist>
     </filter>
     <testsuites>
