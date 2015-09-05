@@ -26,25 +26,41 @@
       position: absolute;
         top: 2.3rem; left: 0; right: 0;
       padding: 0 @small-value;
+      color: @base-light-gray;
+      font-family: @font-stack-headings;
       font-size: @base-font-size;
       line-height: 3rem;
-      transition: top @transition-quick;
+      transition: all @transition-quick;
       z-index: 1;
     }
 
-    & input {
+    & input,
+    & input:invalid {
       padding: 0 @small-value;
       width: 100%;
       border: 0;
       border-bottom: .3rem solid @base-light-gray;
+      box-shadow: none;
       font-size: @h5-size;
-      font-style: italic;
       line-height: @large-value;
     }
 
-    & input:focus ~ label {
-      top: 0;
+    & input:focus,
+    & input:valid {
       border-bottom-color: @primary-color;
+
+      & ~ label {
+        top: 0;
+        color: @primary-color;
+      }
+    }
+
+    & input:valid:not(:focus) {
+      border-bottom-color: @base-light-gray;
+
+      & ~ label {
+        color: @base-light-gray;
+      }
     }
   }
 }

@@ -17,23 +17,15 @@ get_header('page');
     <form method="post" action="/nous-contacter/#wpcf7-f146-p10-o1">
       <ul class="contactform-list">
         <li>
-          <input type="text" id="form-nom">
+          <input type="text" id="form-nom" required>
           <label for="form-nom">Nom</label>
         </li>
         <li>
-          <input type="text" id="form-prenom">
+          <input type="text" id="form-prenom" required>
           <label for="form-prenom">Prénom</label>
         </li>
-        <li>
-          <input type="text" id="form-entreprise">
-          <label for="form-entreprise">Entreprise</label>
-        </li>
-        <li>
-          <input type="text" id="form-telephone">
-          <label for="form-telephone">Téléphone</label>
-        </li>
         <li class="full-width">
-          <input type="email" id="form-email">
+          <input type="email" id="form-email" required>
           <label for="form-email">Email</label>
         </li>
         <li>
