@@ -325,3 +325,48 @@
     }
   }
 }
+
+
+//
+// Contact page
+
+.tpl_contact-content {
+  & p:first-of-type:first-letter {
+    float: left;
+    padding: @small-value @tiny-value 0 0;
+    color: @primary-color;
+    font-family: @font-stack-headings;
+    font-size: 4.5em;
+  }
+
+  & p {
+    font-size: @h5-size;
+    line-height: 1.5em;
+  }
+}
+
+.tpl_contact-contacts {
+  padding: @extra-large-value - @medium-value - @medium-value @large-value;
+  width: 85%;
+  background-color: @primary-color;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: @tiny-value;
+  color: @secondary-color;
+  list-style: none;
+
+  & > li {
+    font-family: @font-stack-headings;
+    font-size: @h2-size;
+
+    &:not(:first-of-type) {
+      padding-top: @grid-value;
+    }
+
+    & a:hover {
+      padding-bottom: .2rem;
+      border-bottom: 1px solid @secondary-color;
+    }
+  }
+}
