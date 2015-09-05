@@ -1,0 +1,50 @@
+/**
+ * Forms Less file
+ * */
+
+
+/** CONTACT FORM BOX **/
+
+.contactform-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    position: relative;
+    padding: 3rem 0 0;
+    width: 48%;
+
+    &.full-width {
+      width: 100%;
+    }
+
+    & label {
+      position: absolute;
+        top: 2.3rem; left: 0; right: 0;
+      padding: 0 @small-value;
+      font-size: @base-font-size;
+      line-height: 3rem;
+      transition: top @transition-quick;
+      z-index: 1;
+    }
+
+    & input {
+      padding: 0 @small-value;
+      width: 100%;
+      border: 0;
+      border-bottom: .3rem solid @base-light-gray;
+      font-size: @h5-size;
+      font-style: italic;
+      line-height: @large-value;
+    }
+
+    & input:focus ~ label {
+      top: 0;
+      border-bottom-color: @primary-color;
+    }
+  }
+}
