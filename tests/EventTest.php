@@ -13,6 +13,7 @@
  */
 require_once __DIR__.'/../../../../wp/wp-load.php';
 require_once __DIR__.'/../functions.php';
+use Quai10\Event;
 /**
  * Unit tests for Event class
  *

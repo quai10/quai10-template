@@ -11,7 +11,7 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
- 
+namespace Quai10;
 /**
  * Manage Events Manager events
  *
@@ -26,14 +26,14 @@
  */
 class Event
 {
-    
+
     /**
      * Get future events
      * @return string HTML
      */
     static function getFutureEvents()
     {
-        return EM_Events::output(
+        return \EM_Events::output(
             array(
                 'format_header'=>'<ul>',
                 'format'=>'<li>
@@ -53,7 +53,7 @@ class Event
      */
     static function getPastEvents()
     {
-        return EM_Events::output(
+        return \EM_Events::output(
             array(
                 'format_header'=>'<ul>',
                 'format'=>'<li>
