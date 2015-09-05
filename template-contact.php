@@ -24,12 +24,15 @@ get_header('page');
           <input type="text" id="form-prenom" required>
           <label for="form-prenom">Prénom</label>
         </li>
-        <li class="full-width">
+        <li class="w100">
           <input type="email" id="form-email" required>
           <label for="form-email">Email</label>
         </li>
+        <li class="w100">
+          <textarea id="form-message" required>Un message ? une idée ? une suggestion ? une question ?</textarea>
+        </li>
         <li>
-          <textarea id="form-message">Un message ? une idée ? une suggestion ? une question ?</textarea>
+          <button class="btn" type="submit">Envoyer</button>
         </li>
       </ul><!-- .contactform-list -->
     </form>

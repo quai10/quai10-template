@@ -18,7 +18,7 @@
     padding: 3rem 0 0;
     width: 48%;
 
-    &.full-width {
+    &.w100 {
       width: 100%;
     }
 
@@ -60,6 +60,28 @@
 
       & ~ label {
         color: @base-light-gray;
+      }
+    }
+
+    & textarea {
+      height: @maxi-large-value;
+      padding: @medium-value - @tiny-value @medium-value;
+      width: 100%;
+      border: .3rem solid @base-light-gray;
+      color: @base-light-gray;
+      transition: color @transition-quick;
+
+      &:focus {
+        color: @base-color;
+      }
+    }
+
+    & button {
+      background: transparent;
+
+      &:hover,
+      &:focus {
+        background: @primary-color;
       }
     }
   }
