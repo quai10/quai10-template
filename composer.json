@@ -22,5 +22,10 @@
     "type": "wordpress-theme",
     "require": {
         "composer/installers": "~1.0.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "Quai10\\": "lib/"
+        }
     }
 }

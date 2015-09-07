@@ -11,6 +11,7 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
+
 /**
  * Mock EM_Events class
  *
@@ -29,7 +30,7 @@ class EM_Events
    * Mock output function
    * @return string
    */
-  static function output()
+  public static function output()
   {
     return '<ul><li>Foo</li><li>Bar</li>';
   }

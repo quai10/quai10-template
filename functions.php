@@ -13,9 +13,9 @@
  * @link     https://quai10.org/
  */
 $includes = array(
+  'vendor/autoload.php',
   'lib/cleanup.php',
-  'lib/config.php',
-  'lib/Event.php'
+  'lib/config.php'
 );
 
 foreach ($includes as $inc) {

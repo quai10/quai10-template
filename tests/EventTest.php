@@ -11,9 +11,7 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
-require_once __DIR__.'/EM_EventsMock.php';
-require_once __DIR__.'/../lib/Event.php';
-use Quai10\Event;
+namespace Quai10;
 
 /**
  * Unit tests for Event class
@@ -27,7 +25,7 @@ use Quai10\Event;
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
-class EventTest extends PHPUnit_Framework_TestCase
+class EventTest extends \PHPUnit_Framework_TestCase
 {
   /**
    * Unit tests for events functions
