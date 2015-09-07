@@ -21,33 +21,33 @@
       </div><!-- .footer-logo -->
       <div class="footer-content grid-5">
         <div class="footer-col">
-            <?php if (false) : ?>
+          <?php if (false) : ?>
           <h5 class="footer-title"><a class="no-style" href="#">À propos</a></h5>
           <ul class="footer-list">
             <li><a class="no-style" href="#">L'association</a></li>
             <li><a class="no-style" href="#">Les lieux</a></li>
             <li><a class="no-style" href="#">Horaires et prix</a></li>
           </ul><!-- .footer-list -->
-            <?php
+          <?php
 endif; ?>
         </div><!-- .footer-col -->
         <div class="footer-col">
-            <?php if (false) : ?>
+          <?php if (false) : ?>
           <h5 class="footer-title"><a class="no-style" href="#">Le coworking</a></h5>
           <ul class="footer-list">
             <li><a class="no-style" href="#">Formules</a></li>
             <li><a class="no-style" href="#">Services</a></li>
             <li><a class="no-style" href="#">FAQ</a></li>
           </ul><!-- .footer-list -->
-            <?php
+          <?php
 endif; ?>
         </div><!-- .footer-col -->
         <div class="footer-col">
           <h5 class="footer-title">
               <a class="no-style" href="#">Devenir membre</a>
           </h5>
-            <?php
-            wp_nav_menu(
+          <?php
+          wp_nav_menu(
                 array(
                     'theme_location' => 'footer3',
                     'menu_class' => 'footer-list'
@@ -57,9 +57,9 @@ endif; ?>
         </div><!-- .footer-col -->
         <div class="footer-col footer-col-newsletter">
           <h5 class="footer-title"><a class="no-style" href="#">Newsletter</a></h5>
-            <?php
-            echo '<form action="https://quai10.us10.list-manage.com/subscribe/post?'.
-                'u=699bad1c5b054cbdff43d84a8&amp;id=384dd5ed71" method="post">';
+          <?php
+          echo '<form action="https://quai10.us10.list-manage.com/subscribe/post?'.
+          'u=699bad1c5b054cbdff43d84a8&amp;id=384dd5ed71" method="post">';
             ?>
             <div class="icon-email">
               <input name="EMAIL" type="email" placeholder="Renseigne ton email"
@@ -77,6 +77,6 @@ endif; ?>
       </div><!-- .footer-content -->
     </div><!-- .footer-container -->
   </footer><!-- .footer-box -->
-    <?php wp_footer(); ?>
+  <?php wp_footer(); ?>
 </body>
 </html>

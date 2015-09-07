@@ -25,12 +25,12 @@
  */
 class EM_Events
 {
-    /**
-     * Mock output function
-     * @return string
-     */
-    static function output()
-    {
-        return '<ul><li>Foo</li><li>Bar</li>';
-    }
+  /**
+   * Mock output function
+   * @return string
+   */
+  static function output()
+  {
+    return '<ul><li>Foo</li><li>Bar</li>';
+  }
 }

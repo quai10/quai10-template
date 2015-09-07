@@ -29,23 +29,23 @@ $loop = new WP_Query($args);
 // we check if we have children
 if ($loop->have_posts()) :
     // we loop each child
-    while ($loop->have_posts()) :
+  while ($loop->have_posts()) :
         // we load all child page's informations
-        $loop->the_post();
+    $loop->the_post();
         // we search the template name
-        $template = get_page_template_slug();
-        $template = explode('.', $template)[0];
-        $template = explode('-', $template, 2);
+    $template = get_page_template_slug();
+    $template = explode('.', $template)[0];
+    $template = explode('-', $template, 2);
         // we call the asked template
-        get_template_part($template[0], $template[1]);
+    get_template_part($template[0], $template[1]);
         // we unset useless vars
-        unset($template);
-    endwhile;
+    unset($template);
+  endwhile;
     // we unset useless vars
-    unset($loop, $args);
-    wp_reset_postdata();
-else:
-    the_content();
+  unset($loop, $args);
+  wp_reset_postdata();
+else :
+  the_content();
 endif;
 
 get_footer();

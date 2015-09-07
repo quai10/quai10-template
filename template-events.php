@@ -13,6 +13,7 @@
  */
 /* Template Name: Events */
 use Quai10\Event;
+
 get_header();
 get_header('page');
 ?>

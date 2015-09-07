@@ -12,6 +12,7 @@
  * @link     https://quai10.org/
  */
 namespace Quai10;
+
 /**
  * Manage Events Manager events
  *
@@ -27,48 +28,47 @@ namespace Quai10;
 class Event
 {
 
-    /**
-     * Get future events
-     * @return string HTML
-     */
-    static function getFutureEvents()
-    {
-        return \EM_Events::output(
-            array(
-                'format_header'=>'<ul>',
-                'format'=>'<li>
+  /**
+   * Get future events
+   * @return string HTML
+   */
+  public static function getFutureEvents()
+  {
+    return \EM_Events::output(
+          array(
+              'format_header'=>'<ul>',
+              'format'=>'<li>
                     <div>#_{j M Y}</div>
                     <h3>#_EVENTNAME</h3>
                     <div>#_EVENTNOTES</div>
                     <a href="#_EVENTURL">En savoir plus</a>
                 </li>',
-                'format_footer'=>'</ul>'
-            )
-        );
-    }
+              'format_footer'=>'</ul>'
+          )
+      );
+  }
 
-    /**
-     * Get past events
-     * @return string HTML
-     */
-    static function getPastEvents()
-    {
-        return \EM_Events::output(
-            array(
-                'format_header'=>'<ul>',
-                'format'=>'<li>
+  /**
+   * Get past events
+   * @return string HTML
+   */
+  public static function getPastEvents()
+  {
+    return \EM_Events::output(
+          array(
+              'format_header'=>'<ul>',
+              'format'=>'<li>
                     <div>#_{j M Y}</div>
                     <h3>#_EVENTNAME</h3>
                     <div>#_EVENTNOTES</div>
                     <a href="#_EVENTURL">En savoir plus</a>
                 </li>',
-                'format_footer'=>'</ul>',
-                'scope'=>'past',
-                'order'=>'DESC',
-                'limit'=>3,
-                'pagination'=>true
-            )
-        );
-    }
-
+              'format_footer'=>'</ul>',
+              'scope'=>'past',
+              'order'=>'DESC',
+              'limit'=>3,
+              'pagination'=>true
+          )
+      );
+  }
 }

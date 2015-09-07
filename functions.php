@@ -19,6 +19,6 @@ $includes = array(
 );
 
 foreach ($includes as $inc) {
-    include_once locate_template($inc);
+  include_once locate_template($inc);
 }
 unset($inc);
