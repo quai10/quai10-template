@@ -86,41 +86,52 @@
   <div class="content-box container margin-large grid no-padding-left no-padding">
     <section class="espace-box">
       <?php
-        $contenu_espace = get_field('contenu_espace');
-        $args = array(
-          'post_type' => 'page',
-          'page_id' => $contenu_espace[0]->ID
-        );
-        $loop = new WP_Query($args);
-        if ($loop->have_posts()) : $loop->the_post();
+      $contenu_espace = get_field('contenu_espace');
+      $args = array(
+        'post_type' => 'page',
+        'page_id' => $contenu_espace[0]->ID
+      );
+      $loop = new WP_Query($args);
+      if ($loop->have_posts()) :
+        $loop->the_post();
         $title = str_replace('Quai Numéro Dix', '<svg role="img" aria-labelledby="title-logo-quai10-vert"><use xlink:href="#icon-logo-quai10-vert"></use></svg>', get_the_title());
       ?>
       <h2 class="espace-title"><?php echo $title; ?></h2>
       <div class="espace-list">
         <?php the_content(); ?>
       </div><!-- .espace-list -->
-    <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
+    <?php
+      endif;
+      unset($loop, $args);
+      wp_reset_postdata();
+    ?>
     </section><!-- .espace-box -->
   </div><!-- .content-box -->
   <div class="content-box container margin-large grid-3-2 no-padding-left">
     <section class="entrepot-box border-left">
       <?php
-        $photos = get_field('photographies');
-        $args = array(
-          'post_type' => 'post',
-          'category_name' => 'chantier'
-        );
-        $loop = new WP_Query($args);
+      $photos = get_field('photographies');
+      $args = array(
+        'post_type' => 'post',
+        'category_name' => 'chantier'
+      );
+      $loop = new WP_Query($args);
       ?>
       <h2 class="entrepot-title"><?php echo $photos->name; ?></h2>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <?php while ($loop->have_posts()) : $loop->the_post(); $photo = get_field('photographie'); ?>
+          <?php
+          while ($loop->have_posts()) :
+            $loop->the_post();
+            $photo = get_field('photographie');
+            ?>
           <div class="swiper-slide">
             <div class="slide-photographie" style="background-image: url(<?php echo $photo['url']; ?>);"></div>
             <strong class="slide-title"><?php the_title(); ?></strong>
           </div><!-- .swiper-slide -->
-          <?php endwhile; ?>
+          <?php
+          endwhile;
+          ?>
         </div><!-- .swiper-wrapper -->
         <div class="swiper-pagination">
           <a class="swiper-prev-btn" href="#">
@@ -145,36 +156,44 @@
           </li><!-- .social-icon -->
         </ul><!-- .social-icons -->
       </div><!-- .swiper-container -->
-      <?php unset($loop, $args); wp_reset_postdata(); ?>
+      <?php
+      unset($loop, $args);
+      wp_reset_postdata();
+      ?>
     </section><!-- .entrepot-box -->
     <section class="projet-box">
       <?php
-        $projet = get_field('projet');
-        $projet_btn = get_field('link_coworking');
-        $projet_btn_label = get_field('link_coworking_label');
-        $args = array(
-          'post_type' => 'page',
-          'page_id' => $projet->ID
-        );
-        $loop = new WP_Query($args);
-        if ($loop->have_posts()) : $loop->the_post();
+      $projet = get_field('projet');
+      $projet_btn = get_field('link_coworking');
+      $projet_btn_label = get_field('link_coworking_label');
+      $args = array(
+        'post_type' => 'page',
+        'page_id' => $projet->ID
+      );
+      $loop = new WP_Query($args);
+      if ($loop->have_posts()) :
+        $loop->the_post();
       ?>
       <h2 class="projet-title"><?php the_title(); ?></h2>
       <?php the_content(); ?>
       <a class="btn" href="<?php echo $projet_btn; ?>"><?php echo $projet_btn_label; ?></a>
-      <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
+      <?php
+      endif;
+      unset($loop, $args);
+      wp_reset_postdata();
+      ?>
     </section><!-- .projet-box -->
   </div><!-- .content-box -->
   <?php
-    $contact = get_field('section_contact');
-    if (is_object($contact)) {
-        $args = array(
-          'post_type' => 'page',
-          'page_id' => $contact->ID
-        );
-        $loop = new WP_Query($args);
-        $loop->the_post();
-    }
+  $contact = get_field('section_contact');
+  if (is_object($contact)) {
+    $args = array(
+      'post_type' => 'page',
+      'page_id' => $contact->ID
+    );
+    $loop = new WP_Query($args);
+    $loop->the_post();
+  }
   ?>
   <section class="cta-box content-box container margin-large contrast-box grid-2-1 no-padding-left" style="background-image: url(<?php echo get_field('cta_background')['url']; ?>);">
     <div class="cta-content border-left">
@@ -184,12 +203,15 @@
     <aside class="cta-aside">
       <p class="cta-aside-content"><?php echo get_field('cta_contenu'); ?></p>
       <?php
-        $destination = get_field('cta_destination');
-        if (is_object($destination)) :
-      ?>
+      $destination = get_field('cta_destination');
+      if (is_object($destination)) : ?>
       <a class="btn cta-aside-btn" href="<?php echo $destination->guid; ?>"><?php echo get_field('cta_titre'); ?></a>
-        <?php endif; ?>
+      <?php
+      endif; ?>
     </aside><!-- .cta-aside -->
   </section><!-- .cta-box -->
-  <?php unset($loop, $args); wp_reset_postdata(); ?>
-<?php get_footer(); ?>
+  <?php
+  unset($loop, $args);
+  wp_reset_postdata();
+  get_footer();
+  ?>
