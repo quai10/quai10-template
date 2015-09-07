@@ -5,7 +5,7 @@
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:quai10/quai10.git"
+    "url": "https://github.com/quai10/quai10-template.git"
   },
   "author": "Damien Senger <hi@hiwelo.co>",
   "license": "GNU GPL v3",
