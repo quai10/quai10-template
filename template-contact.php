@@ -25,7 +25,7 @@ get_header('page');
           <label for="form-prenom">Prénom</label>
         </li>
         <li class="w100">
-          <input type="email" id="form-email" required>
+          <input type="text" id="form-email" required>
           <label for="form-email">Email</label>
         </li>
         <li class="w100">
