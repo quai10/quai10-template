@@ -57,11 +57,20 @@ endif; ?>
         </div><!-- .footer-col -->
         <div class="footer-col footer-col-newsletter">
           <h5 class="footer-title"><a class="no-style" href="#">Newsletter</a></h5>
-          <form action="#" method="post">
+            <?php
+            echo '<form action="https://quai10.us10.list-manage.com/subscribe/post?'.
+                'u=699bad1c5b054cbdff43d84a8&amp;id=384dd5ed71" method="post">';
+            ?>
             <div class="icon-email">
-              <input type="email" placeholder="Renseigne ton email"
+              <input name="EMAIL" type="email" placeholder="Renseigne ton email"
                 required value="">
-              <input type="submit" value="OK">
+                <!-- real people should not fill this in and expect good things -
+                    do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_699bad1c5b054cbdff43d84a8_384dd5ed71"
+                        tabindex="-1" value="">
+                </div>
+              <input type="submit" value="OK" name="subscribe">
             </div><!-- .icon-email -->
           </form>
         </div><!-- .footer-col -->
