@@ -167,12 +167,14 @@
   </div><!-- .content-box -->
   <?php
     $contact = get_field('section_contact');
-    $args = array(
-      'post_type' => 'page',
-      'page_id' => $contact->ID
-    );
-    $loop = new WP_Query($args);
-    $loop->the_post();
+    if (is_object($contact)) {
+        $args = array(
+          'post_type' => 'page',
+          'page_id' => $contact->ID
+        );
+        $loop = new WP_Query($args);
+        $loop->the_post();
+    }
   ?>
   <section class="cta-box content-box container margin-large contrast-box grid-2-1 no-padding-left" style="background-image: url(<?php echo get_field('cta_background')['url']; ?>);">
     <div class="cta-content border-left">
@@ -181,7 +183,12 @@
     </div><!-- .cta-content -->
     <aside class="cta-aside">
       <p class="cta-aside-content"><?php echo get_field('cta_contenu'); ?></p>
-      <a class="btn cta-aside-btn" href="<?php echo get_field('cta_destination')->guid; ?>"><?php echo get_field('cta_titre'); ?></a>
+      <?php
+        $destination = get_field('cta_destination');
+        if (is_object($destination)) :
+      ?>
+      <a class="btn cta-aside-btn" href="<?php echo $destination->guid; ?>"><?php echo get_field('cta_titre'); ?></a>
+        <?php endif; ?>
     </aside><!-- .cta-aside -->
   </section><!-- .cta-box -->
   <?php unset($loop, $args); wp_reset_postdata(); ?>
