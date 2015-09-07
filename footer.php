@@ -49,8 +49,8 @@ endif; ?>
             <?php
             wp_nav_menu(
                 array(
-                    'menu'=>'Devenir membre',
-                    'items_wrap'=>'<ul id="%1$s" class="footer-list %2$s">%3$s</ul>'
+                    'theme_location' => 'footer3',
+                    'menu_class' => 'footer-list'
                 )
             );
         ?>
