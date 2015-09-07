@@ -141,6 +141,7 @@
             <img src="<?php bloginfo('template_directory'); ?>/assets/dist/img/arrow-white.png" alt="Flèche suivante" title="Slide suivante">
           </a><!-- .swiper-next-btn -->
         </div><!-- .swiper-pagination -->
+        <?php if (false): ?>
         <ul class="social-icons" role="presentation">
           <li class="social-icon">
             <a class="no-style" href="https://flickr.com/" target="_blank">
@@ -155,6 +156,7 @@
             </a>
           </li><!-- .social-icon -->
         </ul><!-- .social-icons -->
+        <?php endif; ?>
       </div><!-- .swiper-container -->
       <?php
       unset($loop, $args);
