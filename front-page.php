@@ -205,7 +205,7 @@
       <?php
       $destination = get_field('cta_destination');
       if (is_object($destination)) : ?>
-      <a class="btn cta-aside-btn" href="<?php echo $destination->guid; ?>"><?php echo get_field('cta_titre'); ?></a>
+      <a class="btn cta-aside-btn" href="<?php echo get_permalink($destination); ?>"><?php echo get_field('cta_titre'); ?></a>
       <?php
       endif; ?>
     </aside><!-- .cta-aside -->
