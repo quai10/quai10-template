@@ -12,11 +12,11 @@
   "devDependencies": {
     "bower": "latest",
     "gulp": "latest",
-    "gulp-autoprefixer": "latest",
+    "gulp-autoprefixer": "~2.3.1",
     "gulp-concat": "latest",
     "gulp-csso": "latest",
     "gulp-imagemin": "latest",
-    "gulp-less": "latest",
+    "gulp-less": "~3.0.3",
     "gulp-load-plugins": "latest",
     "gulp-notify": "latest",
     "gulp-rename": "latest",
