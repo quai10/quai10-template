@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset name="HiweloCodingStandard">
+  <description>A lame coding standard</description>
+
+  <rule ref="PSR2">
+    <exclude name="PSR2.ControlStructures.SwitchDeclaration.BreakIndent"/>
+    <exclude name="PSR2.Methods.FunctionCallSignature.Indent"/>
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+  </rule>
+
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="2"/>
+      <property name="tabIndent" value="false"/>
+      <property name="exact" value="true"/>
+    </properties>
+  </rule>
+
+</ruleset>

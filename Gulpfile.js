@@ -9,6 +9,16 @@ var source = './assets/src',
     prod = './assets/dist';
 
 
+// ----------
+// ERROR TASK
+// ----------
+
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
+
+
 // -----------------------------
 // Build task : css js img fonts
 // -----------------------------
@@ -17,6 +27,7 @@ var source = './assets/src',
 gulp.task('css', function () {
   return gulp.src(source + '/css/styles.less')
     .pipe(plugins.less())
+    .on('error', onError)
     .pipe(plugins.autoprefixer())
     .pipe(plugins.csso())
     .pipe(plugins.rename({
@@ -28,11 +39,14 @@ gulp.task('css', function () {
 // JS Task = concatenation and copying, don't forget to add vendors
 gulp.task('js', function () {
   return gulp.src([
-    source + '/js/*.js',
-    source + '/vendor/jquery/dist/jquery.min.js' // jQuery vendor
+    source + '/vendor/jquery/dist/jquery.min.js', // jQuery vendor
+    source + '/vendor/swiper/dist/js/swiper.min.js', // swiperJS
+    source + '/vendor/leaflet/dist/leaflet.js', // leaflet JS maps
+    source + '/js/*.js' // scripts du thème
   ])
     .pipe(plugins.concat('global.min.js'))
-    .pipe(plugins.uglify())
+    //.pipe(plugins.uglify())
+    .on('error', onError)
     .pipe(gulp.dest(prod + '/js/'));
 });
 
@@ -46,6 +60,7 @@ gulp.task('img', function () {
         cleanupIDs: false
       }]
     }))
+    .on('error', onError)
     .pipe(gulp.dest(prod + '/img'));
 });
 

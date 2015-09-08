@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme index
+ * Single post template
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  */
-if (function_exists('get_header')) {
-    get_header();
-}
-if (function_exists('get_footer')) {
-    get_footer();
-}
+get_header();
+get_header('page');
+
+the_content();
+
+get_footer();

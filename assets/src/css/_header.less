@@ -1,0 +1,137 @@
+/**
+ * Header Less file
+ * */
+
+
+/** HEADER BOX **/
+
+.header-box {
+  margin-top: @large-value;
+  overflow: hidden;
+  background: @secondary-background;
+  border: 0;
+  border-radius: @tiny-value;
+  color: @secondary-color;
+  font-family: @font-stack-headings;
+
+  &.container {
+    padding: 0;
+  }
+}
+
+
+/** NAVIGATION **/
+
+.nav-box {
+  padding: @small-value 0;
+
+  & .nav-logo {
+    & svg {
+      display: block;
+      height: 7rem;
+      margin: auto;
+      max-width: 13rem;
+      fill: @secondary-color;
+    }
+  }
+
+  & .nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  & .menu-item {
+    display: inline-block;
+    margin-right: @small-value;
+
+    body &.current_page_item a {
+      border-color: @secondary-color-fade;
+    }
+
+    & a {
+      display: block;
+      padding: @small-value @small-value+@tiny-value;
+      border: .2rem solid;
+      border-color: transparent;
+      border-radius: @extra-large-value;
+      color: inherit;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all @transition;
+
+      &:hover,
+      &:focus {
+        border-color: @secondary-color;
+      }
+    }
+  }
+}
+
+.nav-logo:hover ~ .nav-list .menu-item:first-child a {
+  border-color: @secondary-color;
+}
+
+
+/** HEADER CONTENT **/
+
+.header-container {
+  padding: @extra-large-value 0;
+
+  & .header-icon {
+    min-height: @maxi-large-value;
+    text-align: right;
+
+    & svg {
+      height: @maxi-large-value - @small-value;
+      max-width: 75%;
+      fill: @secondary-color;
+      opacity: .5;
+    }
+  }
+
+  & .header-title {
+    margin-top: .65em;
+    font-size: 2.7rem;
+    font-weight: 300;
+    line-height: 1.35;
+
+    &:first-line {
+      font-size: 6rem;
+      font-weight: 400;
+    }
+  }
+}
+
+
+/** NOT HOME HEADER CONTENT **/
+
+:not(.home) .header-box {
+  margin-bottom: @large-value;
+}
+
+:not(.home) .header-container {
+  min-height: @maxi-large-value + @ultra-large-value;
+  padding: @large-value + @medium-value 0;
+}
+
+
+/** HEADER BACKGROUNDS **/
+
+.home .header-box {
+  background-image: url('../img/icone-quai10.svg');
+  background-position: -50rem -25rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+/** MAP STYLES **/
+
+[id='map'] {
+  min-height: 15rem;
+}

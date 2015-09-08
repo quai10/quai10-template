@@ -1,0 +1,19 @@
+<phpunit bootstrap="bootstrap.php">
+    <filter>
+        <whitelist>
+            <directory>lib/</directory>
+            <exclude>
+                <file>lib/cleanup.php</file>
+                <file>lib/config.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+    <testsuites>
+        <testsuite>
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="coverage-html" target="coverage/" />
+    </logging>
+</phpunit>

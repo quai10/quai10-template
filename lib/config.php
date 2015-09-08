@@ -23,7 +23,8 @@ function quai10_setup() {
    * @source    http://codex.wordpress.org/Function_Reference/register_nav_menus
    * */
   register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'quai10')
+      'primary_navigation' => __('Primary Navigation', 'quai10'),
+      'footer3' => __('Footer menu 3', 'quai10')
   ]);
 
   /**
@@ -31,12 +32,13 @@ function quai10_setup() {
    * @source http://codex.wordpress.org/Post_Thumbnails
    * */
   add_theme_support('post-thumbnails');
+  set_post_thumbnail_size(250, 250);
 
   /**
    * Add post formats
    * @source http://codex.wordpress.org/Post_Formats
    * */
-  //add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
+  add_theme_support('post-formats', [/*'aside', 'gallery', 'link', */'image'/*, 'quote', 'video', 'audio'*/]);
 
   /**
    * Add HTML5 Markup for captions
