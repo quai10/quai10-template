@@ -44,7 +44,7 @@ endif; ?>
         </div><!-- .footer-col -->
         <div class="footer-col">
           <h5 class="footer-title">
-              <a class="no-style" href="#">Devenir membre</a>
+              Devenir membre
           </h5>
           <?php
           wp_nav_menu(
@@ -56,7 +56,7 @@ endif; ?>
         ?>
         </div><!-- .footer-col -->
         <div class="footer-col footer-col-newsletter">
-          <h5 class="footer-title"><a class="no-style" href="#">Newsletter</a></h5>
+          <h5 class="footer-title">Newsletter</h5>
           <?php
           echo '<form action="https://quai10.us10.list-manage.com/subscribe/post?'.
           'u=699bad1c5b054cbdff43d84a8&amp;id=384dd5ed71" method="post">';
