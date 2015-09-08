@@ -14,28 +14,7 @@ get_header('page');
   </section><!-- .tpl_contact-content -->
   <aside class="tpl_contact-aside">
     <h2 class="tpl_contact-title"><?php echo get_field('contactform_title'); ?></h2>
-    <form method="post" action="/nous-contacter/#wpcf7-f146-p10-o1">
-      <ul class="contactform-list">
-        <li>
-          <input type="text" id="form-nom" required>
-          <label for="form-nom">Nom</label>
-        </li>
-        <li>
-          <input type="text" id="form-prenom" required>
-          <label for="form-prenom">Prénom</label>
-        </li>
-        <li class="w100">
-          <input type="text" id="form-email" required>
-          <label for="form-email">Email</label>
-        </li>
-        <li class="w100">
-          <textarea id="form-message" required>Un message ? une idée ? une suggestion ? une question ?</textarea>
-        </li>
-        <li>
-          <button class="btn" type="submit">Envoyer</button>
-        </li>
-      </ul><!-- .contactform-list -->
-    </form>
+    <?php echo get_field('contactform_id'); ?>
   </aside><!-- .tpl_contact-aside -->
 </div><!-- .tpl_contact-container -->
 <?php /*

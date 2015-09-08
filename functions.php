@@ -15,7 +15,8 @@
 $includes = array(
   'vendor/autoload.php',
   'lib/cleanup.php',
-  'lib/config.php'
+  'lib/config.php',
+  'lib/contact.php'
 );
 
 foreach ($includes as $inc) {
