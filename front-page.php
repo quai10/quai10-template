@@ -73,7 +73,7 @@
             <img src="<?php echo $url; ?>" alt="Photo de <?php the_title(); ?>" title="Photo de <?php the_title(); ?>">
           </div><!-- .coworkers-element-image -->
           <h3 class="h5-like coworkers-element-name"><?php the_title(); ?></h3>
-          <p class="coworkers-element-work"><?php echo get_field('metier'); ?></p>
+          <p class="coworkers-element-work"><?php echo get_field('work'); ?></p>
           <?php if ($coworker_url) : ?></a><?php endif; ?>
         </li><!-- .coworkers-element -->
         <?php unset($url, $coworker_url); endwhile; ?>
