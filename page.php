@@ -36,9 +36,11 @@ if ($loop->have_posts()) :
     $template = get_page_template_slug();
     $template = explode('.', $template)[0];
     $template = explode('-', $template, 2);
-        // we call the asked template
-    get_template_part($template[0], $template[1]);
-        // we unset useless vars
+    if (isset($template[1])) {
+      // we call the asked template
+      get_template_part($template[0], $template[1]);
+      // we unset useless vars
+    }
     unset($template);
   endwhile;
     // we unset useless vars
