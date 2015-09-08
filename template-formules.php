@@ -14,7 +14,7 @@ $args = array(
   'posts_per_page' => 3,
   'meta_key' => 'order',
   'orderby' => 'meta_value_num',
-  'order' => ASC
+  'order' => 'ASC'
 );
 $loop = new WP_Query($args);
 
