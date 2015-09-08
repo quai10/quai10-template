@@ -13,7 +13,6 @@
  * @link     https://quai10.org/
  */
 $includes = array(
-  'vendor/autoload.php',
   'lib/cleanup.php',
   'lib/config.php',
   'lib/contact.php'
