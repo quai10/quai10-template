@@ -31,6 +31,7 @@ get_template_part('header', 'frontpage');
       <?php
         $args = array(
           'category_name' => $bloc_coworkers->slug,
+          'posts_per_page' => 6,
           'orderby' => 'rand'
         );
         $loop = new WP_Query($args);
