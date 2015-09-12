@@ -23,7 +23,7 @@ get_template_part('header', 'frontpage');
       <a href="<?php echo $cta['href']; ?>" class="btn"><?php echo $cta['label']; ?></a>
     </section>
     <?php
-    endwhile; endif; unset($loop, $args); wp_reset_postdata();
+    endwhile; endif; wp_reset_postdata();
     $bloc_coworkers = get_field('emplacement_des_voyageurs');
     ?>
     <section class="coworkers-box">
@@ -53,11 +53,11 @@ get_template_part('header', 'frontpage');
           <p class="coworkers-element-work"><?php echo get_field('work'); ?></p>
           <?php if ($coworker_url) : ?></a><?php endif; ?>
         </li><!-- .coworkers-element -->
-        <?php unset($url, $coworker_url); endwhile; ?>
+        <?php endwhile; ?>
       </ul><!-- .coworkers-list -->
       <?php else : ?>
         <p>Aucun voyageur n'a pris place dans le train actuellement.</p>
-      <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
+      <?php endif; wp_reset_postdata(); ?>
     </section><!-- .coworkers-box -->
   </div><!-- .content-box -->
   <div class="content-box container margin-large grid no-padding-left no-padding">
@@ -79,7 +79,6 @@ get_template_part('header', 'frontpage');
       </div><!-- .espace-list -->
     <?php
       endif;
-      unset($loop, $args);
       wp_reset_postdata();
     ?>
     </section><!-- .espace-box -->
@@ -136,7 +135,6 @@ get_template_part('header', 'frontpage');
         <?php endif; ?>
       </div><!-- .swiper-container -->
       <?php
-      unset($loop, $args);
       wp_reset_postdata();
       ?>
     </section><!-- .entrepot-box -->
@@ -158,7 +156,6 @@ get_template_part('header', 'frontpage');
       <a class="btn" href="<?php echo $projet_btn; ?>"><?php echo $projet_btn_label; ?></a>
       <?php
       endif;
-      unset($loop, $args);
       wp_reset_postdata();
       ?>
     </section><!-- .projet-box -->
@@ -190,7 +187,6 @@ get_template_part('header', 'frontpage');
     </aside><!-- .cta-aside -->
   </section><!-- .cta-box -->
   <?php
-  unset($loop, $args);
   wp_reset_postdata();
   get_footer();
   ?>

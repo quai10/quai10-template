@@ -41,10 +41,8 @@ if ($loop->have_posts()) :
       get_template_part($template[0], $template[1]);
       // we unset useless vars
     }
-    unset($template);
   endwhile;
     // we unset useless vars
-  unset($loop, $args);
   wp_reset_postdata();
 else :
   the_content();

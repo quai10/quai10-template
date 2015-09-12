@@ -15,7 +15,6 @@
         'menu_id' => 'navigation'
       );
     wp_nav_menu($args);
-    unset($args);
     ?>
   </nav><!-- .nav-box -->
   <div class="header-container grid-1-4">
