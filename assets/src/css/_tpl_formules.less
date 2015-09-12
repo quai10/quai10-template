@@ -1,0 +1,121 @@
+/**
+ * Template Formules Less file
+ * */
+
+.tpl_formules-title {
+  margin-bottom: @grid-value;
+  text-align: center;
+}
+
+.tpl_formules-list {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.tpl_formules-element {
+  display: flex;
+  flex-direction: column;
+  font-size: @h5-size;
+  text-align: center;
+
+  & .tpl_formules-informations {
+    margin-top: auto;
+  }
+
+  &:nth-of-type(2) .tpl_formules-element-title {
+    color: @primary-color;
+
+    &::after {
+      background-color: @primary-color;
+    }
+  }
+}
+
+.tpl_formules-element-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: @ultra-large-value;
+  text-align: center;
+  width: 100%;
+
+  & > img {
+    max-height: @ultra-large-value;
+    width: auto;
+  }
+}
+
+.tpl_formules-element-title {
+  font-size: @h2-size;
+  margin-bottom: @grid-value;
+
+  &::after {
+    display: block;
+    content: '';
+    height: .6rem;
+    margin: @medium-value auto @large-value - @small-value;
+    width: 100%;
+    background-color: @footer-color;
+    border-radius: .3rem;
+  }
+}
+
+.tpl_formules-element-description {
+  font-size: @base-font-size;
+  font-style: italic;
+
+  & p {
+    margin-bottom: @small-value;
+  }
+
+  & strong {
+    font-size: @h5-size;
+    font-style: normal;
+  }
+}
+
+.tpl_formules-element-engagement,
+.tpl_formules-element-price {
+  margin-top: @large-value - @small-value;
+}
+
+.tpl_formules-element-engagement {
+  margin-top: @large-value - @small-value;
+  font-size: @h5-size;
+  font-weight: 700;
+  text-transform: lowercase;
+
+  &::first-line {
+    font-weight: 400;
+  }
+
+  & em {
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+.tpl_formules-element-price {
+  font-family: @font-stack-headings;
+
+  & strong {
+    font-size: @h5-size + @h5-size;
+  }
+
+  & sup {
+    font-size: @h4-size;
+    vertical-align: @tiny-value;
+  }
+
+  & em {
+    display: block;
+    font-size: @h5-size;
+    font-style: normal;
+    margin-top: -@small-value;
+  }
+}
+
+.tpl_formules-element-cta-container {
+  margin: @large-value 0 0 @grid-value + @grid-value;
+  text-align: center;
+}
