@@ -9,6 +9,15 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://quai10.org/
  * */
+
+// We load all information about the footer page
+$args = array(
+  'post_type' => 'page',
+  'meta_key' => '_wp_page_template',
+  'meta_value' => 'template-footer.php'
+);
+$footer = new WP_Query($args);
+$footer->the_post();
 ?>
 <footer class="footer-box">
   <div class="footer-container grid-1-4 container">
@@ -19,35 +28,43 @@
     </div><!-- .footer-logo -->
     <div class="footer-content grid-5">
       <div class="footer-col">
-        <?php if (false) : ?>
-          <h5 class="footer-title"><a class="no-style" href="#">À propos</a></h5>
-          <ul class="footer-list">
-            <li><a class="no-style" href="#">L'association</a></li>
-            <li><a class="no-style" href="#">Les lieux</a></li>
-            <li><a class="no-style" href="#">Horaires et prix</a></li>
-          </ul><!-- .footer-list -->
-        <?php endif; ?>
-      </div><!-- .footer-col -->
-      <div class="footer-col">
-        <?php if (false) : ?>
-          <h5 class="footer-title"><a class="no-style" href="#">Le coworking</a></h5>
-          <ul class="footer-list">
-            <li><a class="no-style" href="#">Formules</a></li>
-            <li><a class="no-style" href="#">Services</a></li>
-            <li><a class="no-style" href="#">FAQ</a></li>
-          </ul><!-- .footer-list -->
-        <?php endif; ?>
-      </div><!-- .footer-col -->
-      <div class="footer-col">
-        <h5 class="footer-title">Devenir membre</h5>
-        <?php
-          wp_nav_menu(
-            array(
-              'theme_location' => 'footer3',
+        <?php if (has_nav_menu('footer1')) : ?>
+          <h5 class="footer-title"><?php echo get_field('footer1_title'); ?></h5>
+          <?php
+            $args = array(
+              'theme_location' => 'footer1',
+              'container' => false,
               'menu_class' => 'footer-list'
-            )
-          );
-        ?>
+            );
+            wp_nav_menu($args);
+          ?>
+        <?php else: echo '&nbsp;'; endif; ?>
+      </div><!-- .footer-col -->
+      <div class="footer-col">
+        <?php if (has_nav_menu('footer2')) : ?>
+          <h5 class="footer-title"><?php echo get_field('footer2_title'); ?></h5>
+          <?php
+            $args = array(
+              'theme_location' => 'footer2',
+              'container' => false,
+              'menu_class' => 'footer-list'
+            );
+            wp_nav_menu($args);
+          ?>
+        <?php else: echo '&nbsp;'; endif; ?>
+      </div><!-- .footer-col -->
+      <div class="footer-col">
+        <?php if (has_nav_menu('footer3')) : ?>
+          <h5 class="footer-title"><?php echo get_field('footer3_title'); ?></h5>
+          <?php
+            $args = array(
+              'theme_location' => 'footer3',
+              'container' => false,
+              'menu_class' => 'footer-list'
+            );
+            wp_nav_menu($args);
+          ?>
+        <?php else: echo '&nbsp;'; endif; ?>
       </div><!-- .footer-col -->
       <div class="footer-col footer-col-newsletter">
         <h5 class="footer-title">Newsletter</h5>
