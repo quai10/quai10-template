@@ -1,31 +1,7 @@
-<?php get_header(); ?>
-  <header class="header-box container" id="top">
-    <nav class="nav-box grid-1-4">
-      <div class="nav-logo">
-        <a href="<?php echo home_url(); ?>">
-          <svg role="img" aria-labelledby="title-logo-quai10">
-            <use xlink:href="#icon-logo-quai10"></use>
-          </svg>
-        </a>
-      </div><!-- .nav-logo -->
-      <?php
-        $args = array(
-          'theme_location' => 'primary_navigation',
-          'container' => false,
-          'menu_class' => 'nav-list',
-          'menu_id' => 'navigation'
-        );
-        wp_nav_menu($args);
-        unset($args);
-      ?>
-    </nav><!-- .nav-box -->
-    <div class="header-container grid-1-4">
-      <div class="header-icon">
-        <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
-      </div><!-- .header-icon -->
-      <h1 class="header-title"><?php the_title(); ?></h1>
-    </div><!-- .header-container -->
-  </header><!-- .header-box -->
+<?php
+get_header();
+get_template_part('header', 'frontpage');
+?>
   <div class="content-box container margin-large grid-2 no-padding-left">
     <?php
       $bloc_association = get_field('description_association')[0];
@@ -47,7 +23,7 @@
       <a href="<?php echo $cta['href']; ?>" class="btn"><?php echo $cta['label']; ?></a>
     </section>
     <?php
-    endwhile; endif; unset($loop, $args); wp_reset_postdata();
+    endwhile; endif; wp_reset_postdata();
     $bloc_coworkers = get_field('emplacement_des_voyageurs');
     ?>
     <section class="coworkers-box">
@@ -55,6 +31,7 @@
       <?php
         $args = array(
           'category_name' => $bloc_coworkers->slug,
+          'posts_per_page' => 6,
           'orderby' => 'rand'
         );
         $loop = new WP_Query($args);
@@ -76,11 +53,11 @@
           <p class="coworkers-element-work"><?php echo get_field('work'); ?></p>
           <?php if ($coworker_url) : ?></a><?php endif; ?>
         </li><!-- .coworkers-element -->
-        <?php unset($url, $coworker_url); endwhile; ?>
+        <?php endwhile; ?>
       </ul><!-- .coworkers-list -->
       <?php else : ?>
         <p>Aucun voyageur n'a pris place dans le train actuellement.</p>
-      <?php endif; unset($loop, $args); wp_reset_postdata(); ?>
+      <?php endif; wp_reset_postdata(); ?>
     </section><!-- .coworkers-box -->
   </div><!-- .content-box -->
   <div class="content-box container margin-large grid no-padding-left no-padding">
@@ -102,7 +79,6 @@
       </div><!-- .espace-list -->
     <?php
       endif;
-      unset($loop, $args);
       wp_reset_postdata();
     ?>
     </section><!-- .espace-box -->
@@ -159,7 +135,6 @@
         <?php endif; ?>
       </div><!-- .swiper-container -->
       <?php
-      unset($loop, $args);
       wp_reset_postdata();
       ?>
     </section><!-- .entrepot-box -->
@@ -181,7 +156,6 @@
       <a class="btn" href="<?php echo $projet_btn; ?>"><?php echo $projet_btn_label; ?></a>
       <?php
       endif;
-      unset($loop, $args);
       wp_reset_postdata();
       ?>
     </section><!-- .projet-box -->
@@ -213,7 +187,6 @@
     </aside><!-- .cta-aside -->
   </section><!-- .cta-box -->
   <?php
-  unset($loop, $args);
   wp_reset_postdata();
   get_footer();
   ?>

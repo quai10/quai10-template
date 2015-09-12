@@ -8,13 +8,13 @@
       </a>
     </div><!-- .nav-logo -->
     <?php
-    $args = array(
+      $args = array(
         'theme_location' => 'primary_navigation',
         'container' => false,
         'menu_class' => 'nav-list',
         'menu_id' => 'navigation'
       );
-    wp_nav_menu($args);
+      wp_nav_menu($args);
     ?>
   </nav><!-- .nav-box -->
   <div class="header-container grid-1-4">

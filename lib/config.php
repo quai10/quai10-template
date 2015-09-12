@@ -23,8 +23,10 @@ function quai10_setup() {
    * @source    http://codex.wordpress.org/Function_Reference/register_nav_menus
    * */
   register_nav_menus([
-      'primary_navigation' => __('Primary Navigation', 'quai10'),
-      'footer3' => __('Footer menu 3', 'quai10')
+      'primary_navigation' => __('Navigation principale', 'quai10'),
+      'footer1' => __('Pied de page – colonne 1', 'quai10'),
+      'footer2' => __('Pied de page – colonne 2', 'quai10'),
+      'footer3' => __('Pied de page – colonne 3', 'quai10')
   ]);
 
   /**
