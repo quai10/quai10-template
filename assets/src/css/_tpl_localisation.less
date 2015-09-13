@@ -1,0 +1,52 @@
+/**
+ * Template News Less file
+ * */
+
+.tpl_localisation {
+  color: @secondary-color;
+  padding: @large-value + @small-value @extra-large-value;
+}
+
+.tpl_localisation,
+.tpl_localisation-title {
+ color: @secondary-color;
+}
+
+.tpl_localisation-content {
+  font-size: @h5-size;
+
+  & ul {
+    margin-bottom: @grid-value;
+
+    & > li {
+      position: relative;
+      list-style: none;
+      margin-bottom: @small-value;
+
+      &::before {
+        display: block;
+        position: absolute;
+          left: -1.6rem; top: .9rem;
+        height: .85rem;
+        margin-right: .5rem;
+        width: .85rem;
+        content: '';
+        background: transparent;
+        border: .2rem solid;
+        border-radius: 50%;
+        box-sizing: border-box;
+        color: @secondary-color;
+        opacity: .35;
+      }
+    }
+  }
+}
+
+.tpl_localisation-aside {
+  display: flex;
+
+  & .leaflet-container {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
