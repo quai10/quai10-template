@@ -10,14 +10,14 @@
  * @link     https://quai10.org/
  * */
 
-// We load all information about the footer page
-$args = array(
-  'post_type' => 'page',
-  'meta_key' => '_wp_page_template',
-  'meta_value' => 'template-footer.php'
-);
-$footer = new WP_Query($args);
-$footer->the_post();
+// We get all datas about the three menus
+$menu_locations = get_nav_menu_locations();
+$menus = array();
+foreach ($menu_locations as $key => $value) {
+  if (strpos($key, 'footer') !== false) {
+    $menus[$key] = wp_get_nav_menu_object($value);
+  }
+}
 ?>
 <footer class="footer-box">
   <div class="footer-container grid-1-4 container">
@@ -26,10 +26,11 @@ $footer->the_post();
         <use xlink:href="#icon-logo-quai10"></use>
       </svg>
     </div><!-- .footer-logo -->
+    <?php /**foreach ($menus)**/ ?>
     <div class="footer-content grid-5">
       <div class="footer-col">
-        <?php if (has_nav_menu('footer1')) : ?>
-          <h5 class="footer-title"><?php echo get_field('footer1_title'); ?></h5>
+        <?php if (has_nav_menu('footer1')) :  ?>
+          <h5 class="footer-title"><?php echo $menus['footer1']->name; ?></h5>
           <?php
             $args = array(
               'theme_location' => 'footer1',
@@ -42,7 +43,7 @@ $footer->the_post();
       </div><!-- .footer-col -->
       <div class="footer-col">
         <?php if (has_nav_menu('footer2')) : ?>
-          <h5 class="footer-title"><?php echo get_field('footer2_title'); ?></h5>
+          <h5 class="footer-title"><?php echo $menus['footer2']->name; ?></h5>
           <?php
             $args = array(
               'theme_location' => 'footer2',
@@ -55,7 +56,7 @@ $footer->the_post();
       </div><!-- .footer-col -->
       <div class="footer-col">
         <?php if (has_nav_menu('footer3')) : ?>
-          <h5 class="footer-title"><?php echo get_field('footer3_title'); ?></h5>
+          <h5 class="footer-title"><?php echo $menus['footer3']->name; ?></h5>
           <?php
             $args = array(
               'theme_location' => 'footer3',

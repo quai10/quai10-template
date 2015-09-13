@@ -2,7 +2,6 @@
 /* Template Name: Contact page */
 the_post();
 get_header();
-get_header('page');
 ?>
 <div class="tpl_contact-container container content-box margin-large grid-2 no-padding">
   <section class="tpl_contact-content">

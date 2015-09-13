@@ -12,7 +12,6 @@
  * @link     https://quai10.org/
  */
 get_header();
-get_header('page');
 
 // on récupère les variables nécessaires
 $page_id = get_queried_object_id();

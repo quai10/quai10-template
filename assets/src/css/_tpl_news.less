@@ -3,6 +3,10 @@
  * */
 
 .tpl_news {
+  & .tpl_news-container {
+    margin-left: -2.7em;
+  }
+
   & .tpl_news-aside {
     display: flex;
     align-items: stretch;
@@ -20,8 +24,10 @@
 
   & .tpl_news-aside-text {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     font-family: @font-stack-headings;
     font-size: @h2-size;
     text-align: center;
@@ -29,6 +35,21 @@
     & > p {
       margin: 0;
       padding: 0;
+    }
+  }
+
+  & .tpl_news-aside-arrow {
+    display: block;
+    height: @large-value + @medium-value;
+    margin: @grid-value 0 0;
+    padding: @small-value;
+    width: @extra-large-value;
+    border: .3rem solid @secondary-color;
+    border-radius: 3rem;
+    fill: @secondary-color;
+
+    & > svg {
+      max-height: 100%;
     }
   }
 }

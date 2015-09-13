@@ -15,7 +15,6 @@
 use Quai10\Event;
 
 get_header();
-get_header('page');
 ?>
 <h2>Les prochains événements</h2>
 <?php
