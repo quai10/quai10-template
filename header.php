@@ -50,4 +50,30 @@
       	<path role="presentation" class="path1 fill-colo1" d="M621.254 877.254l320-320c24.994-24.992 24.994-65.516 0-90.51l-320-320c-24.994-24.992-65.516-24.992-90.51 0-24.994 24.994-24.994 65.516 0 90.51l210.746 210.746h-613.49c-35.346 0-64 28.654-64 64s28.654 64 64 64h613.49l-210.746 210.746c-12.496 12.496-18.744 28.876-18.744 45.254s6.248 32.758 18.744 45.254c24.994 24.994 65.516 24.994 90.51 0z"></path>
       </symbol>
     </defs>
-  </svg>
+  </svg><!-- /svg -->
+  <header class="header-box container" id="top">
+    <nav class="nav-box grid-1-4">
+      <div class="nav-logo">
+        <a href="<?php echo home_url(); ?>">
+          <svg role="img" aria-labelledby="title-logo-quai10">
+            <use xlink:href="#icon-logo-quai10"></use>
+          </svg>
+        </a>
+      </div><!-- .nav-logo -->
+      <?php
+        $args = array(
+          'theme_location' => 'primary_navigation',
+          'container' => false,
+          'menu_class' => 'nav-list',
+          'menu_id' => 'navigation'
+        );
+        wp_nav_menu($args);
+      ?>
+    </nav><!-- .nav-box -->
+    <div class="header-container grid-1-4">
+      <div class="header-icon">
+        <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
+      </div><!-- .header-icon -->
+      <h1 class="header-title"><?php the_title(); ?></h1>
+    </div><!-- .header-container -->
+  </header><!-- .header-box -->

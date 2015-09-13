@@ -1,6 +1,5 @@
 <?php
 get_header();
-get_template_part('header', 'frontpage');
 ?>
   <div class="content-box container margin-large grid-2 no-padding-left">
     <?php

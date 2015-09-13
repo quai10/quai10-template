@@ -12,7 +12,6 @@
  * @link     https://quai10.org/
  */
 get_header();
-get_header('page');
 
 the_content();
 
