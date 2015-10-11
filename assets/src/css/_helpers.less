@@ -8,7 +8,7 @@
 .container {
   margin: 0 auto;
   padding: 0 @extra-large-value;
-  width: 1280px;
+  width: @large-screen;
 
   &.margin-large {
     margin: @large-value auto;
@@ -107,4 +107,35 @@ p {
   background-image: url('../img/mail-icon.png');
   height: @medium-value - @tiny-value;
   width: @medium-value;
+}
+
+
+/** media queries **/
+
+@media screen and (max-width: @large-screen) {
+    .container {
+        width: @medium-screen;
+        padding: 0 @large-value;
+    }
+}
+
+@media screen and (max-width: @medium-screen) {
+    .container {
+        width: @small-screen;
+        padding: 0 @grid-value;        
+    }
+}
+
+@media screen and (max-width: @small-screen) {
+    .container {
+        width: @tiny-screen;
+        padding: 0 @medium-value;                
+    }
+}
+
+@media screen and (max-width: @tiny-screen) {
+    .container {
+        width: @tiny-screen;
+        padding: 0 @tiny-value;                
+    }
 }
