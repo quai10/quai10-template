@@ -48,10 +48,12 @@
     }
     // Footer
     .footer-box .footer-container {
-        display: block !important;
+        //display: block !important;
+        .grid(1);
     }
     .footer-logo, .footer-content {
-        width: 100% !important;
+        //width: 100% !important;
+        flex: 1 0 auto;
     }
     .footer-content, .footer-col {
         margin-left: 0;
@@ -91,11 +93,9 @@
         .grid(1);
         & .tpl_contact-content {
             flex: 1 0 auto;
-            //.reset-grid;
             margin-bottom: @extra-large-value;
             }
         & .tpl_contact-aside {
-            //.reset-grid;
             flex: 1 0 auto;
         }
     }
