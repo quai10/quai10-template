@@ -124,12 +124,27 @@ p {
         width: @small-screen;
         padding: 0 @grid-value;        
     }
+    .footer-col {
+        width: 25%;
+    }
+    .footer-col-newsletter {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 785px) { // small screen + offset 17px
     .container {
         width: @tiny-screen;
         padding: 0 @medium-value;                
+    }
+    .footer-box .footer-container {
+        display: block !important;
+    }
+    .footer-logo, .footer-content {
+        width: 100% !important;
+    }
+    .footer-content, .footer-col {
+        margin-left: 0;
     }
 }
 
