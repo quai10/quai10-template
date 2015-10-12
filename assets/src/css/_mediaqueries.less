@@ -1,4 +1,5 @@
 @media screen and (max-width: 1297px) { // large screen + offset 17px
+    // Wrapper
     .container {
         width: @medium-screen;
         padding: 0 @large-value;
@@ -6,16 +7,19 @@
 }
 
 @media screen and (max-width: 1041px) { // medium screen + offset 17px
+    // Wrapper
     .container {
         width: @small-screen;
         padding: 0 @grid-value;        
     }
+    // Footer
     .footer-col {
         width: 25%;
     }
     .footer-col-newsletter {
         width: 100%;
     }
+    // Header
     .header-container {
         & .header-title {
             &:first-line {
@@ -23,19 +27,26 @@
             }
         }
     }
+    // Contact content
+    .tpl_contact-contacts {
+        & > li {
+            font-size: @h3-size;
+        }
+    }
 }
 
 @media screen and (max-width: 785px) { // small screen + offset 17px
-    // Reset uneven grid on small resolutions
+    // Reset uneven grid layout on small resolutions
     .reset-grid {
         width: 100%;
         margin: 0 auto;
     }
-    // end reset
+    // Wrapper
     .container {
         width: @tiny-screen;
         padding: 0 @medium-value;                
     }
+    // Footer
     .footer-box .footer-container {
         display: block !important;
     }
@@ -45,7 +56,7 @@
     .footer-content, .footer-col {
         margin-left: 0;
     }
-
+    // Main menu
     .nav-box {
         .reset-grid;
         & .nav-logo {
@@ -58,7 +69,7 @@
         justify-content: center;
         }
     }
-
+    // Jumbotron
     .header-container, :not(.home) .header-container {
         .reset-grid;
         min-height: auto;        
@@ -75,21 +86,42 @@
             }
         }
     }
+    // Contact container
+    .tpl_contact-container {
+        .grid(1);
+        & .tpl_contact-content {
+            flex: 1 0 auto;
+            //.reset-grid;
+            margin-bottom: @extra-large-value;
+            }
+        & .tpl_contact-aside {
+            //.reset-grid;
+            flex: 1 0 auto;
+        }
+    }
 }
 
 @media screen and (max-width: 497px) { // tiny screen + offset 17px
+    // Wrapper
     .container {
         padding: 0 @tiny-value;                
     }
+    // Footer
     .footer-box {
         width: 480px;
         & .footer-content {
             padding: 0 @small-value;
         }
     }
-
+    // Header
     .header-box {
         margin-top: 0;
         border-radius: 0;
-    }    
+    }
+    // Contact container
+    .tpl_contact-container {
+        & .tpl_contact-content, & .tpl_contact-aside {
+            padding: 0 @small-value;
+        }
+    }        
 }
