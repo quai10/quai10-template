@@ -2,7 +2,7 @@
     // Wrapper
     .container {
         width: @medium-screen;
-        padding: 0 @large-value;
+        //padding: 0 @large-value;
     }
 }
 
@@ -10,7 +10,8 @@
     // Wrapper
     .container {
         width: @small-screen;
-        padding: 0 @grid-value;        
+        padding-left: 0;
+        padding-right: 0;        
     }
     // Footer
     .footer-col {
@@ -44,7 +45,6 @@
     // Wrapper
     .container {
         width: @tiny-screen;
-        padding: 0 @medium-value;                
     }
     // Footer
     .footer-box .footer-container {
@@ -103,7 +103,8 @@
 @media screen and (max-width: 497px) { // tiny screen + offset 17px
     // Wrapper
     .container {
-        padding: 0 @tiny-value;                
+        padding-left: @tiny-value;
+        padding-right: @tiny-value;                
     }
     // Footer
     .footer-box {

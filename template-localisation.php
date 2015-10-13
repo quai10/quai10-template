@@ -1,7 +1,7 @@
 <?php
 /* Template Name: Localisation */
 ?>
-<section class="tpl_localisation container content-box contrast-box margin-large grid">
+<section class="tpl_localisation container content-box contrast-box margin-large">
   <h2 class="tpl_localisation-title content-title"><?php the_title(); ?></h2>
   <div class="grid-2">
     <aside class="tpl_localisation-aside">
