@@ -116,6 +116,18 @@
             flex: 1 0 auto;
         }
     }
+    // News
+    .tpl_news {
+        & .tpl_news-container {
+            .grid(1);
+        }
+        & .tpl_news-title {
+            font-size: @h3-size;
+        }
+        & .tpl_news-aside {
+            padding: @small-value;
+        }
+    }
 }
 
 @media screen and (max-width: 497px) { // tiny screen + offset 17px
@@ -146,6 +158,14 @@
     .tpl_localisation-content {
         & h3 {
             font-size: @h4-size;
+        }
+    }
+    // News
+    .tpl_news {
+        & .tpl_news-content {
+            & p {
+                text-align: justify;
+            }
         }
     }        
 }
