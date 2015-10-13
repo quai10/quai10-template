@@ -34,6 +34,24 @@
             font-size: @h3-size;
         }
     }
+    // Localisation
+    .tpl_localisation {
+        padding-left: @large-value;
+        padding-right: @large-value;
+        .tpl_localisation-content {
+            // margin-left: 0;
+            margin-top: @large-value;
+            & div {
+                text-align: center;
+            }
+        }
+        .tpl_localisation-aside {
+            min-height: 350px;
+        }
+        & > div {
+            .grid(1);
+        }
+    }
 }
 
 @media screen and (max-width: 785px) { // small screen + offset 17px
@@ -122,6 +140,12 @@
     .tpl_contact-container {
         & .tpl_contact-content, & .tpl_contact-aside {
             padding: 0 @small-value;
+        }
+    }
+    // Localisation
+    .tpl_localisation-content {
+        & h3 {
+            font-size: @h4-size;
         }
     }        
 }
