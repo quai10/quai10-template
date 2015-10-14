@@ -19,7 +19,9 @@ get_header();
       <h2 class="asso-title"><?php the_title(); ?></h2>
       <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
       <?php the_content(); ?>
-      <a href="<?php echo $cta['href']; ?>" class="btn"><?php echo $cta['label']; ?></a>
+      <div>
+        <a href="<?php echo $cta['href']; ?>" class="btn"><?php echo $cta['label']; ?></a>
+      </div>
     </section>
     <?php
     endwhile; endif; wp_reset_postdata();
