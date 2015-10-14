@@ -11,6 +11,13 @@
                 font-size: @h6-size;
             }
         }
+        & .espace-box {
+            padding-left: @medium-value;
+            padding-right: @medium-value;
+            & .espace-list ul li {
+                font-size: @h5-size;
+            }
+        }
     }    
 }
 
@@ -67,6 +74,21 @@
                 font-size: @h6-size - 0.3;
             }
         }
+        & .espace-box {
+            & .espace-list ul {
+                .grid(2);
+                justify-content: space-between;
+                align-items: center;
+                li {
+                    flex: 1 0 auto;
+                    margin-bottom: 1.33em;
+                }
+
+            }
+            &::before {
+                background-size: contain;
+            }            
+        }        
     }     
 }
 
@@ -168,6 +190,12 @@
                 }
             }
         }
+        & .espace-box {
+            padding-bottom: @grid-value;
+            & .espace-list ul {
+                .grid(1);
+            }
+        }         
     }
 }
 
@@ -218,6 +246,9 @@
             & .asso-box p {
                 text-align: justify;
             }
+        }
+        .espace-box {
+            border-radius: 0;
         }
     }            
 }
