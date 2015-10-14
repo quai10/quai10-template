@@ -154,7 +154,9 @@ get_header();
       ?>
       <h2 class="projet-title"><?php the_title(); ?></h2>
       <?php the_content(); ?>
-      <a class="btn" href="<?php echo $projet_btn; ?>"><?php echo $projet_btn_label; ?></a>
+      <div>
+        <a class="btn" href="<?php echo $projet_btn; ?>"><?php echo $projet_btn_label; ?></a>
+      </div>
       <?php
       endif;
       wp_reset_postdata();
