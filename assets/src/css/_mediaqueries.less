@@ -254,6 +254,7 @@
 @media screen and (max-width: 497px) { // tiny screen + offset 17px
     // Wrapper
     .container {
+        width: 100%;
         padding-left: @tiny-value;
         padding-right: @tiny-value;                
     }
@@ -271,8 +272,17 @@
     }
     // Contact container
     .tpl_contact-container {
+        & .tpl_contact-title {
+            font-size: @h5-size;
+        }
         & .tpl_contact-content, & .tpl_contact-aside {
             padding: 0 @small-value;
+        }
+        & .tpl_contact-content p {
+            text-align: justify;
+        }
+        & .tpl_contact-contacts li {
+            font-size: @h5-size;
         }
     }
     // Localisation
