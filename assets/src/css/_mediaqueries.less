@@ -83,7 +83,6 @@
         padding-left: @large-value;
         padding-right: @large-value;
         .tpl_localisation-content {
-            // margin-left: 0;
             margin-top: @large-value;
             & div {
                 text-align: center;
@@ -260,7 +259,7 @@
     }
     // Footer
     .footer-box {
-        width: 480px;
+        width: 100%;
         & .footer-content {
             padding: 0 @small-value;
         }
@@ -289,10 +288,17 @@
     .tpl_localisation {
         border-radius: 0;
     }
+    .tpl_localisation > div, .tpl_localisation-content, .tpl_localisation-aside {
+        margin-left: 0;
+    }
     .tpl_localisation-content {
+        flex: 1 0 auto;
         & h3 {
             font-size: @h4-size;
         }
+    }
+    .tpl_localisation-aside {
+        flex: 1 0 auto;
     }
     // News
     .tpl_news {
@@ -320,4 +326,19 @@
             }
         }                
     }            
+}
+@media screen and (max-width: 477px) {
+    // Formules
+    .tpl_formules-list {
+        .grid(1);
+        margin-left: 0;
+        & .tpl_formules-element {
+            width: 66%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        & .tpl_formules-element:not(:last-child) {
+            margin-bottom: @extra-large-value;
+        }
+    }
 }
