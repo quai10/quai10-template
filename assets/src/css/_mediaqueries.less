@@ -325,6 +325,15 @@
             & .cta-content p {
                 text-align: justify;           
             }
+        }
+        .coworkers-box {
+            .coworkers-list {
+                .grid(2);
+            }
+        }
+        .asso-title, .coworkers-title, .entrepot-title, .projet-title {
+            text-align: center;
+            font-size: @h3-size;
         }                
     }            
 }
@@ -343,6 +352,16 @@
         }
         & .tpl_formules-element:not(:last-child) {
             margin-bottom: @extra-large-value;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    // Home
+    .home {
+        .coworkers-box {
+            .coworkers-list {
+                .grid(1);
+            }
         }
     }
 }
