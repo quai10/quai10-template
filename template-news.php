@@ -1,5 +1,5 @@
 <?php /* Template Name: Actualité */ ?>
-<section class="tpl_news content-box container margin-large grid no-padding-left">
+<section class="tpl_news content-box container margin-large">
   <div class="tpl_news-container grid-2-1 no-padding-left no-padding">
     <div class="tpl_news-content">
       <h2 class="tpl_news-title content-title"><?php the_title(); ?></h2>

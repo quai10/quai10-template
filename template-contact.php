@@ -3,7 +3,7 @@
 the_post();
 get_header();
 ?>
-<div class="tpl_contact-container container content-box margin-large grid-2 no-padding">
+<div class="tpl_contact-container grid-2 container margin-large content-box">
   <section class="tpl_contact-content">
     <?php the_content(); ?>
     <ul class="tpl_contact-contacts" style="background-image: url(<?php echo get_field('contact_background'); ?>)">

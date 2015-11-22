@@ -173,7 +173,12 @@
   &::before {
     display: block;
     position: absolute;
-      top: -12.5rem; bottom: -12.5rem;
+    top: -12.5rem;
+    bottom: -12.5rem;
+    // x-align
+    left: 0;
+    margin: 0 7.5rem; // 15rem divise par 2
+    // End x-align
     width: ~"calc(100% - 15rem)";
     content: "";
     background: url('../img/logo-bkgnd.png') center center no-repeat;
@@ -330,6 +335,14 @@
 //
 // Contact page
 
+.tpl_contact-container {
+    justify-content: space-between; // To complete .grid class in template-contact.php
+}
+
+.tpl_contact-content, .tpl_contact-aside {
+  margin-left: 0;
+}
+
 .tpl_contact-content {
   & p:first-of-type:first-letter {
     float: left;
@@ -347,7 +360,7 @@
 
 .tpl_contact-contacts {
   padding: @extra-large-value - @medium-value - @medium-value @large-value;
-  width: 85%;
+  width: 100%;
   background-color: @primary-color;
   background-position: center center;
   background-repeat: no-repeat;
