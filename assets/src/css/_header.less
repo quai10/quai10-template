@@ -34,6 +34,50 @@
       fill: @secondary-color;
     }
   }
+  .nav-burger {
+    display: none;
+    width: 25px;  
+    margin-right: @small-value;
+    .menu-opener {
+      position: relative;
+      top: 17px;
+      height: 36px;
+      cursor: pointer;
+      span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: @secondary-color;
+        position: relative;
+        top: 17px;
+        &::before, &::after {
+          content:"";
+          position: absolute; 
+          display: block;
+          width: 25px;
+          height: 2px;
+          background: @secondary-color;
+        }
+        &::before {
+          top: -8px;
+          transition: top 0.2s ease-out;
+        }
+        &::after {
+          bottom: -8px;
+          transition: bottom 0.2s ease-out;
+        }
+      }
+      &:hover {
+        span::before {
+          top: -10px;
+        }
+        span::after {
+          bottom: -10px;
+        }
+      }
+    }
+  }
+
 
   & .nav-list {
     display: flex;

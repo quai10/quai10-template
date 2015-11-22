@@ -11,6 +11,10 @@
  * */
 
 $(document).ready(function () {
+  // Toggle menu
+  $('.menu-opener').click(function() {
+    $('.nav-list').slideToggle();
+  }); 
   var swiperQuai = new Swiper('.swiper-container', {
     loop: true,
     speed: 500,

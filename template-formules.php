@@ -20,7 +20,7 @@ $loop = new WP_Query($args);
 
 // we display this block markup
 ?>
-<section class="tpl_formules content-box container margin-large grid no-padding-left">
+<section class="tpl_formules content-box container margin-large">
   <div class="tpl_formules-container grid no-padding-left no-padding">
     <h2 class="tpl_formules-title content-title"><?php the_title(); ?></h2>
     <?php if ($loop->have_posts()) : ?>
