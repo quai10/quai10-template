@@ -73,7 +73,7 @@
         <div id="menu-opener" class="menu-opener">
           <span></span>
         </div>
-      </div>      
+      </div>
     </nav><!-- .nav-box -->
     <div class="header-container grid-1-4">
       <div class="header-icon">
