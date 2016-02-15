@@ -3,7 +3,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <!-- <title><?php is_front_page() ? bloginfo('name') : wp_title(' ‐ ', true, 'right'); ?></title> -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" media="all" href="<?php bloginfo('template_url'); ?>/assets/dist/css/styles.min.css">
   <script defer src="<?php bloginfo('template_url'); ?>/assets/dist/js/global.min.js"></script>
@@ -73,7 +73,7 @@
         <div id="menu-opener" class="menu-opener">
           <span></span>
         </div>
-      </div>      
+      </div>
     </nav><!-- .nav-box -->
     <div class="header-container grid-1-4">
       <div class="header-icon">
