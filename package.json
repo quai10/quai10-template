@@ -8,7 +8,7 @@
     "url": "https://github.com/quai10/quai10-template.git"
   },
   "author": "Damien Senger <hi@hiwelo.co>",
-  "license": "GNU GPL v3",
+  "license": "GPL-3.0",
   "devDependencies": {
     "bower": "latest",
     "gulp": "latest",
