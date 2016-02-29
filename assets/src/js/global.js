@@ -14,7 +14,7 @@ $(document).ready(function () {
   // Toggle menu
   $('.menu-opener').click(function() {
     $('.nav-list').slideToggle();
-  }); 
+  });
   var swiperQuai = new Swiper('.swiper-container', {
     loop: true,
     speed: 500,
@@ -45,4 +45,6 @@ $(document).ready(function () {
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
+
+  L.marker([container.dataset.lat, container.dataset.lng]).addTo(map);
 });
