@@ -37,14 +37,16 @@ $(document).ready(function () {
 $(document).ready(function () {
   var container = document.getElementById('map');
 
-  var map = L.map('map').setView([
-    container.dataset.lat,
-    container.dataset.lng
-  ], container.dataset.zoom);
+  if (container) {
+    var map = L.map('map').setView([
+      container.dataset.lat,
+      container.dataset.lng
+    ], container.dataset.zoom);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-  L.marker([container.dataset.lat, container.dataset.lng]).addTo(map);
+    L.marker([container.dataset.lat, container.dataset.lng]).addTo(map);
+  }
 });
