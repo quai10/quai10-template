@@ -32,9 +32,10 @@ $loop = new WP_Query($args);
           <div class="tpl_formules-element-description"><?php the_content(); ?></div>
           <div class="tpl_formules-informations">
             <div class="tpl_formules-element-perfectfor">
-              Parfait pour&nbsp;:<br> <?php echo get_field('perfectfor'); ?>
+              <span class="tpl_formules-elements-perfectfor-title">Parfait pour</span><br> <?php echo get_field('perfectfor'); ?>
             </div><!-- .tpl_formules-element-perfectfor -->
             <div class="tpl_formules-element-longdesc">
+              <div class="tpl_formules-element-longdesc-title">Comprend...</div>
               <?php echo get_field('longdesc'); ?>
             </div><!-- .tpl_formules-element-longdesc -->
             <div class="tpl_formules-element-engagement">
@@ -50,7 +51,7 @@ $loop = new WP_Query($args);
                 <sup>&euro; ttc</sup>
                 <em>par mois</em>
               <?php else: ?>
-                Gratuit
+                <strong>Gratuit</strong>
               <?php endif; ?>
               <?php if (get_field('price_desc')) : ?>
                 <br/>(<?php echo get_field('price_desc'); ?>)
