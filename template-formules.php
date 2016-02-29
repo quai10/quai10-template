@@ -31,17 +31,31 @@ $loop = new WP_Query($args);
           <h3 class="tpl_formules-element-title"><?php the_title(); ?></h3>
           <div class="tpl_formules-element-description"><?php the_content(); ?></div>
           <div class="tpl_formules-informations">
+            <div class="tpl_formules-element-perfectfor">
+              <span class="tpl_formules-elements-perfectfor-title">Parfait pour</span><br> <?php echo get_field('perfectfor'); ?>
+            </div><!-- .tpl_formules-element-perfectfor -->
+            <div class="tpl_formules-element-longdesc">
+              <div class="tpl_formules-element-longdesc-title">Comprend...</div>
+              <?php echo get_field('longdesc'); ?>
+            </div><!-- .tpl_formules-element-longdesc -->
             <div class="tpl_formules-element-engagement">
               <?php if (get_field('engagement')) : ?>
-                Engagement<br> <?php echo get_field('engagement'); ?>
+                Engagement&nbsp;:<br> <?php echo get_field('engagement'); ?>
               <?php else: ?>
-                <em>Sans<br> engagement</em>
+                Engagement&nbsp;:<br> Aucun !
               <?php endif; ?>
             </div><!-- .tpl_formules-element-engagement -->
             <div class="tpl_formules-element-price">
-              <strong><?php echo get_field('price'); ?></strong>
-              <sup>&euro; ttc</sup>
-              <em>par mois</em>
+              <?php if (get_field('price') > 0) : ?>
+                <strong><?php echo get_field('price'); ?></strong>
+                <sup>&euro; ttc</sup>
+                <em>par mois</em>
+              <?php else: ?>
+                <strong>Gratuit</strong>
+              <?php endif; ?>
+              <?php if (get_field('price_desc')) : ?>
+                <br/>(<?php echo get_field('price_desc'); ?>)
+              <?php endif; ?>
             </div><!-- .tpl_formules-element-price -->
           </div><!-- .tpl_formules-informations -->
         </li>

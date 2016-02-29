@@ -17,13 +17,17 @@
   flex-direction: column;
   font-size: @h5-size;
   text-align: center;
+  padding: 25px;  
 
   & .tpl_formules-informations {
-    margin-top: auto;
+    // margin-top: auto; 
   }
-
+  &:nth-of-type(2) {
+    background-color: rgba(252, 252, 252, 1);
+  }
   &:nth-of-type(2) .tpl_formules-element-title {
     color: @primary-color;
+    
 
     &::after {
       background-color: @primary-color;
@@ -77,6 +81,32 @@
 .tpl_formules-element-engagement,
 .tpl_formules-element-price {
   margin-top: @large-value - @small-value;
+}
+.tpl_formules-element-perfectfor {
+  margin-top: @medium-value;
+  height: 155px;
+}
+.tpl_formules-elements-perfectfor-title {
+  font-family: @font-stack-headings;
+  font-size: @h3-size;
+  font-weight: bold;
+}
+.tpl_formules-element-longdesc {
+  height: 278px;
+}
+.tpl_formules-element-longdesc-title {
+  font-family: @font-stack-headings;
+  font-size: @h4-size;
+  font-weight: bold;
+  margin-bottom: @small-value;
+}
+.tpl_formules-element-longdesc li {
+  list-style: none;
+  text-align: left;
+  margin-bottom: @medium-value;
+}
+.tpl_formules-element-longdesc ul {
+  margin-left: 0;
 }
 
 .tpl_formules-element-engagement {

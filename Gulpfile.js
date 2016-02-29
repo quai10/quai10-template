@@ -41,7 +41,6 @@ gulp.task('js', function () {
   return gulp.src([
     source + '/vendor/jquery/dist/jquery.min.js', // jQuery vendor
     source + '/vendor/swiper/dist/js/swiper.min.js', // swiperJS
-    source + '/vendor/leaflet/dist/leaflet.js', // leaflet JS maps
     source + '/js/*.js' // scripts du thème
   ])
     .pipe(plugins.concat('global.min.js'))

@@ -14,7 +14,7 @@ $(document).ready(function () {
   // Toggle menu
   $('.menu-opener').click(function() {
     $('.nav-list').slideToggle();
-  }); 
+  });
   var swiperQuai = new Swiper('.swiper-container', {
     loop: true,
     speed: 500,
@@ -37,12 +37,16 @@ $(document).ready(function () {
 $(document).ready(function () {
   var container = document.getElementById('map');
 
-  var map = L.map('map').setView([
-    container.dataset.lat,
-    container.dataset.lng
-  ], container.dataset.zoom);
+  if (container) {
+    var map = L.map('map').setView([
+      container.dataset.lat,
+      container.dataset.lng
+    ], container.dataset.zoom);
 
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([container.dataset.lat, container.dataset.lng]).addTo(map);
+  }
 });
