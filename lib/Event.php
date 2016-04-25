@@ -39,6 +39,7 @@ class Event
               'format_header'=>'<ul>',
               'format'=>'<li>
                     <div>#_{j M Y}</div>
+                    #_EVENTIMAGE{372,372}
                     <h3>#_EVENTNAME</h3>
                     <div>#_EVENTNOTES</div>
                     <a href="#_EVENTURL">En savoir plus</a>
@@ -59,6 +60,7 @@ class Event
               'format_header'=>'<ul>',
               'format'=>'<li>
                     <div>#_{j M Y}</div>
+                    #_EVENTIMAGE{372,372}
                     <h3>#_EVENTNAME</h3>
                     <div>#_EVENTNOTES</div>
                     <a href="#_EVENTURL">En savoir plus</a>
