@@ -17,7 +17,7 @@ use Quai10\Event;
 get_header();
 ?>
 <section class="tpl_formules content-box container margin-large grid no-padding-left">
-  <div>
+  <div class="tpl_future-events">
     <h2 class="tpl_formules-title content-title">Les prochains événements</h2>
     <?php
     echo Event::getFutureEvents();
@@ -27,7 +27,7 @@ get_header();
   the_post();
   the_content();
   ?>
-  <div>
+  <div class="tpl_past-events">
     <h2 class="tpl_formules-title content-title">Les événements passés</h2>
     <?php
     echo Event::getPastEvents();

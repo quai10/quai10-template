@@ -279,6 +279,22 @@
             display: flex !important;
         }
     }
+    // Formules
+    .tpl_formules-list {
+        .grid(1);
+        margin-left: 0;
+        & .tpl_formules-element {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            h3 {
+                font-size: @h3-size;
+            }
+        }
+        & .tpl_formules-element:not(:last-child) {
+            margin-bottom: @extra-large-value;
+        }
+    }    
 }
 
 @media screen and (max-width: 497px) { // tiny screen + offset 17px
@@ -372,24 +388,6 @@
             font-size: @h3-size;
         }                
     }            
-}
-@media screen and (max-width: 785px) {
-    // Formules
-    .tpl_formules-list {
-        .grid(1);
-        margin-left: 0;
-        & .tpl_formules-element {
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            h3 {
-                font-size: @h3-size;
-            }
-        }
-        & .tpl_formules-element:not(:last-child) {
-            margin-bottom: @extra-large-value;
-        }
-    }
 }
 @media screen and (max-width: 400px) {
     // Home

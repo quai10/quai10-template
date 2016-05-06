@@ -36,13 +36,13 @@ class Event
   {
     return \EM_Events::output(
           array(
-              'format_header'=>'<ul>',
-              'format'=>'<li>
-                    <div>#_{j M Y}</div>
-                    #_EVENTIMAGE{372,372}
-                    <h3>#_EVENTNAME</h3>
-                    <div>#_EVENTNOTES</div>
-                    <a href="#_EVENTURL">En savoir plus</a>
+              'format_header'=>'<ul class="eventList">',
+              'format'=>'<li class="eventItem">
+                    <div class="eventDate">#_{j M Y}</div>
+                    <div class="eventImg">#_EVENTIMAGE{372,372}</div>
+                    <h3 class="eventTitle">#_EVENTNAME</h3>
+                    <div class="eventDesc">#_EVENTNOTES</div>
+                    <a class="eventRead" href="#_EVENTURL">En savoir plus</a>
                 </li>',
               'format_footer'=>'</ul>'
           )
@@ -57,13 +57,13 @@ class Event
   {
     return \EM_Events::output(
           array(
-              'format_header'=>'<ul>',
-              'format'=>'<li>
-                    <div>#_{j M Y}</div>
-                    #_EVENTIMAGE{372,372}
-                    <h3>#_EVENTNAME</h3>
-                    <div>#_EVENTNOTES</div>
-                    <a href="#_EVENTURL">En savoir plus</a>
+              'format_header'=>'<ul class="eventList">',
+              'format'=>'<li class="eventItem">
+                    <div class="eventDate">#_{j M Y}</div>
+                    <div class="eventImg">#_EVENTIMAGE{372,372}</div>
+                    <h3 class="eventTitle">#_EVENTNAME</h3>
+                    <div class="eventDesc">#_EVENTNOTES</div>
+                    <a class="eventRead" href="#_EVENTURL">En savoir plus</a>
                 </li>',
               'format_footer'=>'</ul>',
               'scope'=>'past',
