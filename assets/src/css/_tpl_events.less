@@ -5,24 +5,133 @@
 /* Future events style */
 
 .tpl_future-events {
+	.eventsWrapper {
+		width: 100%;
+		padding-bottom: 50px;
+		border: 1px solid red;
+		background: url('../img/timeline-events.png') center center repeat-y;
+	}
 	.eventList {
+		margin: 0;
+		padding: 0;
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
 		.eventItem {
-			.eventDate {
+			position: relative;
+			width: 50%;
+			list-style-type: none;
+			.eventWrapper {
+				position: relative;
+				width: 372px;
+				margin: 0 auto;
+				.eventDate {
+					position: absolute;
+					top: 15px;
+					z-index: 2;
+					margin: 5px;
+					padding: 10px;
+					border-radius: 3px;					
+					background-color: @primary-color;
+					color: @secondary-color;
+					font-family: @font-stack-headings;
+					font-size: @h4-size;
+					font-weight: bold;
+				}
+				.eventImg {
 
-			}
-			.eventImg {
+				}
+				.eventTitle {
 
-			}
-			.eventTitle {
+				}
+				.eventDesc {
 
-			}
-			.eventDesc {
-
-			}
-			.eventRead {
-
+				}
+				.eventRead {
+					margin-top: 25px;
+					font-weight: bold;
+				}
 			}
 		}
+		.eventItem:nth-child(odd) {
+			float: left;
+			margin: 0 0 50px;
+			&::after {
+				position: absolute;
+				top: 35px;
+				right: -10px;
+				z-index: 1;
+				content: url('../img/timeline-event-after.png');
+			}			
+			.eventWrapper {
+				.eventDate {
+					right: 0;					
+				}
+			}
+		}
+		.eventItem:nth-child(even) {
+			float: right;
+			margin: 100px 0 25px;
+			&::before {
+				position: absolute;
+				top: 35px;
+				left: -10px;
+				z-index: 1;				
+				content: url('../img/timeline-event-before.png');
+			}			
+			.eventWrapper {
+				.eventDate {
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+/* Event Idea */
+
+.eventMessage {
+	background-color: @primary-background;
+	padding: @extra-large-value;
+	border-radius: 5px;
+}
+
+.eventIdea {
+	position: relative;
+	left: 50%;
+	top: -178px;
+	height: 356px;
+	width: 339px;
+	margin-left: -170px !important;
+	background: url('../img/ampoule-event.png') center center no-repeat;
+	background-size: cover;
+	font-family: @font-stack-headings;
+	.ideaWrapper {
+	    position: absolute;
+	    top: 60%;
+	    width: 100%;
+	    transform: translateY(-60%);		
+		.desc {
+			font-size: @h4-size;
+			font-weight: bold;
+			text-align: center;
+			.cta {
+				padding: 0 25px;
+				border: 2px solid @primary-color;
+				border-radius: 20px;
+				font-size: @h1-size;
+				color: @primary-color;
+				text-decoration: none;
+				text-align: center;
+				transition: all 0.3s ease;
+				&:hover {
+					background-color: @primary-color;
+					color: @secondary-color;
+				}				
+			}			
+		}	
 	}
 }
 

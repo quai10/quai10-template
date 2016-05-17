@@ -38,11 +38,13 @@ class Event
           array(
               'format_header'=>'<ul class="eventList">',
               'format'=>'<li class="eventItem">
+                  <div class="eventWrapper">
                     <div class="eventDate">#_{j M Y}</div>
                     <div class="eventImg">#_EVENTIMAGE{372,372}</div>
                     <h3 class="eventTitle">#_EVENTNAME</h3>
                     <div class="eventDesc">#_EVENTNOTES</div>
-                    <a class="eventRead" href="#_EVENTURL">En savoir plus</a>
+                    <a class="eventRead btn" href="#_EVENTURL">En savoir plus</a>
+                  </div>
                 </li>',
               'format_footer'=>'</ul>'
           )
