@@ -158,9 +158,24 @@
 
 .tpl_past-events {
 	.eventList {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 		.eventItem {
+			position: relative;
 			.eventDate {
-
+				position: absolute;
+				top: 0;
+				right: 0;				
+				margin: 5px;
+				padding: 10px;
+				background-color: #52504f;
+				border-radius: 3px;
+				text-align: center;				
+				color: @secondary-color;
+				font-family: @font-stack-headings;
+				font-size: @h5-size;
+				font-weight: bold;
 			}
 			.eventImg {
 
@@ -169,10 +184,11 @@
 
 			}
 			.eventDesc {
-
+				text-align: justify;
 			}
 			.eventRead {
-				
+				margin-top: 25px;
+				font-weight: bold;
 			}
 		}
 	}

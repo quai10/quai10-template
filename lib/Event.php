@@ -59,13 +59,13 @@ class Event
   {
     return \EM_Events::output(
           array(
-              'format_header'=>'<ul class="eventList">',
+              'format_header'=>'<ul class="eventList grid-3-small-2-tiny-1">',
               'format'=>'<li class="eventItem">
                     <div class="eventDate">#_{j M Y}</div>
                     <div class="eventImg">#_EVENTIMAGE{372,372}</div>
                     <h3 class="eventTitle">#_EVENTNAME</h3>
                     <div class="eventDesc">#_EVENTNOTES</div>
-                    <a class="eventRead" href="#_EVENTURL">En savoir plus</a>
+                    <a class="eventRead btn" href="#_EVENTURL">En savoir plus</a>
                 </li>',
               'format_footer'=>'</ul>',
               'scope'=>'past',
