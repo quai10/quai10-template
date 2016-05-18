@@ -26,8 +26,8 @@ get_header();
     </div>
   </div>
   <div class="eventMessage">
-    <h2 class="tpl_formules-title"><?php the_post(); ?></h2>
-    <p><?php the_content(); ?></p>
+    <?php the_post(); ?>    
+    <?php the_content(); ?>
   </div>
   <div class="eventIdea">
     <div class="ideaWrapper">

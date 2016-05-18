@@ -7,8 +7,7 @@
 .tpl_future-events {
 	.eventsWrapper {
 		width: 100%;
-		padding-bottom: 50px;
-		border: 1px solid red;
+		padding-bottom: 100px;
 		background: url('../img/timeline-events.png') center center repeat-y;
 	}
 	.eventList {
@@ -93,9 +92,29 @@
 /* Event Idea */
 
 .eventMessage {
+	position: relative;
 	background-color: @primary-background;
-	padding: @extra-large-value;
+	padding: 80px;
 	border-radius: 5px;
+	h2 {
+		position: absolute;
+		top: -87px; // = 174/2
+		left: 50%;
+		transform: translateX(-125px); // = 250/2
+		width: 250px;
+		height: 174px;
+		margin: 0 auto;
+		padding-top: 30px;
+		background: url('../img/ellipse-event.png') center center no-repeat;
+		font-size: @h3-size;
+	}
+	p {
+		display: inline-block;
+		vertical-align: top;
+		width: 49%;
+		padding: 50px 25px;
+		text-align: justify;
+	}
 }
 
 .eventIdea {
