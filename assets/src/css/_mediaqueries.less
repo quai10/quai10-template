@@ -270,6 +270,77 @@
             }
         }                  
     }
+    // Events
+    .tpl_future-events {
+        .eventsWrapper {
+        }
+        .eventList {
+            .eventItem {
+                .eventWrapper {
+                    width: 80%;
+                    .eventDate {
+                        padding: 2px;
+                        font-size: @h6-size;
+                    }
+                    .eventTitle {
+                        font-size: @h5-size;
+                    }
+                    .eventDesc {
+                        font-size: 1.4rem;
+                    }
+                    .eventRead {
+                        font-size: 1.2rem;
+                    }
+                    .btn {
+                        padding: 5px 15px;
+                    }                                        
+                }
+            }
+            .eventItem:nth-child(odd) {
+                &::after {
+                    top: 25px;
+                }
+            }
+            .eventItem:nth-child(even) {
+                &::before {
+                    top: 25px;
+                }
+            }            
+        }
+    }
+    .eventMessage {
+        p {
+            display: block;
+            width: initial;
+            padding: 25px 0;
+        }
+    }
+    .tpl_past-events {
+        .eventList {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            .eventItem {
+                position: relative;
+                .eventDate {
+                    padding: 2px;
+                    font-size: @h6-size;
+                }
+                .eventTitle {
+                    font-size: @h5-size;
+                }
+                .eventDesc {
+                    font-size: 1.4rem;
+                }
+                .eventRead {
+                    font-size: 1.2rem;
+                }
+                .btn {
+                    padding: 5px 15px;
+                }
+            }
+        }
+    }            
 }
 
 @media screen and (min-width:785px) {
@@ -279,6 +350,22 @@
             display: flex !important;
         }
     }
+    // Formules
+    .tpl_formules-list {
+        .grid(1);
+        margin-left: 0;
+        & .tpl_formules-element {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            h3 {
+                font-size: @h3-size;
+            }
+        }
+        & .tpl_formules-element:not(:last-child) {
+            margin-bottom: @extra-large-value;
+        }
+    }    
 }
 
 @media screen and (max-width: 497px) { // tiny screen + offset 17px
@@ -371,25 +458,35 @@
             text-align: center;
             font-size: @h3-size;
         }                
-    }            
-}
-@media screen and (max-width: 785px) {
-    // Formules
-    .tpl_formules-list {
-        .grid(1);
-        margin-left: 0;
-        & .tpl_formules-element {
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            h3 {
-                font-size: @h3-size;
+    }
+    // Event
+    .tpl_past-events {
+        .eventList {
+            .eventItem {
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 50px;
+                .eventDate {
+                    right: 10%;
+                    font-size: @h6-size;
+                }
+                .eventImg {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                .eventTitle {
+
+                }
+                .eventDesc {
+                    text-align: justify;
+                }
+                .eventRead {
+                    margin-top: 25px;
+                    font-weight: bold;
+                }
             }
         }
-        & .tpl_formules-element:not(:last-child) {
-            margin-bottom: @extra-large-value;
-        }
-    }
+    }                
 }
 @media screen and (max-width: 400px) {
     // Home
