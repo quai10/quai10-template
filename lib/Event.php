@@ -59,7 +59,7 @@ class Event
   {
     return \EM_Events::output(
           array(
-              'format_header'=>'<ul class="eventList grid-3-small-2-tiny-1">',
+              'format_header'=>'<ul class="eventList grid-3-medium-2-small-2-tiny-1">',
               'format'=>'<li class="eventItem">
                     <div class="eventDate">#_{j M Y}</div>
                     <div class="eventImg">#_EVENTIMAGE{372,372}</div>
