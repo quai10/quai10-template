@@ -5,9 +5,7 @@
  * @source http://mwanoz.fr/nettoyer-le-contenu-de-wp_head-sur-wordpress/
  * */
 
-add_action('init', 'cleaning_head');
-function cleaning_head()
-{
+add_action('init', function () {
     remove_action('wp_head', 'feed_links_extra', 3); // remove extra RSS links (as category)
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wlwmanifest_link');
@@ -16,4 +14,4 @@ function cleaning_head()
 
     global $wp_widget_factory;
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
-}
+});
