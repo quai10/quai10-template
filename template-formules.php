@@ -33,7 +33,8 @@ $loop = new WP_Query($args);
           <div class="tpl_formules-element-description"><?php the_content(); ?></div>
           <div class="tpl_formules-informations">
             <div class="tpl_formules-element-perfectfor">
-              <span class="tpl_formules-elements-perfectfor-title">Parfait pour</span><br> <?php echo get_field('perfectfor'); ?>
+              <span class="tpl_formules-elements-perfectfor-title">Parfait pour</span>
+              <br> <?php echo get_field('perfectfor'); ?>
             </div><!-- .tpl_formules-element-perfectfor -->
             <div class="tpl_formules-element-longdesc">
               <div class="tpl_formules-element-longdesc-title">Comprend...</div>

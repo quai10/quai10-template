@@ -63,12 +63,17 @@ endif; ?>
 ?></a><?php
 endif; ?>
         </li><!-- .coworkers-element -->
-        <?php                                                                                                                                                                                                                           endwhile; ?>
+        <?php
+        endwhile;
+        ?>
       </ul><!-- .coworkers-list -->
-        <?php                                                                                                                                                                                                                         else : ?>
+        <?php
+        else :
+        ?>
         <p>Aucun voyageur n'a pris place dans le train actuellement.</p>
-        <?php endif;
-wp_reset_postdata(); ?>
+        <?php
+        endif;
+        wp_reset_postdata(); ?>
     </section><!-- .coworkers-box -->
   </div><!-- .content-box -->
   <div class="content-box container margin-large grid no-padding-left no-padding">
@@ -82,7 +87,12 @@ wp_reset_postdata(); ?>
         $loop = new WP_Query($args);
         if ($loop->have_posts()) :
             $loop->the_post();
-            $title = str_replace('Quai Numéro Dix', '<svg role="img" aria-labelledby="title-logo-quai10-vert"><use xlink:href="#icon-logo-quai10-vert"></use></svg>', get_the_title());
+            $title = str_replace(
+                'Quai Numéro Dix',
+                '<svg role="img" aria-labelledby="title-logo-quai10-vert">'.
+                    '<use xlink:href="#icon-logo-quai10-vert"></use></svg>',
+                get_the_title()
+            );
         ?>
         <h2 class="espace-title"><?php echo $title; ?></h2>
         <div class="espace-list">
@@ -122,10 +132,12 @@ wp_reset_postdata(); ?>
         </div><!-- .swiper-wrapper -->
         <div class="swiper-pagination">
           <a class="swiper-prev-btn" href="#">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/dist/img/arrow-white.png" alt="Flèche précédente" title="Slide précédente">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/dist/img/arrow-white.png"
+                alt="Flèche précédente" title="Slide précédente">
           </a><!-- .swiper-prev-btn -->
           <a class="swiper-next-btn" href="#">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/dist/img/arrow-white.png" alt="Flèche suivante" title="Slide suivante">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/dist/img/arrow-white.png"
+                alt="Flèche suivante" title="Slide suivante">
           </a><!-- .swiper-next-btn -->
         </div><!-- .swiper-pagination -->
         <?php if (false) : ?>
@@ -184,7 +196,8 @@ wp_reset_postdata(); ?>
         $loop->the_post();
     }
     ?>
-  <section class="cta-box content-box container margin-large contrast-box grid-2-1 no-padding-left" style="background-image: url(<?php echo get_field('cta_background')['url']; ?>);">
+  <section class="cta-box content-box container margin-large contrast-box grid-2-1 no-padding-left"
+    style="background-image: url(<?php echo get_field('cta_background')['url']; ?>);">
     <div class="cta-content border-left">
       <h2 class="cta-title"><?php the_title(); ?></h2>
         <?php the_content(); ?>
@@ -194,7 +207,8 @@ wp_reset_postdata(); ?>
         <?php
         $destination = get_field('cta_destination');
         if (is_object($destination)) : ?>
-        <a class="btn cta-aside-btn" href="<?php echo get_permalink($destination); ?>"><?php echo get_field('cta_titre'); ?></a>
+        <a class="btn cta-aside-btn" href="<?php echo get_permalink($destination); ?>">
+            <?php echo get_field('cta_titre'); ?></a>
         <?php
         endif; ?>
     </aside><!-- .cta-aside -->
