@@ -8,7 +8,7 @@
   <link rel="stylesheet" media="all" href="<?php bloginfo('template_url'); ?>/assets/dist/css/styles.min.css">
   <script defer src="<?php bloginfo('template_url'); ?>/assets/src/vendor/leaflet/dist/leaflet.js"></script>
   <script defer src="<?php bloginfo('template_url'); ?>/assets/dist/js/global.min.js"></script>
-  <?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
   <svg aria-hidden="true" style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -61,7 +61,7 @@
           </svg>
         </a>
       </div><!-- .nav-logo -->
-      <?php
+        <?php
         $args = array(
           'theme_location' => 'primary_navigation',
           'container' => false,
@@ -69,7 +69,7 @@
           'menu_id' => 'navigation'
         );
         wp_nav_menu($args);
-      ?>
+        ?>
       <div class="nav-burger push">
         <div id="menu-opener" class="menu-opener">
           <span></span>

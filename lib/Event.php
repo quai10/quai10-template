@@ -32,10 +32,10 @@ class Event
    * Get future events
    * @return string HTML
    */
-  public static function getFutureEvents()
-  {
-    return \EM_Events::output(
-          array(
+    public static function getFutureEvents()
+    {
+        return \EM_Events::output(
+            array(
               'format_header'=>'<ul class="eventList">',
               'format'=>'<li class="eventItem">
                   <div class="eventWrapper">
@@ -47,18 +47,18 @@ class Event
                   </div>
                 </li>',
               'format_footer'=>'</ul>'
-          )
-      );
-  }
+            )
+        );
+    }
 
   /**
    * Get past events
    * @return string HTML
    */
-  public static function getPastEvents()
-  {
-    return \EM_Events::output(
-          array(
+    public static function getPastEvents()
+    {
+        return \EM_Events::output(
+            array(
               'format_header'=>'<ul class="eventList grid-3-medium-2-small-2-tiny-1">',
               'format'=>'<li class="eventItem">
                     <div class="eventDate">#_{j M Y}</div>
@@ -72,7 +72,7 @@ class Event
               'order'=>'DESC',
               'limit'=>3,
               'pagination'=>true
-          )
-      );
-  }
+            )
+        );
+    }
 }

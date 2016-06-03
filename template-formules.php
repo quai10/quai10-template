@@ -25,7 +25,8 @@ $loop = new WP_Query($args);
     <h2 class="tpl_formules-title content-title"><?php the_title(); ?></h2>
     <?php if ($loop->have_posts()) : ?>
     <ul class="tpl_formules-list grid-3">
-      <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+        <?php while ($loop->have_posts()) :
+            $loop->the_post(); ?>
         <li class="tpl_formules-element">
           <div class="tpl_formules-element-image"><img src="<?php echo get_field('image'); ?>" alt="" title=""></div>
           <h3 class="tpl_formules-element-title"><?php the_title(); ?></h3>
@@ -36,30 +37,30 @@ $loop = new WP_Query($args);
             </div><!-- .tpl_formules-element-perfectfor -->
             <div class="tpl_formules-element-longdesc">
               <div class="tpl_formules-element-longdesc-title">Comprend...</div>
-              <?php echo get_field('longdesc'); ?>
+                <?php echo get_field('longdesc'); ?>
             </div><!-- .tpl_formules-element-longdesc -->
             <div class="tpl_formules-element-engagement">
-              <?php if (get_field('engagement')) : ?>
+                <?php if (get_field('engagement')) : ?>
                 Engagement&nbsp;:<br> <?php echo get_field('engagement'); ?>
-              <?php else: ?>
+                <?php else : ?>
                 Engagement&nbsp;:<br> Aucun !
-              <?php endif; ?>
+                <?php endif; ?>
             </div><!-- .tpl_formules-element-engagement -->
             <div class="tpl_formules-element-price">
-              <?php if (get_field('price') > 0) : ?>
+                <?php if (get_field('price') > 0) : ?>
                 <strong><?php echo get_field('price'); ?></strong>
                 <sup>&euro; ttc</sup>
                 <em>par mois</em>
-              <?php else: ?>
+                <?php else : ?>
                 <strong>Gratuit</strong>
-              <?php endif; ?>
-              <?php if (get_field('price_desc')) : ?>
+                <?php endif; ?>
+                <?php if (get_field('price_desc')) : ?>
                 <br/>(<?php echo get_field('price_desc'); ?>)
-              <?php endif; ?>
+                <?php endif; ?>
             </div><!-- .tpl_formules-element-price -->
           </div><!-- .tpl_formules-informations -->
         </li>
-      <?php endwhile; ?>
+        <?php endwhile; ?>
     </ul><!-- .tpl_formules-list -->
     <?php endif; ?>
     <div class="tpl_formules-element-cta-container mla mra">

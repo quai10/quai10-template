@@ -9,10 +9,10 @@
     <div id="map" data-lat="<?php echo $map_data['lat']; ?>" data-lng="<?php echo $map_data['lng']; ?>" data-zoom="17"></div>
     </aside><!-- .tpl_localisation-aside -->
     <div class="tpl_localisation-content">
-      <?php the_content(); ?>
+        <?php the_content(); ?>
       <div>
         <a class="btn" href="<?php echo get_field('cta_destination'); ?>">
-          <?php echo get_field('cta_label'); ?>
+            <?php echo get_field('cta_label'); ?>
         </a>
       </div><!-- .btn -->
     </div><!-- .tpl_localisation-content -->

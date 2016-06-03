@@ -14,9 +14,9 @@
 $menu_locations = get_nav_menu_locations();
 $menus = array();
 foreach ($menu_locations as $key => $value) {
-  if (strpos($key, 'footer') !== false) {
-    $menus[$key] = wp_get_nav_menu_object($value);
-  }
+    if (strpos($key, 'footer') !== false) {
+        $menus[$key] = wp_get_nav_menu_object($value);
+    }
 }
 ?>
 <footer class="footer-box">
@@ -31,48 +31,57 @@ foreach ($menu_locations as $key => $value) {
       <div class="footer-col">
         <?php if (has_nav_menu('footer1')) :  ?>
           <h5 class="footer-title"><?php echo $menus['footer1']->name; ?></h5>
-          <?php
+            <?php
             $args = array(
               'theme_location' => 'footer1',
               'container' => false,
               'menu_class' => 'footer-list'
             );
             wp_nav_menu($args);
-          ?>
-        <?php else: echo '&nbsp;'; endif; ?>
+            ?>
+        <?php else :
+    echo '&nbsp;';
+
+endif; ?>
       </div><!-- .footer-col -->
       <div class="footer-col">
         <?php if (has_nav_menu('footer2')) : ?>
           <h5 class="footer-title"><?php echo $menus['footer2']->name; ?></h5>
-          <?php
+            <?php
             $args = array(
               'theme_location' => 'footer2',
               'container' => false,
               'menu_class' => 'footer-list'
             );
             wp_nav_menu($args);
-          ?>
-        <?php else: echo '&nbsp;'; endif; ?>
+            ?>
+        <?php else :
+    echo '&nbsp;';
+
+endif; ?>
       </div><!-- .footer-col -->
       <div class="footer-col">
         <?php if (has_nav_menu('footer3')) : ?>
           <h5 class="footer-title"><?php echo $menus['footer3']->name; ?></h5>
-          <?php
+            <?php
             $args = array(
               'theme_location' => 'footer3',
               'container' => false,
               'menu_class' => 'footer-list'
             );
             wp_nav_menu($args);
-          ?>
-        <?php else: echo '&nbsp;'; endif; ?>
+            ?>
+        <?php else :
+    echo '&nbsp;';
+
+endif; ?>
       </div><!-- .footer-col -->
       <div class="footer-col footer-col-newsletter">
         <h5 class="footer-title">Newsletter</h5>
         <?php
         echo '<form action="https://quai10.us10.list-manage.com/subscribe/post?'.
           'u=699bad1c5b054cbdff43d84a8&amp;id=384dd5ed71" method="post">';
-          ?>
+            ?>
           <div class="icon-email">
             <input name="EMAIL" type="email" placeholder="Renseigne ton email"
             required value="">

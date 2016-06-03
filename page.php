@@ -28,32 +28,32 @@ $loop = new WP_Query($args);
 // we check if we have children
 if ($loop->have_posts()) :
     // we loop each child
-  while ($loop->have_posts()) :
+    while ($loop->have_posts()) :
         // we load all child page's informations
-    $loop->the_post();
+        $loop->the_post();
         // we search the template name
-    $template = get_page_template_slug();
-    $template = explode('.', $template)[0];
-    $template = explode('-', $template, 2);
-    if (isset($template[1])) {
-      // we call the asked template
-      get_template_part($template[0], $template[1]);
-      // we unset useless vars
-    } else {
-    ?>
-    <section class="tpl_formules content-box container margin-large grid no-padding-left">
-      <h2 id="<?php echo get_post_field('post_name', get_post()); ?>" class="tpl_formules-title content-title"><?php the_title(); ?></h2>
-    <?php
-      the_content();
-    ?>
-      </section>
-    <?php
-  }
-  endwhile;
+        $template = get_page_template_slug();
+        $template = explode('.', $template)[0];
+        $template = explode('-', $template, 2);
+        if (isset($template[1])) {
+          // we call the asked template
+            get_template_part($template[0], $template[1]);
+          // we unset useless vars
+        } else {
+        ?>
+        <section class="tpl_formules content-box container margin-large grid no-padding-left">
+        <h2 id="<?php echo get_post_field('post_name', get_post()); ?>" class="tpl_formules-title content-title"><?php the_title(); ?></h2>
+        <?php
+        the_content();
+        ?>
+        </section>
+        <?php
+        }
+    endwhile;
     // we unset useless vars
-  wp_reset_postdata();
+    wp_reset_postdata();
 else :
-  the_content();
+    the_content();
 endif;
 
 get_footer();
