@@ -10,10 +10,10 @@
  * Initialisation du swiperJS
  * */
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
   // Toggle menu
-  $('.menu-opener').click(function() {
-    $('.nav-list').slideToggle();
+  jQuery('.menu-opener').click(function() {
+    jQuery('.nav-list').slideToggle();
   });
   var swiperQuai = new Swiper('.swiper-container', {
     loop: true,
@@ -34,7 +34,7 @@ $(document).ready(function () {
  * Initialisation des maps
  * */
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
   var container = document.getElementById('map');
 
   if (container) {
