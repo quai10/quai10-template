@@ -1,24 +1,25 @@
 {
-  "name": "Quai10",
-  "authors": [
-    "Damien Senger <hi@hiwelo.co>"
-  ],
-  "description": "Quai10 wordpress template",
-  "main": "index.html",
-  "license": "GNU GPL v3",
-  "homepage": "https://quai10.org/",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "assets/src/vendor/",
-    "test",
-    "tests"
-  ],
-  "devDependencies": {
-    "knacss": "~4.3.2",
-    "jquery": "~2.1.4",
-    "swiper": "~3.1.0",
-    "leaflet": "~0.7.3"
-  }
+	"name": "quai10-template",
+	"authors": [
+		"Damien Senger <hi@hiwelo.co>",
+        "Pierre Rudloff <contact@rudloff.pro>",
+        "Alexandre Mathieu <mr.alexandre.mathieu@gmail.com>"
+	],
+	"description": "Quai10 wordpress template",
+	"license": "GNU GPL v3",
+	"homepage": "https://quai10.org/",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"assets/src/vendor/",
+		"test",
+		"tests"
+	],
+	"devDependencies": {
+		"knacss": "~4.3.2",
+		"jquery": "~2.1.4",
+		"swiper": "~3.1.0",
+		"leaflet": "~0.7.3"
+	}
 }
