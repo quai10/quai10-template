@@ -80,6 +80,15 @@
       <div class="header-icon">
         <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
       </div><!-- .header-icon -->
-      <h1 class="header-title"><?php the_title(); ?></h1>
+      <h1 class="header-title">
+            <?php
+            if (defined('PAGE_TITLE')) {
+                $title = PAGE_TITLE;
+            } else {
+                $title = the_title();
+            }
+            echo $title;
+            ?>
+      </h1>
     </div><!-- .header-container -->
   </header><!-- .header-box -->
