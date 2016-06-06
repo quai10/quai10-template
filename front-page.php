@@ -27,7 +27,6 @@ get_header();
     </section>
     <?php
           endwhile;
-
       endif;
         wp_reset_postdata();
         $bloc_coworkers = get_field('emplacement_des_voyageurs');

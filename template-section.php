@@ -5,7 +5,6 @@
 <section class="tpl_section content-box container margin-large">
 <?php if (!empty(get_field('aside_content'))) {
     $grid = "grid-2-small-1";
-
 } else {
     $grid = "grid";
 } ?>

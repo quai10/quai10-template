@@ -41,7 +41,6 @@ foreach ($menu_locations as $key => $value) {
             ?>
         <?php else :
     echo '&nbsp;';
-
 endif; ?>
       </div><!-- .footer-col -->
       <div class="footer-col">
@@ -57,7 +56,6 @@ endif; ?>
             ?>
         <?php else :
     echo '&nbsp;';
-
 endif; ?>
       </div><!-- .footer-col -->
       <div class="footer-col">
@@ -73,7 +71,6 @@ endif; ?>
             ?>
         <?php else :
     echo '&nbsp;';
-
 endif; ?>
       </div><!-- .footer-col -->
       <div class="footer-col footer-col-newsletter">
