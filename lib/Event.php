@@ -43,7 +43,6 @@ class Event
                     <div class="eventImg">#_EVENTIMAGE{372,372}</div>
                     <h3 class="eventTitle">#_EVENTNAME</h3>
                     <div class="eventDesc">#_EVENTNOTES</div>
-                    <a class="eventRead btn" href="#_EVENTURL">En savoir plus</a>
                   </div>
                 </li>',
               'format_footer'=>'</ul>'
@@ -65,7 +64,6 @@ class Event
                     <div class="eventImg">#_EVENTIMAGE{372,372}</div>
                     <h3 class="eventTitle">#_EVENTNAME</h3>
                     <div class="eventDesc">#_EVENTNOTES</div>
-                    <a class="eventRead btn" href="#_EVENTURL">En savoir plus</a>
                 </li>',
               'format_footer'=>'</ul>',
               'scope'=>'past',
