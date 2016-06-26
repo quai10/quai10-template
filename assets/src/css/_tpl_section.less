@@ -1,0 +1,49 @@
+/**
+ * Template Section Less file
+ * */
+.tpl_section {
+	& .tpl_section-container {
+		& li {
+			margin-bottom: @medium-value;
+		}
+	}
+	& .tpl_section-aside {
+		padding: @large-value;
+		margin-top: -@large-value;
+		align-items: stretch;
+		justify-content: center;
+		background: @primary-color center center no-repeat;
+		background-size: cover;
+		border-radius: @tiny-value;
+		color: @secondary-color;
+		transition: all @transition;
+		text-align: center;
+
+		&:hover {
+		  filter: saturate(115%);
+		}
+
+		& a {
+			color: @secondary-color;
+		}  
+	}
+	& .btn {
+		color: @secondary-color;
+		border-color: @secondary-color;
+	}
+	& .tpl_news-aside-arrow {
+	    display: block;
+	    height: @large-value + @medium-value;
+	    margin: @grid-value 0 0;
+	    padding: @small-value;
+	    width: @extra-large-value;
+	    border: .3rem solid @secondary-color;
+	    border-radius: 3rem;
+	    fill: @secondary-color;
+	}
+	& .tpl_section-aside-content {
+		margin-bottom: @medium-value;
+
+	}
+
+}
