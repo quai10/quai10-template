@@ -31,7 +31,7 @@ get_header();
   </div>
   <div class="eventIdea">
     <div class="ideaWrapper">
-      <p class="desc">J'ai une idée,<br>je vous la suggère !<br><a href="" class="cta">&rarr;</a></p>
+      <p class="desc">J'ai une idée,<br>je vous la suggère !<br><a href=<?php echo get_permalink(10); ?> class="cta">&rarr;</a></p>
     </div>    
   </div>
   <div class="tpl_past-events">
