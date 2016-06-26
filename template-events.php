@@ -20,9 +20,9 @@ get_header();
   <div class="tpl_future-events">
     <h2 class="tpl_formules-title">Les prochains événements</h2>
     <div class="eventsWrapper">
-      <?php
-      echo Event::getFutureEvents();
-      ?>      
+        <?php
+        echo Event::getFutureEvents();
+        ?>      
     </div>
   </div>
   <div class="eventMessage">

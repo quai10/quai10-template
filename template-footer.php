@@ -1,3 +1,2 @@
 <?php
-/* Template Name: Pied de page */
-?>
+;/* Template Name: Pied de page */
