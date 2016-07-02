@@ -16,13 +16,30 @@ use Quai10\Event;
 
 get_header();
 ?>
-<h2>Les prochains événements</h2>
+<section class="tpl_formules content-box container margin-large grid no-padding-left">
+  <div class="tpl_future-events">
+    <h2 class="tpl_formules-title">Les prochains événements</h2>
+    <div class="eventsWrapper">
+        <?php
+        echo Event::getFutureEvents();
+        ?>      
+    </div>
+  </div>
+  <div class="eventMessage">
+    <?php the_post(); ?>    
+    <?php the_content(); ?>
+  </div>
+  <div class="eventIdea">
+    <div class="ideaWrapper">
+      <p class="desc">J'ai une idée,<br>je vous la suggère !<br><a href=<?php echo get_permalink(10); ?> class="cta">&rarr;</a></p>
+    </div>    
+  </div>
+  <div class="tpl_past-events">
+    <h2 class="tpl_formules-title">Les événements passés</h2>
+    <?php
+    echo Event::getPastEvents();
+    ?>
+  </div>
+</section>
 <?php
-echo Event::getFutureEvents();
-the_post();
-the_content();
-?>
-<h2>Les événements passés</h2>
-<?php
-echo Event::getPastEvents();
 get_footer();

@@ -15,9 +15,10 @@
 $includes = array(
   'lib/cleanup.php',
   'lib/config.php',
-  'lib/contact.php'
+  'lib/contact.php',
+  'vendor/autoload.php'
 );
 
 foreach ($includes as $inc) {
-  include_once locate_template($inc);
+    include_once locate_template($inc);
 }

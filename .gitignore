@@ -5,9 +5,6 @@ npm-debug.log
 # Bower
 assets/src/vendor/*
 
-# Gulp generated dist data
-assets/dist/*
-
 # Mac OSX crap
 .DS_Store
 .AppleDouble
@@ -29,9 +26,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
-## Composer
-vendor/
 
 ## phpunit
 coverage/

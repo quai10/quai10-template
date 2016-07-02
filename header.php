@@ -8,7 +8,7 @@
   <link rel="stylesheet" media="all" href="<?php bloginfo('template_url'); ?>/assets/dist/css/styles.min.css">
   <script defer src="<?php bloginfo('template_url'); ?>/assets/src/vendor/leaflet/dist/leaflet.js"></script>
   <script defer src="<?php bloginfo('template_url'); ?>/assets/dist/js/global.min.js"></script>
-  <?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
   <svg aria-hidden="true" style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -47,8 +47,8 @@
         </g>
       </symbol>
       <symbol id="icon-arrow" viewBox="0 0 1024 1024">
-      	<title id="title-icon-arrow">Flèche vers la droite</title>
-      	<path role="presentation" class="path1 fill-colo1" d="M621.254 877.254l320-320c24.994-24.992 24.994-65.516 0-90.51l-320-320c-24.994-24.992-65.516-24.992-90.51 0-24.994 24.994-24.994 65.516 0 90.51l210.746 210.746h-613.49c-35.346 0-64 28.654-64 64s28.654 64 64 64h613.49l-210.746 210.746c-12.496 12.496-18.744 28.876-18.744 45.254s6.248 32.758 18.744 45.254c24.994 24.994 65.516 24.994 90.51 0z"></path>
+        <title id="title-icon-arrow">Flèche vers la droite</title>
+        <path role="presentation" class="path1 fill-colo1" d="M621.254 877.254l320-320c24.994-24.992 24.994-65.516 0-90.51l-320-320c-24.994-24.992-65.516-24.992-90.51 0-24.994 24.994-24.994 65.516 0 90.51l210.746 210.746h-613.49c-35.346 0-64 28.654-64 64s28.654 64 64 64h613.49l-210.746 210.746c-12.496 12.496-18.744 28.876-18.744 45.254s6.248 32.758 18.744 45.254c24.994 24.994 65.516 24.994 90.51 0z"></path>
       </symbol>
     </defs>
   </svg><!-- /svg -->
@@ -61,7 +61,7 @@
           </svg>
         </a>
       </div><!-- .nav-logo -->
-      <?php
+        <?php
         $args = array(
           'theme_location' => 'primary_navigation',
           'container' => false,
@@ -69,7 +69,7 @@
           'menu_id' => 'navigation'
         );
         wp_nav_menu($args);
-      ?>
+        ?>
       <div class="nav-burger push">
         <div id="menu-opener" class="menu-opener">
           <span></span>
@@ -80,6 +80,15 @@
       <div class="header-icon">
         <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
       </div><!-- .header-icon -->
-      <h1 class="header-title"><?php the_title(); ?></h1>
+      <h1 class="header-title">
+            <?php
+            if (defined('PAGE_TITLE')) {
+                $title = PAGE_TITLE;
+            } else {
+                $title = the_title();
+            }
+            echo $title;
+            ?>
+      </h1>
     </div><!-- .header-container -->
   </header><!-- .header-box -->

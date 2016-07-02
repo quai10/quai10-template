@@ -12,7 +12,11 @@
  * @link     https://quai10.org/
  */
 get_header();
-
-the_content();
-
+?>
+<section class="tpl_single-event tpl_formules content-box container margin-large grid no-padding-left">
+    <div class="eventWrapper">
+        <?php the_content(); ?>
+    </div>
+</section>
+<?php
 get_footer();
