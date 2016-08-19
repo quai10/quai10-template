@@ -5,6 +5,7 @@
             <exclude>
                 <file>lib/cleanup.php</file>
                 <file>lib/config.php</file>
+                <file>lib/contact.php</file>
             </exclude>
         </whitelist>
     </filter>
