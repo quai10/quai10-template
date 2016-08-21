@@ -2,9 +2,10 @@
 /**
  * EventTest class
  */
-namespace Quai10;
+namespace Quai10\Test;
 
 use Mockery;
+use Quai10\Event;
 
 /**
  * Unit tests for Event class
