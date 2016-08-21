@@ -1,37 +1,19 @@
 <?php
 /**
  * Event class
- *
- * PHP version 5
- *
- * @category Template
- * @package  Quai10
- * @author   Pierre Rudloff <contact@rudloff.pro>
- * @author   Damien Senger <hi@hiwelo.co>
- * @license  GPL http://www.gnu.org/licenses/gpl.html
- * @link     https://quai10.org/
  */
 namespace Quai10;
 
 /**
  * Manage Events Manager events
- *
- * PHP version 5
- *
- * @category Template
- * @package  Quai10
- * @author   Pierre Rudloff <contact@rudloff.pro>
- * @author   Damien Senger <hi@hiwelo.co>
- * @license  GPL http://www.gnu.org/licenses/gpl.html
- * @link     https://quai10.org/
  */
 class Event
 {
 
-  /**
-   * Get future events
-   * @return string HTML
-   */
+    /**
+     * Get future events
+     * @return string HTML
+     */
     public static function getFutureEvents()
     {
         return \EM_Events::output(
@@ -50,10 +32,10 @@ class Event
         );
     }
 
-  /**
-   * Get past events
-   * @return string HTML
-   */
+    /**
+     * Get past events
+     * @return string HTML
+     */
     public static function getPastEvents()
     {
         return \EM_Events::output(
