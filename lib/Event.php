@@ -23,7 +23,7 @@ class Event
                   <div class="eventWrapper">
                     <div class="eventDate">#_{j M Y}</div>
                     <div class="eventImg">#_EVENTIMAGE{372,372}</div>
-                    <h3 class="eventTitle">#_EVENTNAME</h3>
+                    <h3 class="eventTitle"><a href="#_EVENTURL">#_EVENTNAME</a></h3>
                     <div class="eventDesc">#_EVENTNOTES</div>
                   </div>
                 </li>',
@@ -44,7 +44,7 @@ class Event
               'format'=>'<li class="eventItem">
                     <div class="eventDate">#_{j M Y}</div>
                     <div class="eventImg">#_EVENTIMAGE{372,372}</div>
-                    <h3 class="eventTitle">#_EVENTNAME</h3>
+                    <h3 class="eventTitle"><a href="#_EVENTURL">#_EVENTNAME</a></h3>
                     <div class="eventDesc">#_EVENTNOTES</div>
                 </li>',
               'format_footer'=>'</ul>',
