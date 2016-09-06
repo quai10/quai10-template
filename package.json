@@ -1,14 +1,10 @@
 {
   "name": "Quai10",
-  "version": "0.3.1",
   "description": "Quai10 wordpress template",
-  "main": "index.html",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/quai10/quai10-template.git"
-  },
+  "version": "0.3.1",
   "author": "Damien Senger <hi@hiwelo.co>",
-  "license": "GPL-3.0",
+  "contributors": ["Pierre Rudloff", "Alexandre Mathieu"],
+  "bugs": "https://github.com/quai10/quai10-template/issues",
   "devDependencies": {
     "bower": "latest",
     "gulp": "latest",
@@ -21,5 +17,16 @@
     "gulp-notify": "latest",
     "gulp-rename": "latest",
     "gulp-uglify": "latest"
+  },
+  "homepage": "https://quai10.org/",
+  "keywords": [
+    "theme",
+    "wordpress"
+  ],
+  "license": "GPL-3.0",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quai10/quai10-template.git"
   }
 }
