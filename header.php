@@ -62,12 +62,12 @@
         </a>
       </div><!-- .nav-logo -->
         <?php
-        $args = array(
+        $args = [
           'theme_location' => 'primary_navigation',
-          'container' => false,
-          'menu_class' => 'nav-list',
-          'menu_id' => 'navigation'
-        );
+          'container'      => false,
+          'menu_class'     => 'nav-list',
+          'menu_id'        => 'navigation',
+        ];
         wp_nav_menu($args);
         ?>
       <div class="nav-burger push">

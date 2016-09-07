@@ -1,6 +1,6 @@
 <?php
 /**
- * EventTest class
+ * EventTest class.
  */
 namespace Quai10\Test;
 
@@ -8,11 +8,10 @@ use Mockery;
 use Quai10\Event;
 
 /**
- * Unit tests for Event class
+ * Unit tests for Event class.
  */
 class EventTest extends \PHPUnit_Framework_TestCase
 {
-
     protected function setUp()
     {
         Mockery::mock('overload:EM_Events')
@@ -21,7 +20,8 @@ class EventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Unit tests for events functions
+     * Unit tests for events functions.
+     *
      * @return void
      */
     public function testGetEvents()

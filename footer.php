@@ -1,18 +1,19 @@
 <?php
 /**
- * Footer
+ * Footer.
  *
  * @category Template
- * @package  Quai10
+ *
  * @author   Pierre Rudloff <contact@rudloff.pro>
  * @author   Damien Senger <hi@hiwelo.co>
  * @license  GPL http://www.gnu.org/licenses/gpl.html
+ *
  * @link     https://quai10.org/
  * */
 
 // We get all datas about the three menus
 $menu_locations = get_nav_menu_locations();
-$menus = array();
+$menus = [];
 foreach ($menu_locations as $key => $value) {
     if (strpos($key, 'footer') !== false) {
         $menus[$key] = wp_get_nav_menu_object($value);
@@ -32,11 +33,11 @@ foreach ($menu_locations as $key => $value) {
         <?php if (has_nav_menu('footer1')) :  ?>
           <h5 class="footer-title"><?php echo $menus['footer1']->name; ?></h5>
             <?php
-            $args = array(
+            $args = [
               'theme_location' => 'footer1',
-              'container' => false,
-              'menu_class' => 'footer-list'
-            );
+              'container'      => false,
+              'menu_class'     => 'footer-list',
+            ];
             wp_nav_menu($args);
             ?>
         <?php else :
@@ -47,11 +48,11 @@ endif; ?>
         <?php if (has_nav_menu('footer2')) : ?>
           <h5 class="footer-title"><?php echo $menus['footer2']->name; ?></h5>
             <?php
-            $args = array(
+            $args = [
               'theme_location' => 'footer2',
-              'container' => false,
-              'menu_class' => 'footer-list'
-            );
+              'container'      => false,
+              'menu_class'     => 'footer-list',
+            ];
             wp_nav_menu($args);
             ?>
         <?php else :
@@ -62,11 +63,11 @@ endif; ?>
         <?php if (has_nav_menu('footer3')) : ?>
           <h5 class="footer-title"><?php echo $menus['footer3']->name; ?></h5>
             <?php
-            $args = array(
+            $args = [
               'theme_location' => 'footer3',
-              'container' => false,
-              'menu_class' => 'footer-list'
-            );
+              'container'      => false,
+              'menu_class'     => 'footer-list',
+            ];
             wp_nav_menu($args);
             ?>
         <?php else :

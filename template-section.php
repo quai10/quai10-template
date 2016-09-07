@@ -4,9 +4,9 @@
 ?>
 <section class="tpl_section content-box container margin-large">
 <?php if (!empty(get_field('aside_content'))) {
-    $grid = "grid-2-small-1";
+    $grid = 'grid-2-small-1';
 } else {
-    $grid = "grid";
+    $grid = 'grid';
 } ?>
   <h2 class="tpl_section-title content-title"><?php the_title(); ?></h2>
   <div class="tpl_section-container <?php echo $grid ?> no-padding-left no-padding">
@@ -17,8 +17,8 @@
     </div>
     <?php if (!empty(get_field('aside_content'))) : ?>
       <div class="tpl_section-aside" style="<?php if (!empty(get_field('aside_image'))) {
-            echo "background-image: url(" . get_field('aside_image')['url'] ." ) ";
-} ?>">
+            echo 'background-image: url('.get_field('aside_image')['url'].' ) ';
+        } ?>">
         <div class="tpl_section-aside-content">
             <?php echo get_field('aside_content'); ?>
         </div>
