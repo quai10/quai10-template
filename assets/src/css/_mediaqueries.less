@@ -229,10 +229,6 @@
             padding: @small-value;
         }
     }
-    // Formules
-    .tpl_formules-element-title {
-        font-size: @h5-size;
-    }
     // Home
     .home {
         & > div:nth-child(3) {
@@ -340,6 +336,9 @@
         }
     }
     // Formules
+    .tpl_formules-element-title {
+        font-size: @h5-size;
+    }
     .tpl_formules-list {
         .grid(1);
         margin-left: 0;
@@ -352,9 +351,17 @@
             }
         }
         & .tpl_formules-element:not(:last-child) {
-            margin-bottom: @extra-large-value;
+            margin-bottom: @large-value;
         }
-    } 
+        & .tpl_formules-element:not(:nth-child(2)) {
+            order: 2;
+        }
+    }
+    .tpl_section {
+        & .tpl_section-content {
+            margin-bottom: @large-value;
+        }
+    }
 }
 
 @media screen and (min-width:785px) {
@@ -483,6 +490,12 @@
                     font-weight: bold;
                 }
             }
+        }
+    }
+    // Formules
+    .tpl_formules-list {
+        & .tpl_formules-element {
+            width: 100%;
         }
     }
 }
