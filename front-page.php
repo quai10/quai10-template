@@ -4,14 +4,14 @@ get_header();
   <div class="content-box container margin-large grid-2 no-padding-left">
     <?php
       $bloc_association = get_field('description_association')[0];
-      $cta = array(
-        'href' => get_field('cta_social_href'),
-        'label' => get_field('cta_social_label')
-      );
-      $args = array(
+      $cta = [
+        'href'  => get_field('cta_social_href'),
+        'label' => get_field('cta_social_label'),
+      ];
+      $args = [
         'post_type' => 'page',
-        'page_id' => $bloc_association->ID
-      );
+        'page_id'   => $bloc_association->ID,
+      ];
       $loop = new WP_Query($args);
       if ($loop->have_posts()) :
           while ($loop->have_posts()) :
@@ -34,11 +34,11 @@ get_header();
     <section class="coworkers-box">
       <h2 class="coworkers-title"><?php echo $bloc_coworkers->name; ?></h2>
         <?php
-        $args = array(
-          'category_name' => $bloc_coworkers->slug,
+        $args = [
+          'category_name'  => $bloc_coworkers->slug,
           'posts_per_page' => 6,
-          'orderby' => 'rand'
-        );
+          'orderby'        => 'rand',
+        ];
         $loop = new WP_Query($args);
         if ($loop->have_posts()) :
         ?>
@@ -79,10 +79,10 @@ endif; ?>
     <section class="espace-box">
         <?php
         $contenu_espace = get_field('contenu_espace');
-        $args = array(
+        $args = [
         'post_type' => 'page',
-        'page_id' => $contenu_espace[0]->ID
-        );
+        'page_id'   => $contenu_espace[0]->ID,
+        ];
         $loop = new WP_Query($args);
         if ($loop->have_posts()) :
             $loop->the_post();
@@ -107,10 +107,10 @@ endif; ?>
     <section class="entrepot-box border-left">
         <?php
         $photos = get_field('photographies');
-        $args = array(
-        'post_type' => 'post',
-        'category_name' => 'chantier'
-        );
+        $args = [
+        'post_type'     => 'post',
+        'category_name' => 'chantier',
+        ];
         $loop = new WP_Query($args);
         ?>
       <h2 class="entrepot-title"><?php echo $photos->name; ?></h2>
@@ -165,10 +165,10 @@ endif; ?>
         $projet = get_field('projet');
         $projet_btn = get_field('link_coworking');
         $projet_btn_label = get_field('link_coworking_label');
-        $args = array(
+        $args = [
         'post_type' => 'page',
-        'page_id' => $projet->ID
-        );
+        'page_id'   => $projet->ID,
+        ];
         $loop = new WP_Query($args);
         if ($loop->have_posts()) :
             $loop->the_post();
@@ -187,10 +187,10 @@ endif; ?>
     <?php
     $contact = get_field('section_contact');
     if (is_object($contact)) {
-        $args = array(
+        $args = [
         'post_type' => 'page',
-        'page_id' => $contact->ID
-        );
+        'page_id'   => $contact->ID,
+        ];
         $loop = new WP_Query($args);
         $loop->the_post();
     }
