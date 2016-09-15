@@ -132,12 +132,33 @@
             }
         }
     }
+    // Single Event
+    .tpl_single-event {
+        .eventWrapper {
+            padding: 0 @small-value;
+            div {
+
+            }
+            p:nth-child(1) {
+
+            }
+            p:nth-child(2) {
+                
+            }
+            p:nth-child(3) {
+                
+            }
+            p:nth-child(4) {
+                
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 785px) { // small screen + offset 17px
     // Wrapper
     .container {
-        width: @tiny-screen;
+        width: 100%;
     }
     // Footer
     .footer-box .footer-container {
@@ -149,46 +170,51 @@
     .footer-content, .footer-col {
         margin-left: 0;
     }
-    // Main menu
+    // // Main menu
     .nav-box {
-        position: relative;
-        .nav-logo {
-            width: 20%; // Ecrase media queries de knacss
-        }
-        .nav-burger {
-            display: initial;
-        }
         .nav-list {
-            display: none;
-            position: absolute;
-            top: 80px;
-            left: 0;
-            width: 480px;
-            background-color: @primary-color;
-            flex-direction: column;
-            border-bottom: 1px solid @secondary-color;
-            .menu-item {
-                display: block;
-                margin-right: 0;
-                text-align: center;
-                a {
-                    border: 0;
-                    border-radius: 0;
-                    &:hover, &:focus {
-                        background-color: @secondary-color;
-                        color: @primary-color;
-                    }
-                }
-                body &.current_page_item a {
-                    background-color: @secondary-color-fade;
-                    &:hover, &:focus {
-                        background-color: @secondary-color;
-                        color: @primary-color;
-                    }
-                }
-            }
+            justify-content: center
         }
     }
+    // .nav-box {
+    //     position: relative;
+    //     .nav-logo {
+    //         width: 20%; // Ecrase media queries de knacss
+    //     }
+    //     .nav-burger {
+    //         display: initial;
+    //     }
+    //     .nav-list {
+    //         display: none;
+    //         position: absolute;
+    //         top: 80px;
+    //         left: 0;
+    //         width: 480px;
+    //         background-color: @primary-color;
+    //         flex-direction: column;
+    //         border-bottom: 1px solid @secondary-color;
+    //         .menu-item {
+    //             display: block;
+    //             margin-right: 0;
+    //             text-align: center;
+    //             a {
+    //                 border: 0;
+    //                 border-radius: 0;
+    //                 &:hover, &:focus {
+    //                     background-color: @secondary-color;
+    //                     color: @primary-color;
+    //                 }
+    //             }
+    //             body &.current_page_item a {
+    //                 background-color: @secondary-color-fade;
+    //                 &:hover, &:focus {
+    //                     background-color: @secondary-color;
+    //                     color: @primary-color;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     // Jumbotron
     .header-container, :not(.home) .header-container {
         .grid(1);
@@ -394,8 +420,43 @@
     }
     // Main menu
     .nav-box {
+        position: relative;
+        margin-left: 0;        
+        .nav-logo {
+            width: 20%; // Ecrase media queries de knacss
+        }
+        .nav-burger {
+            display: initial;
+        }
         .nav-list {
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 0;
             width: 100%;
+            flex-direction: column;
+            background-color: @primary-color;            
+            border-bottom: 1px solid @secondary-color;
+            .menu-item {
+                display: block;
+                margin-right: 0;
+                text-align: center;
+                a {
+                    border: 0;
+                    border-radius: 0;
+                    &:hover, &:focus {
+                        background-color: @secondary-color;
+                        color: @primary-color;
+                    }
+                }
+                body &.current_page_item a {
+                    background-color: @secondary-color-fade;
+                    &:hover, &:focus {
+                        background-color: @secondary-color;
+                        color: @primary-color;
+                    }
+                }
+            }
         }
     }
     // Contact container
