@@ -1,4 +1,5 @@
 <?php
+
 namespace Quai10;
 
 class ScriptLoader
