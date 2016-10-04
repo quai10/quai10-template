@@ -8,14 +8,14 @@ $page_id = get_queried_object_id();
 $cat_id = get_field('formules_category');
 
 // we create a WP_Query for this contents
-$args = array(
-  'post_type' => 'post',
-  'cat' => $cat_id,
+$args = [
+  'post_type'      => 'post',
+  'cat'            => $cat_id,
   'posts_per_page' => 3,
-  'meta_key' => 'order',
-  'orderby' => 'meta_value_num',
-  'order' => 'ASC'
-);
+  'meta_key'       => 'order',
+  'orderby'        => 'meta_value_num',
+  'order'          => 'ASC',
+];
 $loop = new WP_Query($args);
 
 // we display this block markup

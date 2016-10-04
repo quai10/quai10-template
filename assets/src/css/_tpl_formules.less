@@ -18,21 +18,28 @@
   font-size: @h5-size;
   text-align: center;
   padding: 25px;
-
+  background-color: @primary-background;
+  border-radius: @tiny-value;   
   & .tpl_formules-informations {
     // margin-top: auto;
   }
   &:nth-of-type(2) {
-    background-color: rgba(252, 252, 252, 1);
+    background-color: @primary-color;
+    color: @secondary-color;
+    .tpl_formules-element-title {
+      &::after {
+        background-color: @secondary-color;
+      }
+    }    
   }
-  &:nth-of-type(2) .tpl_formules-element-title {
-    color: @primary-color;
+  // &:nth-of-type(2) .tpl_formules-element-title {
+  //   color: @primary-color;
 
 
-    &::after {
-      background-color: @primary-color;
-    }
-  }
+  //   &::after {
+  //     background-color: @primary-color;
+  //   }
+  // }
 }
 
 .tpl_formules-element-image {
@@ -56,7 +63,7 @@
   &::after {
     display: block;
     content: '';
-    height: .6rem;
+    height: .4rem;
     margin: @medium-value auto @large-value - @small-value;
     width: 100%;
     background-color: @footer-color;
@@ -102,11 +109,12 @@
 }
 .tpl_formules-element-longdesc li {
   list-style: none;
-  text-align: left;
+  // text-align: left;
   margin-bottom: @medium-value;
 }
 .tpl_formules-element-longdesc ul {
   margin-left: 0;
+  padding-left: 0;
 }
 
 .tpl_formules-element-engagement {

@@ -1,7 +1,8 @@
 <?php
+
 add_action('wpcf7_init', function () {
     wpcf7_add_shortcode(
-        array( 'text', 'text*', 'email', 'email*', 'url', 'url*', 'tel', 'tel*' ),
+        ['text', 'text*', 'email', 'email*', 'url', 'url*', 'tel', 'tel*'],
         function ($tag) {
             $tag = new WPCF7_Shortcode($tag);
 
@@ -13,15 +14,15 @@ add_action('wpcf7_init', function () {
 
             $class = wpcf7_form_controls_class($tag->type, 'wpcf7-text');
 
-            if (in_array($tag->basetype, array( 'email', 'url', 'tel' ))) {
-                $class .= ' wpcf7-validates-as-' . $tag->basetype;
+            if (in_array($tag->basetype, ['email', 'url', 'tel'])) {
+                $class .= ' wpcf7-validates-as-'.$tag->basetype;
             }
 
             if ($validation_error) {
                 $class .= ' wpcf7-not-valid';
             }
 
-            $atts = array();
+            $atts = [];
 
             $atts['size'] = $tag->get_size_option('40');
             $atts['maxlength'] = $tag->get_maxlength_option();
@@ -88,7 +89,7 @@ add_action('wpcf7_init', function () {
 
         $class = wpcf7_form_controls_class($tag->type);
 
-        $atts = array();
+        $atts = [];
 
         $atts['class'] = $tag->get_class_option($class).' btn';
         $atts['id'] = $tag->get_id_option();
