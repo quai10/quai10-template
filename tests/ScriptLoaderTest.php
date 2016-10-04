@@ -1,7 +1,7 @@
 <?php
+
 namespace Quai10\Test;
 
-use Mockery;
 use Quai10\ScriptLoader;
 use WP_Mock;
 
