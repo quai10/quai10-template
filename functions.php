@@ -23,3 +23,5 @@ $includes = [
 foreach ($includes as $inc) {
     include_once locate_template($inc);
 }
+
+add_action('wp_enqueue_scripts', array('Quai10\ScriptLoader', 'init'));

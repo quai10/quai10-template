@@ -47,6 +47,11 @@ jQuery(document).ready(function () {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([container.dataset.lat, container.dataset.lng]).addTo(map);
+    L.marker([container.dataset.lat, container.dataset.lng], {
+        icon: L.icon({
+            iconUrl: template_url + '/assets/dist/img/map-marker.png',
+            iconAnchor: [24, 56]
+        })
+    }).addTo(map);
   }
 });
