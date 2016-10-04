@@ -10,7 +10,7 @@
 } ?>
   <h2 class="tpl_section-title content-title"><?php the_title(); ?></h2>
   <div class="tpl_section-container <?php echo $grid ?> no-padding-left no-padding">
-    <div>
+    <div class="tpl_section-content">
         <?php
         the_content();
         ?>
