@@ -19,6 +19,11 @@ class EventTest extends \PHPUnit_Framework_TestCase
                 ->andReturn('<ul><li>Foo</li><li>Bar</li>');
     }
 
+    public function tearDown()
+    {
+        Mockery::close();
+    }
+
     /**
      * Unit tests for events functions.
      *

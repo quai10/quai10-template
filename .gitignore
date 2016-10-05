@@ -4,6 +4,7 @@ npm-debug.log
 
 # Bower
 assets/src/vendor/*
+!assets/src/vendor/leaflet/
 
 # Mac OSX crap
 .DS_Store

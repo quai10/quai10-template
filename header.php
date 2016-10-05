@@ -5,9 +5,6 @@
   <!-- <title><?php is_front_page() ? bloginfo('name') : wp_title(' ‐ ', true, 'right'); ?></title> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" media="all" href="<?php bloginfo('template_url'); ?>/assets/dist/css/styles.min.css">
-  <script defer src="<?php bloginfo('template_url'); ?>/assets/src/vendor/leaflet/dist/leaflet.js"></script>
-  <script defer src="<?php bloginfo('template_url'); ?>/assets/dist/js/global.min.js"></script>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
