@@ -27,7 +27,6 @@ foreach ($menu_locations as $key => $value) {
         <use xlink:href="#icon-logo-quai10"></use>
       </svg>
     </div><!-- .footer-logo -->
-    <?php /**foreach ($menus)**/ ?>
     <div class="footer-content grid-5">
       <div class="footer-col">
         <?php if (has_nav_menu('footer1')) :  ?>
