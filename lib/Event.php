@@ -2,6 +2,7 @@
 /**
  * Event class.
  */
+
 namespace Quai10;
 
 /**

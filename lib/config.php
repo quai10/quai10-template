@@ -44,7 +44,6 @@ add_action('after_setup_theme', function () {
     add_theme_support('html5', ['caption', 'comment-form', 'comment-list']);
 });
 
-
 /*
  * Add a body class with page slug if existing
  * */
