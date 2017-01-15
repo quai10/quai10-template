@@ -17,33 +17,18 @@ get_header();
 <section class="tpl_single-event tpl_formules content-box container margin-large grid no-padding-left">
     <div class="eventWrapper">
         <?php
-        global $EM_Event;
-        echo apply_filters(
-            'em_event_output_single',
-            $EM_Event->output(
-                '<div style="float:right; margin:0px 0px 15px 15px;">#_LOCATIONMAP</div>
-                <p>
-                    <strong>Date / Heure</strong><br/>
-                    Date(s) - #_EVENTDATES<br /><i>#_EVENTTIMES</i>
-                </p>
-                {has_location}
-                <p>
-                    <strong>Emplacement</strong><br/>
-                    #_LOCATIONLINK
-                </p>
-                {/has_location}
-                <p>
-                    <strong>Catégories</strong>
-                    #_CATEGORIES
-                </p>
-                <br style="clear:both" />
-                #_EVENTNOTES',
-                'html'
-            ),
-            $EM_Event,
-            'html'
-        );
+            global $post;
+            $EM_Event = em_get_event($post->ID, 'post_id'); 
         ?>
+        <h2 class="eventTitle"><?php echo $EM_Event->output('#_EVENTNAME');?></h2>
+        <?php echo $EM_Event->output('#_EVENTNOTES');?>
+        <div class="flex-container">
+            <div class="eventInfo flex-item-fluid">
+                <p class="eventDate"><strong>Quand ?</strong><br><?php echo $EM_Event->output('#_EVENTDATES');?><br><?php echo $EM_Event->output('#_EVENTTIMES');?></p>
+                <p class="eventCategory"><strong>Type d'évènement</strong><br><?php echo $EM_Event->output('#_CATEGORIES');?></p>
+            </div>
+            <div class="eventMap w450p"><strong>Où ?</strong><br><?php echo $EM_Event->output('#_LOCATIONMAP');?></div>            
+        </div>
     </div>
 </section>
 <?php
