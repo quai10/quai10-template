@@ -10,6 +10,7 @@ add_action('init', function () {
     remove_action('wp_head', 'wlwmanifest_link');
     remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
     remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+    remove_filter('dbem_notes', 'wpautop');
 
     global $wp_widget_factory;
     remove_action('wp_head', [$wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style']);
