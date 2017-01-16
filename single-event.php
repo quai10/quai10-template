@@ -17,11 +17,12 @@ get_header();
 <section class="tpl_single-event tpl_formules content-box container margin-large grid no-padding-left">
     <div class="eventWrapper">
         <?php
-            global $post;
-            $EM_Event = em_get_event($post->ID, 'post_id'); 
+            // global $post;
+            // $EM_Event = em_get_event($post->ID, 'post_id');
+            global $EM_Event; 
         ?>
         <h2 class="eventTitle"><?php echo $EM_Event->output('#_EVENTNAME');?></h2>
-        <?php echo $EM_Event->output('#_EVENTNOTES');?>
+        <p class="eventContent"><?php echo $EM_Event->output('#_EVENTNOTES');?></p>
         <div class="flex-container">
             <div class="eventInfo flex-item-fluid">
                 <p class="eventDate"><strong>Quand ?</strong><br><?php echo $EM_Event->output('#_EVENTDATES');?><br><?php echo $EM_Event->output('#_EVENTTIMES');?></p>
