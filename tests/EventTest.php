@@ -2,6 +2,7 @@
 /**
  * EventTest class.
  */
+
 namespace Quai10\Test;
 
 use Mockery;

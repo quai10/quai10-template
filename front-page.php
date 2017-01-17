@@ -139,22 +139,6 @@ endif; ?>
                 alt="Flèche suivante" title="Slide suivante">
           </a><!-- .swiper-next-btn -->
         </div><!-- .swiper-pagination -->
-        <?php if (false) : ?>
-        <ul class="social-icons" role="presentation">
-          <li class="social-icon">
-            <a class="no-style" href="https://flickr.com/" target="_blank">
-              <img src="<?php bloginfo('template_directory'); ?>/assets/dist/img/icon-flickr.png" alt="" title="">
-              Flickr
-            </a>
-          </li><!-- .social-icon -->
-          <li class="social-icon">
-            <a class="no-style" href="https://instagram.com/" target="_blank">
-              <img src="<?php bloginfo('template_directory'); ?>/assets/dist/img/icon-instagram.png" alt="" title="">
-              Instagram
-            </a>
-          </li><!-- .social-icon -->
-        </ul><!-- .social-icons -->
-        <?php endif; ?>
       </div><!-- .swiper-container -->
         <?php
         wp_reset_postdata();

@@ -35,7 +35,7 @@ add_action('after_setup_theme', function () {
    * Add post formats
    * @source http://codex.wordpress.org/Post_Formats
    * */
-    add_theme_support('post-formats', [/*'aside', 'gallery', 'link', */'image'/*, 'quote', 'video', 'audio'*/]);
+    add_theme_support('post-formats', ['image']);
 
   /*
    * Add HTML5 Markup for captions
@@ -43,7 +43,6 @@ add_action('after_setup_theme', function () {
    * */
     add_theme_support('html5', ['caption', 'comment-form', 'comment-list']);
 });
-
 
 /*
  * Add a body class with page slug if existing

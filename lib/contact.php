@@ -1,7 +1,7 @@
 <?php
 
 add_action('wpcf7_init', function () {
-    wpcf7_add_shortcode(
+    wpcf7_add_form_tag(
         ['text', 'text*', 'email', 'email*', 'url', 'url*', 'tel', 'tel*'],
         function ($tag) {
             $tag = new WPCF7_Shortcode($tag);
@@ -84,7 +84,7 @@ add_action('wpcf7_init', function () {
 });
 
 add_action('wpcf7_init', function () {
-    wpcf7_add_shortcode('submit', function ($tag) {
+    wpcf7_add_form_tag('submit', function ($tag) {
         $tag = new WPCF7_Shortcode($tag);
 
         $class = wpcf7_form_controls_class($tag->type);
