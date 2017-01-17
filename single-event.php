@@ -24,7 +24,6 @@ get_header();
         <div class="flex-container">
             <div class="eventInfo flex-item-fluid">
                 <p class="eventDate"><strong>Quand ?</strong><br><?php echo $EM_Event->output('#_EVENTDATES'); ?><br><?php echo $EM_Event->output('#_EVENTTIMES'); ?></p>
-                <p class="eventCategory"><strong>Type d'évènement</strong><br><?php echo $EM_Event->output('#_CATEGORIES'); ?></p>
             </div>
             <div class="eventMap w450p"><strong>Où ?</strong><br><?php echo $EM_Event->output('#_LOCATIONMAP'); ?></div>
         </div>
