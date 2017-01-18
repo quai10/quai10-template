@@ -2,11 +2,11 @@
 /**
  * ContactFormTest class.
  */
+
 namespace Quai10\Test;
 
 use Quai10\ContactForm;
 use WP_Mock;
-use Mockery;
 
 /**
  * Test the ContactForm class.
@@ -24,6 +24,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Remove mock functions.
+     *
      * @return void
      */
     protected function tearDown()
@@ -33,6 +34,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test the addFields() function.
+     *
      * @return void
      */
     public function testAddFields()
@@ -43,6 +45,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test the addSubmitBtn() function.
+     *
      * @return void
      */
     public function testAddSubmitBtn()
@@ -50,5 +53,4 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
         ContactForm::addSubmitBtn();
         $this->markTestIncomplete('We need to test the anonymous function.');
     }
-
 }

@@ -2,6 +2,7 @@
 /**
  * ScriptLoaderTest class.
  */
+
 namespace Quai10\Test;
 
 use Quai10\ScriptLoader;
@@ -26,6 +27,7 @@ class ScriptLoaderTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Remove mock functions.
+     *
      * @return void
      */
     protected function tearDown()
@@ -34,7 +36,8 @@ class ScriptLoaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test the init() function
+     * Test the init() function.
+     *
      * @return void
      */
     public function testInit()

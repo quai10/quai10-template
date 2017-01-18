@@ -2,10 +2,11 @@
 /**
  * ContactForm class.
  */
+
 namespace Quai10;
 
 /**
- * Class used to customize Contact Form 7 output
+ * Class used to customize Contact Form 7 output.
  */
 class ContactForm
 {

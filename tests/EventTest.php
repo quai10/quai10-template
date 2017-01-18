@@ -25,6 +25,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Remove mock functions.
+     *
      * @return void
      */
     protected function tearDown()

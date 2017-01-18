@@ -2,11 +2,12 @@
 /**
  * ConfigTest class.
  */
+
 namespace Quai10\Test;
 
+use Mockery;
 use Quai10\Config;
 use WP_Mock;
-use Mockery;
 
 /**
  * Test the Config class.
@@ -33,6 +34,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Remove mock functions.
+     *
      * @return void
      */
     protected function tearDown()
@@ -42,6 +44,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test the cleanup() function.
+     *
      * @return void
      */
     public function testCleanup()
@@ -54,6 +57,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test the setupTheme() function.
+     *
      * @return void
      */
     public function testSetupTheme()
@@ -63,6 +67,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test the addBodyClass() function.
+     *
      * @return void
      */
     public function testAddBodyClass()

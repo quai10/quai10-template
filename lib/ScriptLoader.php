@@ -2,6 +2,7 @@
 /**
  * ScriptLoader class.
  */
+
 namespace Quai10;
 
 /**
@@ -11,6 +12,7 @@ class ScriptLoader
 {
     /**
      * Add scripts and styles to <head>.
+     *
      * @return void
      */
     public static function init()
