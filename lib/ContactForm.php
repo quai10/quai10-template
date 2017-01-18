@@ -118,5 +118,4 @@ class ContactForm
             return $html;
         });
     }
-
 }

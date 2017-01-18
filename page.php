@@ -49,7 +49,6 @@ if ($loop->have_posts()) :
         the_content(); ?>
         </section>
         <?php
-
         }
     endwhile;
     // we unset useless vars

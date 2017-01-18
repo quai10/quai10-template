@@ -56,5 +56,5 @@ class Event
               'pagination'    => true,
             ]
         );
-    }   
+    }
 }

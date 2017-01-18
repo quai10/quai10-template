@@ -34,5 +34,8 @@
         "psr-4": {
             "Quai10\\": "lib/"
         }
+    },
+    "scripts": {
+        "lint": "phpcs --standard=PSR2 -n *.php lib/"
     }
 }
