@@ -2,16 +2,19 @@
 /**
  * FormTag class.
  */
+
 namespace Quai10;
 
 /**
- * Extended WPCF7_FormTag to make it easier to use in tests
+ * Extended WPCF7_FormTag to make it easier to use in tests.
+ *
  * @codeCoverageIgnore
  */
 class FormTag extends \WPCF7_FormTag
 {
     /**
-     * Get tag type
+     * Get tag type.
+     *
      * @return string Type
      */
     public function getType()
@@ -20,7 +23,8 @@ class FormTag extends \WPCF7_FormTag
     }
 
     /**
-     * Get tag base type
+     * Get tag base type.
+     *
      * @return string Base type
      */
     public function getBaseType()
@@ -29,7 +33,8 @@ class FormTag extends \WPCF7_FormTag
     }
 
     /**
-     * Get tag name
+     * Get tag name.
+     *
      * @return string Name
      */
     public function getName()
@@ -38,7 +43,8 @@ class FormTag extends \WPCF7_FormTag
     }
 
     /**
-     * Get tag values
+     * Get tag values.
+     *
      * @return array values
      */
     public function getValues()
