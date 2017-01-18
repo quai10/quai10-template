@@ -13,7 +13,8 @@ use WPCF7_FormTag;
 class ContactForm
 {
     /**
-     * Declare custom field types
+     * Declare custom field types.
+     *
      * @param array|string $tag Tag
      */
     public static function addCustomFields($tag)
@@ -108,7 +109,8 @@ class ContactForm
     }
 
     /**
-     * Declare custom submit button
+     * Declare custom submit button.
+     *
      * @param array|string $tag Tag
      */
     public static function addCustomSubmitBtn($tag)

@@ -5,11 +5,9 @@
 
 namespace Quai10\Test;
 
-use Quai10\ContactForm;
 use Mockery;
+use Quai10\ContactForm;
 use WP_Mock;
-use Mockery\Generator\MockConfigurationBuilder;
-use Mockery\Generator\StringManipulation\Pass\InstanceMockPass;
 
 /**
  * Test the ContactForm class.
