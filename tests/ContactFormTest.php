@@ -6,7 +6,10 @@
 namespace Quai10\Test;
 
 use Quai10\ContactForm;
+use Mockery;
 use WP_Mock;
+use Mockery\Generator\MockConfigurationBuilder;
+use Mockery\Generator\StringManipulation\Pass\InstanceMockPass;
 
 /**
  * Test the ContactForm class.
@@ -20,6 +23,9 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
     {
         WP_Mock::setUp();
         WP_Mock::wpFunction('wpcf7_add_form_tag');
+        WP_Mock::wpFunction('wpcf7_remove_form_tag');
+        WP_Mock::wpFunction('wpcf7_form_controls_class');
+        Mockery::mock('overload:WPCF7_FormTag');
     }
 
     /**
@@ -30,6 +36,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         WP_Mock::tearDown();
+        Mockery::close();
     }
 
     /**
@@ -40,7 +47,16 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
     public function testAddFields()
     {
         ContactForm::addFields();
-        $this->markTestIncomplete('We need to test the anonymous function.');
+    }
+
+    /**
+     * Test the addCustomFields() function.
+     *
+     * @return void
+     */
+    public function testAddCustomFields()
+    {
+        $this->markTestIncomplete('We need a way to mock WPCF7_FormTag properties.');
     }
 
     /**
@@ -51,6 +67,15 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
     public function testAddSubmitBtn()
     {
         ContactForm::addSubmitBtn();
-        $this->markTestIncomplete('We need to test the anonymous function.');
+    }
+
+    /**
+     * Test the addCustomFields() function.
+     *
+     * @return void
+     */
+    public function testAddCustomSubmitBt()
+    {
+        $this->markTestIncomplete('We need a way to mock WPCF7_FormTag properties.');
     }
 }
