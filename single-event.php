@@ -19,13 +19,13 @@ get_header();
         <?php
             global $EM_Event;
         ?>
-        <h2 class="eventTitle"><?php echo $EM_Event->output('#_EVENTNAME'); ?></h2>
-        <p class="eventContent"><?php echo $EM_Event->output('#_EVENTNOTES'); ?></p>
         <div class="flex-container">
             <div class="eventInfo flex-item-fluid">
+                <h2 class="eventTitle"><?php echo $EM_Event->output('#_EVENTNAME'); ?></h2>
+                <p class="eventContent"><?php echo $EM_Event->output('#_EVENTNOTES'); ?></p>                
                 <p class="eventDate"><strong>Quand ?</strong><br><?php echo $EM_Event->output('#_EVENTDATES'); ?><br><?php echo $EM_Event->output('#_EVENTTIMES'); ?></p>
             </div>
-            <div class="eventMap w450p"><strong>Où ?</strong><br><?php echo $EM_Event->output('#_LOCATIONMAP'); ?></div>
+            <div class="eventMap w450p"><?php echo $EM_Event->output('#_LOCATIONMAP'); ?></div>
         </div>
     </div>
 </section>
