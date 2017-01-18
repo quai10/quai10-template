@@ -4,7 +4,6 @@ namespace Quai10;
 
 class ContactForm
 {
-
     public static function addFields()
     {
         wpcf7_add_form_tag(

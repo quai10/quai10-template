@@ -6,7 +6,9 @@ class Config
 {
     /**
      * Cleaning up wp_head().
+     *
      * @return void
+     *
      * @link http://mwanoz.fr/nettoyer-le-contenu-de-wp_head-sur-wordpress/
      */
     public static function cleanup()
@@ -24,17 +26,18 @@ class Config
 
     /**
      * Theme Setup.
+     *
      * @return void
      */
     public static function setupTheme()
     {
-        /**
+        /*
        * Enable plugins to manage the document title
        * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
        * */
         add_theme_support('title-tag');
 
-      /**
+      /*
        * Register wp_nav_menus() menus
        * @link    http://codex.wordpress.org/Function_Reference/register_nav_menus
        * */
@@ -45,20 +48,20 @@ class Config
           'footer3'            => __('Pied de page – colonne 3', 'quai10'),
         ]);
 
-      /**
+      /*
        * Add post thumnails
        * @link http://codex.wordpress.org/Post_Thumbnails
        * */
         add_theme_support('post-thumbnails');
         set_post_thumbnail_size(250, 250);
 
-      /**
+      /*
        * Add post formats
        * @link http://codex.wordpress.org/Post_Formats
        * */
         add_theme_support('post-formats', ['image']);
 
-      /**
+      /*
        * Add HTML5 Markup for captions
        * @link http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
        * */
@@ -67,6 +70,7 @@ class Config
 
     /**
      * Add a body class with page slug if existing.
+     *
      * @param array $classes Classes
      */
     public static function addBodyClass(array $classes)

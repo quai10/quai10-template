@@ -13,7 +13,6 @@
  *
  * @link     https://quai10.org/
  */
-
 use Quai10\Config;
 use Quai10\ContactForm;
 use Quai10\ScriptLoader;
