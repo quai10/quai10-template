@@ -1,9 +1,17 @@
 <?php
-
+/**
+ * ContactForm class.
+ */
 namespace Quai10;
 
+/**
+ * Class used to customize Contact Form 7 output
+ */
 class ContactForm
 {
+    /**
+     * Customize form fields.
+     */
     public static function addFields()
     {
         wpcf7_add_form_tag(
@@ -88,6 +96,9 @@ class ContactForm
         );
     }
 
+    /**
+     * Customize form submit button.
+     */
     public static function addSubmitBtn()
     {
         wpcf7_add_form_tag('submit', function ($tag) {

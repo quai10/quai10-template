@@ -1,12 +1,20 @@
 <?php
-
+/**
+ * ScriptLoaderTest class.
+ */
 namespace Quai10\Test;
 
 use Quai10\ScriptLoader;
 use WP_Mock;
 
+/**
+ * Test the ScriptLoader class.
+ */
 class ScriptLoaderTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Set up mock functions.
+     */
     protected function setUp()
     {
         WP_Mock::setUp();
@@ -16,11 +24,19 @@ class ScriptLoaderTest extends \PHPUnit_Framework_TestCase
         WP_Mock::wpFunction('wp_localize_script');
     }
 
-    public function tearDown()
+    /**
+     * Remove mock functions.
+     * @return void
+     */
+    protected function tearDown()
     {
         WP_Mock::tearDown();
     }
 
+    /**
+     * Test the init() function
+     * @return void
+     */
     public function testInit()
     {
         ScriptLoader::init();

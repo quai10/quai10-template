@@ -1,13 +1,21 @@
 <?php
-
+/**
+ * ConfigTest class.
+ */
 namespace Quai10\Test;
 
 use Quai10\Config;
 use WP_Mock;
 use Mockery;
 
+/**
+ * Test the Config class.
+ */
 class ConfigTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Set up mock functions.
+     */
     protected function setUp()
     {
         WP_Mock::setUp();
@@ -23,11 +31,19 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         Mockery::mock('overload:WP_Widget_Factory');
     }
 
-    public function tearDown()
+    /**
+     * Remove mock functions.
+     * @return void
+     */
+    protected function tearDown()
     {
         WP_Mock::tearDown();
     }
 
+    /**
+     * Test the cleanup() function.
+     * @return void
+     */
     public function testCleanup()
     {
         global $wp_widget_factory;
@@ -36,11 +52,19 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         Config::cleanup();
     }
 
+    /**
+     * Test the setupTheme() function.
+     * @return void
+     */
     public function testSetupTheme()
     {
         Config::setupTheme();
     }
 
+    /**
+     * Test the addBodyClass() function.
+     * @return void
+     */
     public function testAddBodyClass()
     {
         $this->assertEquals(['foo'], Config::addBodyClass([]));

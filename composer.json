@@ -37,6 +37,7 @@
     },
     "scripts": {
         "lint": "./vendor/bin/phpcs --standard=PSR2 -n *.php lib/",
-        "test": "@php -dzend_extension=xdebug.so ./vendor/bin/phpunit"
+        "test": "@php -dzend_extension=xdebug.so ./vendor/bin/phpunit",
+        "doc": "phpdoc --target=docs --directory=lib/,tests/"
     }
 }

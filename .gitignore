@@ -31,3 +31,4 @@ Temporary Items
 ## phpunit
 coverage/
 clover.xml
+docs/
