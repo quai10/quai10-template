@@ -2,7 +2,6 @@
 <html lang="<?php bloginfo('language'); ?>">
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
-  <!-- <title><?php is_front_page() ? bloginfo('name') : wp_title(' ‐ ', true, 'right'); ?></title> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php wp_head(); ?>
@@ -79,12 +78,11 @@
       </div><!-- .header-icon -->
       <h1 class="header-title">
             <?php
-            if (defined('PAGE_TITLE')) {
-                $title = PAGE_TITLE;
+            if (is_404()) {
+                echo 'Page introuvable';
             } else {
-                $title = the_title();
+                the_title();
             }
-            echo $title;
             ?>
       </h1>
     </div><!-- .header-container -->
