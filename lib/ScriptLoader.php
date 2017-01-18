@@ -1,9 +1,20 @@
 <?php
+/**
+ * ScriptLoader class.
+ */
 
 namespace Quai10;
 
+/**
+ * Class used to load custom JavaScript and CSS files.
+ */
 class ScriptLoader
 {
+    /**
+     * Add scripts and styles to <head>.
+     *
+     * @return void
+     */
     public static function init()
     {
         wp_enqueue_style('quai10-template', get_template_directory_uri().'/assets/dist/css/styles.min.css');

@@ -13,15 +13,15 @@
  *
  * @link     https://quai10.org/
  */
-$includes = [
-  'lib/cleanup.php',
-  'lib/config.php',
-  'lib/contact.php',
-  'vendor/autoload.php',
-];
+use Quai10\Config;
+use Quai10\ContactForm;
+use Quai10\ScriptLoader;
 
-foreach ($includes as $inc) {
-    include_once locate_template($inc);
-}
+require_once __DIR__.'/vendor/autoload.php';
 
-add_action('wp_enqueue_scripts', ['Quai10\ScriptLoader', 'init']);
+add_action('wp_enqueue_scripts', [ScriptLoader::class, 'init']);
+add_action('wp_enqueue_scripts', [Config::class, 'cleanup']);
+add_action('after_setup_theme', [Config::class, 'setupTheme']);
+add_filter('body_class', [Config::class, 'addBodyClass']);
+add_action('wpcf7_init', [ContactForm::class, 'addFields']);
+add_action('wpcf7_init', [ContactForm::class, 'addSubmitBtn']);

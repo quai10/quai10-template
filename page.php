@@ -36,21 +36,18 @@ if ($loop->have_posts()) :
         $template = get_page_template_slug();
         $template = explode('.', $template)[0];
         $template = explode('-', $template, 2);
-        if (isset($template[1])) {
+        if (isset($template[1])) :
             // we call the asked template
             get_template_part($template[0], $template[1]);
-          // we unset useless vars
-        } else {
+        else :
             ?>
-        <section class="tpl_formules content-box container margin-large grid no-padding-left">
-        <h2 id="<?php echo get_post_field('post_name', get_post()); ?>" class="tpl_formules-title content-title">
-            <?php the_title(); ?></h2>
-        <?php
-        the_content(); ?>
-        </section>
-        <?php
-
-        }
+            <section class="tpl_formules content-box container margin-large grid no-padding-left">
+                <h2 id="<?php echo get_post_field('post_name', get_post()); ?>" class="tpl_formules-title content-title">
+                    <?php the_title(); ?></h2>
+                <?php the_content(); ?>
+            </section>
+            <?php
+        endif;
     endwhile;
     // we unset useless vars
     wp_reset_postdata();

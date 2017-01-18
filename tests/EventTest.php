@@ -13,6 +13,9 @@ use Quai10\Event;
  */
 class EventTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Set up mock functions.
+     */
     protected function setUp()
     {
         Mockery::mock('overload:EM_Events')
@@ -20,7 +23,12 @@ class EventTest extends \PHPUnit_Framework_TestCase
                 ->andReturn('<ul><li>Foo</li><li>Bar</li>');
     }
 
-    public function tearDown()
+    /**
+     * Remove mock functions.
+     *
+     * @return void
+     */
+    protected function tearDown()
     {
         Mockery::close();
     }

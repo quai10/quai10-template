@@ -16,7 +16,8 @@
         ?>
     </div>
     <?php if (!empty(get_field('aside_content'))) : ?>
-      <div class="tpl_section-aside" style="<?php if (!empty(get_field('aside_image'))) {
+      <div class="tpl_section-aside" style="<?php
+        if (!empty(get_field('aside_image'))) {
             echo 'background-image: url('.get_field('aside_image')['url'].' ) ';
         } ?>">
         <div class="tpl_section-aside-content">
@@ -31,6 +32,6 @@
         </div><!-- .tpl_section-element-cta-container -->
       </div>
     <?php endif; ?>
-    
+
   </div><!-- .tpl_section-container -->
 </section><!-- .tpl_section -->
