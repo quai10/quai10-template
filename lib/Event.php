@@ -56,28 +56,5 @@ class Event
               'pagination'    => true,
             ]
         );
-    }
-    /**
-     * Get current location.
-     *
-     * @return string HTML
-     */
-    public static function getCurrentLocation()
-    {
-        return \EM_Locations::output(
-            [
-              'format'   => '<div class="eventWrapper">
-                              <div class="flex-container">
-                                <div class="eventInfo flex-item-fluid">
-                                  <h2 class="eventTitle">#_LOCATIONNAME</h2>
-                                  <p class="eventContent">#_LOCATIONNOTES</p>                
-                                  <p class="eventDate">#_LOCATIONADDRESS - #_LOCATIONTOWN - #_LOCATIONCOUNTRY
-</p>
-                                </div>
-                                <div class="eventMap w450p">#_LOCATIONMAP</div>
-                              </div>
-                            </div>'
-            ]
-        );
-    }    
+    }   
 }
