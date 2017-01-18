@@ -5,8 +5,6 @@
 
 namespace Quai10;
 
-use WPCF7_FormTag;
-
 /**
  * Class used to customize Contact Form 7 output.
  */
@@ -19,18 +17,18 @@ class ContactForm
      */
     public static function addCustomFields($tag)
     {
-        $tag = new WPCF7_FormTag($tag);
+        $tag = new FormTag($tag);
 
-        if (empty($tag->name)) {
+        if (empty($tag->getType())) {
             return '';
         }
 
-        $validation_error = wpcf7_get_validation_error($tag->name);
+        $validation_error = wpcf7_get_validation_error($tag->getName());
 
-        $class = wpcf7_form_controls_class($tag->type, 'wpcf7-text');
+        $class = wpcf7_form_controls_class($tag->getType(), 'wpcf7-text');
 
-        if (in_array($tag->basetype, ['email', 'url', 'tel'])) {
-            $class .= ' wpcf7-validates-as-'.$tag->basetype;
+        if (in_array($tag->getBaseType(), ['email', 'url', 'tel'])) {
+            $class .= ' wpcf7-validates-as-'.$tag->getBaseType();
         }
 
         if ($validation_error) {
@@ -62,7 +60,8 @@ class ContactForm
 
         $atts['aria-invalid'] = $validation_error ? 'true' : 'false';
 
-        $value = (string) reset($tag->values);
+        $values = $tag->getValues();
+        $value = (string) reset($values);
 
         if ($tag->has_option('placeholder') || $tag->has_option('watermark')) {
             $atts['placeholder'] = $value;
@@ -71,23 +70,23 @@ class ContactForm
 
         $value = $tag->get_default_option($value);
 
-        $value = wpcf7_get_hangover($tag->name, $value);
+        $value = wpcf7_get_hangover($tag->getName(), $value);
 
         $atts['value'] = $value;
 
         if (wpcf7_support_html5()) {
-            $atts['type'] = $tag->basetype;
+            $atts['type'] = $tag->getBaseType();
         } else {
             $atts['type'] = 'text';
         }
 
-        $atts['name'] = $tag->name;
+        $atts['name'] = $tag->getName();
 
         $atts = wpcf7_format_atts($atts);
 
         $html = sprintf(
             '<input class="%1$s" %2$s />%3$s',
-            sanitize_html_class($tag->name),
+            sanitize_html_class($tag->getName()),
             $atts,
             $validation_error
         );
@@ -115,9 +114,9 @@ class ContactForm
      */
     public static function addCustomSubmitBtn($tag)
     {
-        $tag = new WPCF7_FormTag($tag);
+        $tag = new FormTag($tag);
 
-        $class = wpcf7_form_controls_class($tag->type);
+        $class = wpcf7_form_controls_class($tag->getType());
 
         $atts = [];
 
