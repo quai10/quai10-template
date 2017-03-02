@@ -27,6 +27,7 @@ get_header();
             </div>
             <div class="eventMap w450p"><?php echo $EM_Event->output('#_LOCATIONMAP'); ?></div>
         </div>
+        <?php echo $EM_Event->output('#_BOOKINGFORM'); ?>
     </div>
 </section>
 <?php
