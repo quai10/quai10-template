@@ -10,21 +10,9 @@ namespace Quai10;
  */
 class ContactForm
 {
-    /**
-     * Declare custom field types.
-     *
-     * @param array|string $tag Tag
-     */
-    public static function addCustomFields($tag)
+
+    private static function getClass(FormTag $tag, $validation_error)
     {
-        $tag = new FormTag($tag);
-
-        if (empty($tag->getType())) {
-            return '';
-        }
-
-        $validation_error = wpcf7_get_validation_error($tag->getName());
-
         $class = wpcf7_form_controls_class($tag->getType(), 'wpcf7-text');
 
         if (in_array($tag->getBaseType(), ['email', 'url', 'tel'])) {
@@ -35,6 +23,11 @@ class ContactForm
             $class .= ' wpcf7-not-valid';
         }
 
+        return $class;
+    }
+
+    private static function getAtts(FormTag $tag, $validation_error, $class)
+    {
         $atts = [];
 
         $atts['size'] = $tag->get_size_option('40');
@@ -82,7 +75,26 @@ class ContactForm
 
         $atts['name'] = $tag->getName();
 
-        $atts = wpcf7_format_atts($atts);
+        return wpcf7_format_atts($atts);
+    }
+
+    /**
+     * Declare custom field types.
+     *
+     * @param array|string $tag Tag
+     */
+    public static function addCustomFields($tag)
+    {
+        $tag = new FormTag($tag);
+
+        if (empty($tag->getType())) {
+            return '';
+        }
+
+        $validation_error = wpcf7_get_validation_error($tag->getName());
+        $class = self::getClass($tag, $validation_error);
+
+        $atts = self::getAtts($tag, $validation_error, $class);
 
         $html = sprintf(
             '<input class="%1$s" %2$s />%3$s',
