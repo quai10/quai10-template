@@ -10,7 +10,6 @@ namespace Quai10;
  */
 class ContactForm
 {
-
     private static function getClass(FormTag $tag, $validation_error)
     {
         $class = wpcf7_form_controls_class($tag->getType(), 'wpcf7-text');
