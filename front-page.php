@@ -26,8 +26,8 @@ get_header();
         while ($loop->have_posts()) :
             $loop->the_post();
             ?>
-            <section class="asso-box border-left">
-                <h2 class="asso-title"><?php the_title(); ?></h2>
+            <section class="asso-box border-left" aria-labelledby="a11y_assoBoxTitle">
+                <h2 class="asso-title" id="a11y_assoBoxTitle"><?php the_title(); ?></h2>
                 <svg role="img" aria-labelledby="title-icone-quai10">
                     <use xlink:href="#icon-icone-quai10"></use>
                 </svg>
@@ -44,8 +44,8 @@ get_header();
 
     $bloc_coworkers = get_field('emplacement_des_voyageurs');
     ?>
-    <section class="coworkers-box">
-        <h2 class="coworkers-title"><?php echo $bloc_coworkers->name; ?></h2>
+    <section class="coworkers-box" aria-labelledby="a11y_coworkersBoxTitle">
+        <h2 class="coworkers-title" id="a11y_coworkersBoxTitle"><?php echo $bloc_coworkers->name; ?></h2>
 
         <?php
         $loop = new WP_Query([
@@ -62,13 +62,13 @@ get_header();
                     $loop->the_post();
                     $coworker_url = get_field('url');
                     ?>
-                    <li class="coworkers-element">
+                    <li class="coworkers-element" aria-labelledby="a11y_coworker_<?php the_ID(); ?>">
                         <?php if ($coworker_url) : ?><a class="no-style" href="<?php echo $coworker_url; ?>" target="_blank"><?php endif; ?>
                         <div class="coworkers-element-image">
                             <?php $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()))[0]; ?>
                             <img src="<?php echo $url; ?>" alt="Photo de <?php the_title(); ?>" title="Photo de <?php the_title(); ?>">
                         </div><!-- .coworkers-element-image -->
-                        <h3 class="h5-like coworkers-element-name"><?php the_title(); ?></h3>
+                        <h3 class="h5-like coworkers-element-name" id="a11y_coworker_<?php the_ID(); ?>"><?php the_title(); ?></h3>
                         <p class="coworkers-element-work"><?php echo get_field('work'); ?></p>
                         <?php if ($coworker_url) : ?></a><?php endif; ?>
                     </li><!-- .coworkers-element -->
@@ -84,7 +84,7 @@ get_header();
 </div><!-- .content-box -->
 
 <div class="content-box container margin-large grid no-padding-left no-padding">
-    <section class="espace-box">
+    <section class="espace-box" aria-labelledby="a11y_espaceBoxTitle">
         <?php
         $contenu_espace = get_field('contenu_espace');
 
@@ -102,7 +102,7 @@ get_header();
                 get_the_title()
             );
             ?>
-            <h2 class="espace-title"><?php echo $title; ?></h2>
+            <h2 class="espace-title" id="a11y_espaceBoxTitle"><?php echo $title; ?></h2>
             <div class="espace-list">
                 <?php the_content(); ?>
             </div><!-- .espace-list -->
@@ -114,7 +114,7 @@ get_header();
 </div><!-- .content-box -->
 
 <div class="content-box container margin-large grid-3-2 no-padding-left">
-    <section class="entrepot-box border-left">
+    <section class="entrepot-box border-left" aria-labelledby="a11y_entrepotBoxTitle">
         <?php
         $photos = get_field('photographies');
 
@@ -123,7 +123,7 @@ get_header();
             'category_name' => 'chantier',
         ]);
         ?>
-        <h2 class="entrepot-title"><?php echo $photos->name; ?></h2>
+        <h2 class="entrepot-title" id="a11y_entrepotBoxTitle"><?php echo $photos->name; ?></h2>
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <?php
@@ -132,14 +132,14 @@ get_header();
                     $photo = get_field('photographie');
                     ?>
                     <div class="swiper-slide">
-                        <div class="slide-photographie" style="background-image: url(<?php echo $photo['url']; ?>);"></div>
+                        <div class="slide-photographie" style="background-image: url(<?php echo $photo['url']; ?>);" aria-label="Photographie représentant <?php the_title(); ?>"></div>
                         <strong class="slide-title"><?php the_title(); ?></strong>
                     </div><!-- .swiper-slide -->
                 <?php
                 endwhile;
                 ?>
             </div><!-- .swiper-wrapper -->
-            <div class="swiper-pagination">
+            <div class="swiper-pagination" aria-hidden="true">
                 <a class="swiper-prev-btn" href="#">
                     <img src="<?php bloginfo('template_directory'); ?>/assets/dist/img/arrow-white.png"
                         alt="Flèche précédente" title="Slide précédente">
@@ -153,7 +153,7 @@ get_header();
         <?php wp_reset_postdata(); ?>
     </section><!-- .entrepot-box -->
 
-    <section class="projet-box">
+    <section class="projet-box" aria-labelledby="a11y_projetBoxTitle">
         <?php
         $projet = get_field('projet');
         $projet_btn = get_field('link_coworking');
@@ -167,7 +167,7 @@ get_header();
         if ($loop->have_posts()) :
             $loop->the_post();
             ?>
-            <h2 class="projet-title"><?php the_title(); ?></h2>
+            <h2 class="projet-title" id="a11y_projetBoxTitle"><?php the_title(); ?></h2>
             <?php the_content(); ?>
             <div>
                 <a class="btn" href="<?php echo $projet_btn; ?>"><?php echo $projet_btn_label; ?></a>
@@ -190,9 +190,10 @@ if (is_object($contact)) {
 }
 ?>
 <section class="cta-box content-box container margin-large contrast-box grid-2-1 no-padding-left"
-    style="background-image: url(<?php echo get_field('cta_background')['url']; ?>);">
+    style="background-image: url(<?php echo get_field('cta_background')['url']; ?>);"
+    aria-labelledby="a11y_ctaBoxTitle">
     <div class="cta-content border-left">
-        <h2 class="cta-title"><?php the_title(); ?></h2>
+        <h2 class="cta-title" id="a11y_ctaBoxTitle"><?php the_title(); ?></h2>
         <?php the_content(); ?>
     </div><!-- .cta-content -->
     <aside class="cta-aside">
