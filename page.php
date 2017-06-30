@@ -52,7 +52,13 @@ if ($loop->have_posts()) :
     // we unset useless vars
     wp_reset_postdata();
 else :
-    the_content();
+    while (have_posts()) :
+        the_post();
+        ?>
+        <section class="tpl_formules content-box container margin-large grid no-padding-left">
+            <?php the_content(); ?>
+        </section>
+        <?php
+    endwhile;
 endif;
-
 get_footer();
