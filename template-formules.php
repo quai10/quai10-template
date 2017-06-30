@@ -19,17 +19,19 @@ $loop = new WP_Query([
 
 // we display this block markup
 ?>
-<section class="tpl_formules content-box container margin-large">
+<section class="tpl_formules content-box container margin-large" aria-labelledby="a11y_formulesTitle">
     <div class="tpl_formules-container grid no-padding-left no-padding">
-        <h2 class="tpl_formules-title content-title"><?php the_title(); ?></h2>
+        <h2 class="tpl_formules-title content-title" id="a11y_formulesTitle"><?php the_title(); ?></h2>
         <?php if ($loop->have_posts()) : ?>
             <ul class="tpl_formules-list grid-3">
                 <?php while ($loop->have_posts()) :
                     $loop->the_post();
                     ?>
-                    <li class="tpl_formules-element">
+                    <li class="tpl_formules-element" aria-labelledby="a11y_formuleTitle_<?php the_ID(); ?>">
                         <div class="tpl_formules-element-image"><img src="<?php echo get_field('image'); ?>" alt="" title=""></div>
-                        <h3 class="tpl_formules-element-title"><?php the_title(); ?></h3>
+                        <h3 class="tpl_formules-element-title" id="a11y_formuleTitle_<?php the_ID(); ?>">
+                            <?php the_title(); ?>
+                        </h3><!-- .tpl_formules-element-title -->
                         <div class="tpl_formules-element-description"><?php the_content(); ?></div>
                         <div class="tpl_formules-informations">
                             <div class="tpl_formules-element-perfectfor">
