@@ -1,13 +1,13 @@
 <?php
 /* Template Name: Section */
 ?>
-<section class="tpl_section content-box container margin-large">
+<section class="tpl_section content-box container margin-large" aria-labelledby="a11y_sectionTitle">
     <?php if (!empty(get_field('aside_content'))) {
         $grid = 'grid-2-small-1';
     } else {
         $grid = 'grid';
     } ?>
-    <h2 class="tpl_section-title content-title"><?php the_title(); ?></h2>
+    <h2 class="tpl_section-title content-title" id="a11y_sectionTitle"><?php the_title(); ?></h2>
     <div class="tpl_section-container <?php echo $grid ?> no-padding-left no-padding">
         <div class="tpl_section-content">
             <?php the_content(); ?>
