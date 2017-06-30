@@ -9,7 +9,6 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  *
  * @link     https://quai10.org/
- *
  */
 
 // We get all datas about the three menus
