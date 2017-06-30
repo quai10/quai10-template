@@ -30,7 +30,7 @@ foreach ($menu_locations as $key => $value) {
             </svg>
         </div><!-- .footer-logo -->
         <div class="footer-content grid-5">
-            <section class="footer-col" aria-labelledby="a11y_footerTitle1">
+            <nav class="footer-col" aria-labelledby="a11y_footerTitle1">
                 <?php if (has_nav_menu('footer1')) :  ?>
                     <h5 class="footer-title" id="a11y_footerTitle1"><?php echo $menus['footer1']->name; ?></h5>
                     <?php
@@ -45,8 +45,8 @@ foreach ($menu_locations as $key => $value) {
                     echo '&nbsp;';
                 endif;
                 ?>
-            </section><!-- .footer-col -->
-            <section class="footer-col" aria-labelledby="a11y_footerTitle2">
+            </nav><!-- .footer-col -->
+            <nav class="footer-col" aria-labelledby="a11y_footerTitle2">
                 <?php if (has_nav_menu('footer2')) : ?>
                     <h5 class="footer-title" id="a11y_footerTitle2"><?php echo $menus['footer2']->name; ?></h5>
                     <?php
@@ -59,8 +59,8 @@ foreach ($menu_locations as $key => $value) {
                     echo '&nbsp;';
                 endif;
                 ?>
-            </section><!-- .footer-col -->
-            <section class="footer-col" aria-labelledby="a11y_footerTitle3">
+            </nav><!-- .footer-col -->
+            <nav class="footer-col" aria-labelledby="a11y_footerTitle3">
                 <?php if (has_nav_menu('footer3')) : ?>
                     <h5 class="footer-title" id="a11y_footerTitle3"><?php echo $menus['footer3']->name; ?></h5>
                     <?php
@@ -73,7 +73,7 @@ foreach ($menu_locations as $key => $value) {
                     echo '&nbsp;';
                 endif;
                 ?>
-            </section><!-- .footer-col -->
+            </nav><!-- .footer-col -->
             <section class="footer-col footer-col-newsletter" aria-labelledby="a11y_footerTitleNewsletter">
                 <h5 class="footer-title" id="a11y_footerTitleNewsletter">Newsletter</h5>
                 <form method="post" action="https://quai10.us10.list-manage.com/subscribe/post?u=699bad1c5b054cbdff43d84a8&amp;id=384dd5ed71">
