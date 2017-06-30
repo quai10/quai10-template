@@ -1,4 +1,12 @@
 <?php
+/**
+ * Front page template
+ *
+ * @category Theme
+ * @package  quai10-template
+ * @link     https://codex.wordpress.org/Template_Hierarchy
+ */
+
 get_header();
 ?>
   <div class="content-box container margin-large grid-2 no-padding-left">
