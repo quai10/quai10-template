@@ -31,7 +31,8 @@ foreach ($menu_locations as $key => $value) {
         </div><!-- .footer-logo -->
         <div class="footer-content grid-5">
             <nav class="footer-col" aria-labelledby="a11y_footerTitle1">
-                <?php if (has_nav_menu('footer1')) :  ?>
+                <?php
+                if (has_nav_menu('footer1')) : ?>
                     <h5 class="footer-title" id="a11y_footerTitle1"><?php echo $menus['footer1']->name; ?></h5>
                     <?php
                     wp_nav_menu([
@@ -47,7 +48,8 @@ foreach ($menu_locations as $key => $value) {
                 ?>
             </nav><!-- .footer-col -->
             <nav class="footer-col" aria-labelledby="a11y_footerTitle2">
-                <?php if (has_nav_menu('footer2')) : ?>
+                <?php
+                if (has_nav_menu('footer2')) : ?>
                     <h5 class="footer-title" id="a11y_footerTitle2"><?php echo $menus['footer2']->name; ?></h5>
                     <?php
                     wp_nav_menu([
@@ -61,7 +63,8 @@ foreach ($menu_locations as $key => $value) {
                 ?>
             </nav><!-- .footer-col -->
             <nav class="footer-col" aria-labelledby="a11y_footerTitle3">
-                <?php if (has_nav_menu('footer3')) : ?>
+                <?php
+                if (has_nav_menu('footer3')) : ?>
                     <h5 class="footer-title" id="a11y_footerTitle3"><?php echo $menus['footer3']->name; ?></h5>
                     <?php
                     wp_nav_menu([

@@ -63,18 +63,28 @@ get_header();
                     $coworker_url = get_field('url');
                     ?>
                     <li class="coworkers-element" aria-labelledby="a11y_coworker_<?php the_ID(); ?>">
-                        <?php if ($coworker_url) : ?><a class="no-style" href="<?php echo $coworker_url; ?>" target="_blank"><?php endif; ?>
-                        <div class="coworkers-element-image">
-                            <?php $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()))[0]; ?>
-                            <img src="<?php echo $url; ?>" alt="Photo de <?php the_title(); ?>" title="Photo de <?php the_title(); ?>">
-                        </div><!-- .coworkers-element-image -->
-                        <h3 class="h5-like coworkers-element-name" id="a11y_coworker_<?php the_ID(); ?>"><?php the_title(); ?></h3>
-                        <p class="coworkers-element-work"><?php echo get_field('work'); ?></p>
-                        <?php if ($coworker_url) : ?></a><?php endif; ?>
+                        <?php
+                        if ($coworker_url) : ?>
+                            <a class="no-style" href="<?php echo $coworker_url; ?>" target="_blank">
+                        <?php
+                        endif; ?>
+                            <div class="coworkers-element-image">
+                                <?php $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()))[0]; ?>
+                                <img src="<?php echo $url; ?>" alt="Photo de <?php the_title(); ?>" title="Photo de <?php the_title(); ?>">
+                            </div><!-- .coworkers-element-image -->
+                            <h3 class="h5-like coworkers-element-name" id="a11y_coworker_<?php the_ID(); ?>"><?php the_title(); ?></h3>
+                            <p class="coworkers-element-work"><?php echo get_field('work'); ?></p>
+                        <?php
+                        if ($coworker_url) : ?>
+                            </a>
+                        <?php
+                        endif; ?>
                     </li><!-- .coworkers-element -->
-                <?php endwhile; ?>
+                <?php
+                endwhile; ?>
             </ul><!-- .coworkers-list -->
-        <?php else : ?>
+        <?php
+        else : ?>
             <p>Aucun voyageur n'a pris place dans le train actuellement.</p>
         <?php
         endif;
@@ -203,7 +213,8 @@ if (is_object($contact)) {
         if (is_object($destination)) : ?>
             <a class="btn cta-aside-btn" href="<?php echo get_permalink($destination); ?>">
             <?php echo get_field('cta_titre'); ?></a>
-        <?php endif; ?>
+        <?php
+        endif; ?>
     </aside><!-- .cta-aside -->
 </section><!-- .cta-box -->
 <?php
