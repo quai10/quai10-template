@@ -47,8 +47,8 @@
             </symbol>
         </defs>
     </svg><!-- /svg -->
-    <header class="header-box container" id="top">
-        <nav class="nav-box grid-1-4">
+    <header class="header-box container" id="top" aria-labelledby="a11y_headerTitle">
+        <nav class="nav-box grid-1-4" aria-label="Navigation principale">
             <div class="nav-logo">
                 <a href="<?php echo home_url(); ?>">
                     <svg role="img" aria-labelledby="title-logo-quai10">
@@ -64,7 +64,7 @@
                 'menu_id'        => 'navigation',
             ]);
             ?>
-            <div class="nav-burger push">
+            <div class="nav-burger push" aria-hidden="true">
                 <div id="menu-opener" class="menu-opener"><span></span></div>
             </div>
         </nav><!-- .nav-box -->
@@ -72,7 +72,7 @@
             <div class="header-icon">
                 <svg role="img" aria-labelledby="title-icone-quai10"><use xlink:href="#icon-icone-quai10"></use></svg>
             </div><!-- .header-icon -->
-            <h1 class="header-title">
+            <h1 class="header-title" id="a11y_headerTitle">
             <?php
             if (is_404()) {
                 echo 'Page introuvable';
