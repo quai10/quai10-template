@@ -18,13 +18,12 @@ get_header();
 $page_id = get_queried_object_id();
 
 // we made a loop with each child of this page
-$args = [
-  'post_type'   => 'page',
-  'post_parent' => $page_id,
-  'order'       => 'ASC',
-  'orderby'     => 'menu_order',
-];
-$loop = new WP_Query($args);
+$loop = new WP_Query([
+    'post_type'   => 'page',
+    'post_parent' => $page_id,
+    'order'       => 'ASC',
+    'orderby'     => 'menu_order',
+]);
 
 // we check if we have children
 if ($loop->have_posts()) :
@@ -41,18 +40,24 @@ if ($loop->have_posts()) :
             get_template_part($template[0], $template[1]);
         else :
             ?>
-            <section class="tpl_formules content-box container margin-large grid no-padding-left">
+            <section class="tpl_formules content-box container margin-large grid no-padding-left" aria-labelledby="<?php echo get_post_field('post_name', get_post()); ?>">
                 <h2 id="<?php echo get_post_field('post_name', get_post()); ?>" class="tpl_formules-title content-title">
                     <?php the_title(); ?></h2>
                 <?php the_content(); ?>
-            </section>
+            </section><!-- .tpl_formules -->
             <?php
         endif;
     endwhile;
     // we unset useless vars
     wp_reset_postdata();
 else :
-    the_content();
+    while (have_posts()) :
+        the_post();
+        ?>
+        <section class="tpl_formules content-box container margin-large grid no-padding-left">
+            <?php the_content(); ?>
+        </section>
+        <?php
+    endwhile;
 endif;
-
 get_footer();

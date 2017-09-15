@@ -14,14 +14,14 @@
  */
 get_header();
 ?>
-<section class="tpl_single-event tpl_formules content-box container margin-large grid no-padding-left">
+<section class="tpl_single-event tpl_formules content-box container margin-large grid no-padding-left" aria-labelledby="a11y_eventTitle">
     <div class="eventWrapper">
         <?php
             global $EM_Event;
         ?>
         <div class="flex-container">
             <div class="eventInfo flex-item-fluid">
-                <h2 class="eventTitle"><?php echo $EM_Event->output('#_EVENTNAME'); ?></h2>
+                <h2 class="eventTitle" id="a11y_eventTitle"><?php echo $EM_Event->output('#_EVENTNAME'); ?></h2>
                 <p class="eventContent"><?php echo $EM_Event->output('#_EVENTNOTES'); ?></p>
                 <p class="eventDate"><strong>Quand ?</strong><br><?php echo $EM_Event->output('#_EVENTDATES'); ?><br><?php echo $EM_Event->output('#_EVENTTIMES'); ?></p>
             </div>
@@ -29,6 +29,6 @@ get_header();
         </div>
         <?php echo $EM_Event->output('#_BOOKINGFORM'); ?>
     </div>
-</section>
+</section><!-- .tpl_single-event -->
 <?php
 get_footer();
