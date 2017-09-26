@@ -25,3 +25,6 @@ add_action('after_setup_theme', [Config::class, 'setupTheme']);
 add_filter('body_class', [Config::class, 'addBodyClass']);
 add_action('wpcf7_init', [ContactForm::class, 'addFields']);
 add_action('wpcf7_init', [ContactForm::class, 'addSubmitBtn']);
+
+/** Custom actions */ /* Pierre T. */
+require_once( 'lib/Actions.php' );
