@@ -16,7 +16,7 @@
 get_header();
 ?>
 <div class="tpl_formules content-box container margin-large grid no-padding-left">
-    <?php do_action("Articles", 10) ?>
+    <?php do_action('Articles', 10) ?>
 </div>
 
 

@@ -27,4 +27,4 @@ add_action('wpcf7_init', [ContactForm::class, 'addFields']);
 add_action('wpcf7_init', [ContactForm::class, 'addSubmitBtn']);
 
 /** Custom actions */ /* Pierre T. */
-require_once( 'lib/Actions.php' );
+require_once 'lib/Actions.php';
