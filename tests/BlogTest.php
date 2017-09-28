@@ -24,8 +24,8 @@ class BlogTest extends \PHPUnit_Framework_TestCase
             ->shouldReceive('have_posts')
             ->andReturn(true, false)
             ->shouldReceive('the_post');
-        WP_Mock::wpFunction('get_template_part');
-        WP_Mock::wpFunction('wp_reset_query');
+        WP_Mock::userFunction('get_template_part');
+        WP_Mock::userFunction('wp_reset_query');
     }
 
     /**

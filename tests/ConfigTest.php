@@ -20,15 +20,15 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         WP_Mock::setUp();
-        WP_Mock::wpFunction('remove_action');
-        WP_Mock::wpFunction('remove_filter');
-        WP_Mock::wpFunction('add_theme_support');
-        WP_Mock::wpFunction('register_nav_menus');
-        WP_Mock::wpFunction('__');
-        WP_Mock::wpFunction('set_post_thumbnail_size');
-        WP_Mock::wpFunction('is_single', ['return'=>true]);
-        WP_Mock::wpFunction('is_page');
-        WP_Mock::wpFunction('get_permalink', ['return'=>'foo']);
+        WP_Mock::userFunction('remove_action');
+        WP_Mock::userFunction('remove_filter');
+        WP_Mock::userFunction('add_theme_support');
+        WP_Mock::userFunction('register_nav_menus');
+        WP_Mock::userFunction('__');
+        WP_Mock::userFunction('set_post_thumbnail_size');
+        WP_Mock::userFunction('is_single', ['return'=>true]);
+        WP_Mock::userFunction('is_page');
+        WP_Mock::userFunction('get_permalink', ['return'=>'foo']);
         Mockery::mock('overload:WP_Widget_Factory');
     }
 

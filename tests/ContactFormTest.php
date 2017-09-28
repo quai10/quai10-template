@@ -20,13 +20,13 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         WP_Mock::setUp();
-        WP_Mock::wpFunction('wpcf7_add_form_tag');
-        WP_Mock::wpFunction('wpcf7_remove_form_tag');
-        WP_Mock::wpFunction('wpcf7_form_controls_class');
-        WP_Mock::wpFunction('wpcf7_format_atts');
-        WP_Mock::wpFunction('wpcf7_get_validation_error', ['return'=>'This is an error.']);
-        WP_Mock::wpFunction('wpcf7_get_hangover');
-        WP_Mock::wpFunction('sanitize_html_class');
+        WP_Mock::userFunction('wpcf7_add_form_tag');
+        WP_Mock::userFunction('wpcf7_remove_form_tag');
+        WP_Mock::userFunction('wpcf7_form_controls_class');
+        WP_Mock::userFunction('wpcf7_format_atts');
+        WP_Mock::userFunction('wpcf7_get_validation_error', ['return'=>'This is an error.']);
+        WP_Mock::userFunction('wpcf7_get_hangover');
+        WP_Mock::userFunction('sanitize_html_class');
         $this->mockFormTag = Mockery::mock('overload:Quai10\FormTag')
             ->shouldReceive('getName')
             ->shouldReceive('getBaseType')->andReturn('url')
@@ -70,7 +70,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddCustomFields()
     {
-        WP_Mock::wpFunction('wpcf7_support_html5');
+        WP_Mock::userFunction('wpcf7_support_html5');
         $this->mockFormTag->shouldReceive('getType')->andReturn('foo');
         $this->assertEquals('<input class=""  />This is an error.', ContactForm::addCustomFields('foo'));
     }
@@ -93,7 +93,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddCustomFieldsWithHtml5()
     {
-        WP_Mock::wpFunction('wpcf7_support_html5', ['return'=>true]);
+        WP_Mock::userFunction('wpcf7_support_html5', ['return'=>true]);
         $this->mockFormTag->shouldReceive('getType')->andReturn('foo');
         $this->assertEquals('<input class=""  />This is an error.', ContactForm::addCustomFields('foo'));
     }
@@ -113,9 +113,9 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testAddCustomSubmitBt()
+    public function testAddCustomSubmitBtn()
     {
         $this->mockFormTag->shouldReceive('getType')->andReturn('foo');
-        $this->assertEquals('<button type="submit" ></button>', ContactForm::addCustomSubmitBtn('foo'));
+        $this->assertEquals('<button type="submit" >Send</button>', ContactForm::addCustomSubmitBtn('foo'));
     }
 }
