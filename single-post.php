@@ -10,9 +10,11 @@ get_header(); ?>
 
 <?php while (have_posts()) :
     the_post(); ?>
-    <div id="single-blog-thumbnail-wrapper">
-        <img src="<?php the_post_thumbnail_url('blog') ?>" alt="<?php the_title() ?>">
-    </div>
+    <?php if (has_post_thumbnail()) : ?>
+        <div id="single-blog-thumbnail-wrapper">
+            <img src="<?php the_post_thumbnail_url('blog') ?>" alt="<?php the_title() ?>">
+        </div>
+    <?php endif; ?>
     <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
         <?php do_action('foundationpress_post_before_entry_content'); ?>
         <div class="entry-content">
