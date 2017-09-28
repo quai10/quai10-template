@@ -20,7 +20,7 @@ use Quai10\ScriptLoader;
 
 require_once __DIR__.'/vendor/autoload.php';
 
-/**
+/*
  * Custom actions
  */
 add_action('wp_enqueue_scripts', [ScriptLoader::class, 'init']);
@@ -32,7 +32,7 @@ add_action('wpcf7_init', [ContactForm::class, 'addSubmitBtn']);
 add_action('Articles', [Blog::class, 'getArticles'], 1, 1);
 add_filter('excerpt_length', [Blog::class, 'getExcerptLength'], 999);
 
-/**
+/*
  * Custom thumbnail size
  */
 add_image_size('blog', 250, 250, true);

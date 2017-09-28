@@ -10,7 +10,6 @@ namespace Quai10;
  */
 class Blog
 {
-
     /**
      * Loop Article Blog.
      *
@@ -27,10 +26,10 @@ class Blog
                 'order'          => 'DESC',
             ];
         $loop = new \WP_Query($args);
-        while ($loop->have_posts()) :
+        while ($loop->have_posts()) {
             $loop->the_post();
             get_template_part('template-parts/blog', 'article');
-        endwhile;
+        }
         wp_reset_query();
     }
 
