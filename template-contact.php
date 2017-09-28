@@ -15,7 +15,7 @@ get_header();
     </section><!-- .tpl_contact-content -->
     <aside class="tpl_contact-aside" aria-labelledby="a11y_asideContactTitle">
         <h2 class="tpl_contact-title" id="a11y_asideContactTitle"><?php echo get_field('contactform_title'); ?></h2>
-        <?php echo get_field('contactform_id'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="'.get_field('contactform_id').'"]'); ?>
     </aside><!-- .tpl_contact-aside -->
 </div><!-- .tpl_contact-container -->
 <?php get_footer(); ?>
