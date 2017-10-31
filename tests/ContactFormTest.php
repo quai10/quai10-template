@@ -24,7 +24,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
         WP_Mock::userFunction('wpcf7_remove_form_tag');
         WP_Mock::userFunction('wpcf7_form_controls_class');
         WP_Mock::userFunction('wpcf7_format_atts');
-        WP_Mock::userFunction('wpcf7_get_validation_error', ['return'=>'This is an error.']);
+        WP_Mock::userFunction('wpcf7_get_validation_error', ['return' => 'This is an error.']);
         WP_Mock::userFunction('wpcf7_get_hangover');
         WP_Mock::userFunction('sanitize_html_class');
         $this->mockFormTag = Mockery::mock('overload:Quai10\FormTag')
@@ -93,7 +93,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddCustomFieldsWithHtml5()
     {
-        WP_Mock::userFunction('wpcf7_support_html5', ['return'=>true]);
+        WP_Mock::userFunction('wpcf7_support_html5', ['return' => true]);
         $this->mockFormTag->shouldReceive('getType')->andReturn('foo');
         $this->assertEquals('<input class=""  />This is an error.', ContactForm::addCustomFields('foo'));
     }

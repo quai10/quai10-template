@@ -26,9 +26,9 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         WP_Mock::userFunction('register_nav_menus');
         WP_Mock::userFunction('__');
         WP_Mock::userFunction('set_post_thumbnail_size');
-        WP_Mock::userFunction('is_single', ['return'=>true]);
+        WP_Mock::userFunction('is_single', ['return' => true]);
         WP_Mock::userFunction('is_page');
-        WP_Mock::userFunction('get_permalink', ['return'=>'foo']);
+        WP_Mock::userFunction('get_permalink', ['return' => 'foo']);
         Mockery::mock('overload:WP_Widget_Factory');
     }
 
@@ -51,7 +51,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
     {
         global $wp_widget_factory;
         $wp_widget_factory = new \WP_Widget_Factory();
-        $wp_widget_factory->widgets = ['WP_Widget_Recent_Comments'=>''];
+        $wp_widget_factory->widgets = ['WP_Widget_Recent_Comments' => ''];
         Config::cleanup();
     }
 
