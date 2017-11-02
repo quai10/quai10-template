@@ -8,8 +8,12 @@
     "Pierre Rudloff",
     "Alexandre Mathieu"
   ],
+  "dependencies": {
+    "knacss": "~4.3.2",
+    "leaflet": "~0.7.3",
+    "swiper": "~3.1.0"
+  },
   "devDependencies": {
-    "bower": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "~2.3.1",
     "gulp-concat": "latest",

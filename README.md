@@ -9,8 +9,7 @@ This README explains every steps which are necessary to get this template runnin
 
 ## Technical requirements ##
 
-* NPM
-* Bower
+* Yarn
 * Gulp
 * Less
 
@@ -24,7 +23,6 @@ This README explains every steps which are necessary to get this template runnin
 
 ```bash
 git clone https://github.com/quai10/quai10-template.git
-npm install
-bower install
-gulp
+yarn install
+yarn gulp
 ```

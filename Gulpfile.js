@@ -39,7 +39,7 @@ gulp.task('css', function () {
 // JS Task = concatenation and copying, don't forget to add vendors
 gulp.task('js', function () {
   return gulp.src([
-    source + '/vendor/swiper/dist/js/swiper.min.js', // swiperJS
+    source + '/../../node_modules/swiper/dist/js/swiper.min.js', // swiperJS
     source + '/js/*.js' // scripts du thème
   ])
     .pipe(plugins.concat('global.min.js'))
