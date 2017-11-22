@@ -2,6 +2,10 @@
  * Template Formules Less file
  * */
 
+.tpl_formules-intro {
+  font-size: @h4-size;
+}
+
 .tpl_formules-title {
   margin-bottom: @large-value;
   text-align: center;
@@ -15,23 +19,22 @@
 .tpl_formules-element {
   display: flex;
   flex-direction: column;
-  font-size: @h5-size;
   text-align: center;
   padding: 25px;
   background-color: @primary-background;
   border-radius: @tiny-value;
-  & .tpl_formules-informations {
-    // margin-top: auto;
-  }
-  &:nth-of-type(2) {
-    background-color: @primary-color;
-    color: @secondary-color;
-    .tpl_formules-element-title {
-      &::after {
-        background-color: @secondary-color;
-      }
-    }
-  }
+  // & .tpl_formules-informations {
+  //   // margin-top: auto;
+  // }
+  // &:nth-of-type(2) {
+  //   background-color: @primary-color;
+  //   color: @secondary-color;
+  //   .tpl_formules-element-title {
+  //     &::after {
+  //       background-color: @secondary-color;
+  //     }
+  //   }
+  // }
   // &:nth-of-type(2) .tpl_formules-element-title {
   //   color: @primary-color;
 
@@ -40,6 +43,34 @@
   //     background-color: @primary-color;
   //   }
   // }
+}
+
+.tpl_formules-element-description {
+  font-size: @base-font-size;
+  font-style: italic;
+
+  & p {
+    margin-bottom: @small-value;
+  }
+
+  & strong {
+    font-size: @h5-size;
+    font-style: normal;
+  }
+}
+
+.tpl_formules-element.is-promoted {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  background-color: @primary-color;
+  color: @secondary-color;
+  .tpl_formules-element-title {
+    &::after {
+      background-color: @secondary-color;
+    }
+  }
+  .tpl_formules-acf:not(:last-child) {
+    border-bottom: 1px dotted @primary-border;
+  }  
 }
 
 .tpl_formules-element-image {
@@ -71,18 +102,44 @@
   }
 }
 
-.tpl_formules-element-description {
-  font-size: @base-font-size;
-  font-style: italic;
+.tpl_formules-acf {
+  margin-bottom: @medium-value;
+  font-family: @font-stack-common;
+}
 
-  & p {
-    margin-bottom: @small-value;
-  }
+.tpl_formules-acf:not(:last-child) {
+  border-bottom: 1px dotted @base-color;
+}
 
-  & strong {
-    font-size: @h5-size;
-    font-style: normal;
-  }
+.tpl_formules-acf-label {
+  font-weight: bold;
+}
+
+.tpl_formules-acf-value {
+  list-style-type: none;  
+  font-size: 1.4rem;
+}
+
+.tpl_formules-acf table {
+  table-layout: initial;
+}
+
+.tpl_formules-acf table, .tpl_formules-acf td, .tpl_formules-acf th {
+  border: 0;
+  vertical-align: middle;
+}
+
+.tpl_formules-acf th {
+  text-align: center;
+}
+
+.tpl_formules-acf td:first-child {
+    width: 80%;
+}
+
+.tpl_formules-acf-value td:last-child {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .tpl_formules-element-engagement,
@@ -121,7 +178,6 @@
   margin-top: @large-value - @small-value;
   font-size: @h5-size;
   font-weight: 700;
-  text-transform: lowercase;
 
   &::first-line {
     font-weight: 400;
