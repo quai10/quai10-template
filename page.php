@@ -18,6 +18,7 @@ get_header();
 $page_id = get_queried_object_id();
 // Get the content outside the loop
 $page_object = get_page( $page_id );
+
 if ($page_object->post_content)
 {
     echo '<section class="tpl_formules content-box container margin-large grid no-padding-left">
@@ -46,6 +47,11 @@ if ($loop->have_posts()) :
         if (isset($template[1])) :
             // we call the asked template
             get_template_part($template[0], $template[1]);
+            // Initialize dummy var for second call of "template-showcase"
+            // after call of "template-formules"
+            if ($template[1] == 'formules') :
+                $reverse = true;
+            endif;
         else :
             ?>
             <section class="tpl_formules content-box container margin-large grid no-padding-left" aria-labelledby="<?php echo get_post_field('post_name', get_post()); ?>">
@@ -58,5 +64,12 @@ if ($loop->have_posts()) :
     endwhile;
     // we unset useless vars
     wp_reset_postdata();
+    if ($page_id == 318 && (get_field('cta_label') || get_field('cta_description') || get_field('cta_destination'))) : ?>
+        <div class="tpl_formules-element-cta-container mla mra">
+            <span class="cta-description"><?php echo get_field('cta_description'); ?></span>            
+            <a class="btn" href="<?php echo get_field('cta_destination'); ?>"><?php echo get_field('cta_label') ?></a>
+        </div>
+    <?php
+    endif;
 endif;
 get_footer();

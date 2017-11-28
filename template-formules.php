@@ -16,8 +16,10 @@ $loop = new WP_Query([
 ?>
 <section class="content-box container margin-large" aria-labelledby="a11y_formulesTitle">
     <h2 class="tpl_formules-title content-title" id="a11y_formulesTitle"><?php the_title(); ?></h2>
+    <?php if (the_content()) : the_content(); endif; ?>
+    <p><?php echo get_field('commitment'); ?></p>
     <?php if ($loop->have_posts()) : ?>
-        <div class="tpl_formules-list grid-<?php echo $loop->post_count ?>">
+        <div class="tpl_formules-list grid-<?php echo $loop->post_count; ?>">
             <?php while ($loop->have_posts()) :
                 $loop->the_post();
                 ?>
@@ -33,18 +35,19 @@ $loop = new WP_Query([
                         if (the_content())
                             echo '<div class="tpl_formules-element-description">'.the_content().'</div>';
                     ?>
+                    <?php if (get_field('purpose')) : ?>
                     <div class="tpl_formules-acf">
-                        <p class="tpl_formules-acf-label">Parfait pour</p>
+                        <p class="tpl_formules-acf-label">Parfait pour...</p>
                         <p class="tpl_formules-acf-value"><?php echo get_field('purpose'); ?></p>
                     </div><!-- .tpl_formules-element-perfectfor -->
+                    <?php endif; ?>
+                    <?php if (get_field('including')) : ?>
                     <div class="tpl_formules-acf">
-                        <p class="tpl_formules-acf-label">Inclus</p>
+                        <p class="tpl_formules-acf-label">Inclus...</p>
                         <p class="tpl_formules-acf-value"><?php echo get_field('including'); ?></p>
                     </div><!-- .tpl_formules-element-longdesc -->
-                    <div class="tpl_formules-acf">
-                        <p class="tpl_formules-acf-label">Engagement</p>
-                        <p class="tpl_formules-acf-value"><?php echo get_field('commitment'); ?></p>
-                    </div><!-- .tpl_formules-element-engagement -->
+                    <?php endif; ?>
+                    <?php if (get_field('price_unique') || get_field('price_big_business') || get_field('price_small_business') || get_field('price_nonprofit_individual')) : ?>
                     <div class="tpl_formules-acf">
                         <table>
                             <tr>
@@ -80,16 +83,21 @@ $loop = new WP_Query([
                             ?>
                         </table>
                     </div>
+                    <?php endif; ?>
+                    <?php if (get_field('prepaid')) : ?>
                     <div class="tpl_formules-acf">
                         <p class="tpl_formules-acf-label">Acompte</p>
                         <p class="tpl_formules-acf-value"><?php echo get_field('prepaid'); ?></p>
                     </div>                        
+                    <?php endif; ?>
+                    <?php if (get_field('deposit')) : ?>
                     <div class="tpl_formules-acf">
                         <p class="tpl_formules-acf-label">Caution</p>
                         <p class="tpl_formules-acf-value"><?php echo get_field('deposit'); ?></p>
                     </div>
+                    <?php endif; ?>
                 </article>
-            <?php endwhile; ?>
+            <?php endwhile; wp_reset_postdata(); ?>
         </div><!-- .tpl_formules-list -->
     <?php endif; ?>
 </section><!-- .tpl_formules -->

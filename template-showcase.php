@@ -9,15 +9,15 @@ $loop = new WP_Query([
     'cat'            => $cat_id,
 ]);
 // we display this block markup
+global $reverse;
 ?>
 <section class="content-box container margin-large grid-2" aria-labelledby="a11y_formulesTitle">
-    <div>
+    <div <?php if($reverse) : echo 'style="order: 2"'; endif; ?>>
         <h2 class="tpl_formules-title content-title" id="a11y_formulesTitle"><?php the_title(); ?></h2>
         <div><?php the_content(); ?></div>
         <div class="tpl_formules-element-cta-container mla mra">
-            <a class="btn" href="<?php echo get_field('cta_destination'); ?>">
-                <?php echo __('Contactez-nous', 'quai10'); ?>
-            </a>
+            <span class="cta-description"><?php echo get_field('cta_description'); ?></span>            
+            <a class="btn" href="<?php echo get_field('cta_destination'); ?>"><?php echo get_field('cta_label') ?></a>
         </div>        
     </div>    
     <div class="swiper-container">
