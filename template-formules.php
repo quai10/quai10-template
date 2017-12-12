@@ -49,39 +49,23 @@ $loop = new WP_Query([
                     <?php endif; ?>
                     <?php if (get_field('price_unique') || get_field('price_big_business') || get_field('price_small_business') || get_field('price_nonprofit_individual')) : ?>
                     <div class="tpl_formules-acf">
-                        <table>
-                            <tr>
-                                <th class="tpl_formules-acf-label" colspan="2">Tarifs</th>                                   
-                            </tr>
+                            <p class="tpl_formules-acf-label" colspan="2">Tarifs</p>                                   
                             <?php
                                 if (get_field('price_unique'))
-                                    echo '<tr class="tpl_formules-acf-value">
-                                            <td>Tarif unique</td>
-                                            <td >'.get_field('price_unique').'</td>
-                                        </tr>';
+                                    echo '<p class="tpl_formules-acf-value">Tarif unique : <span>'.get_field('price_unique').'</span></p>';
                             ?>
                             <?php
                                 if (get_field('price_big_business'))
-                                    echo '<tr class="tpl_formules-acf-value">
-                                            <td>Grandes entreprises<br>=> 10 salariés</td>
-                                            <td >'.get_field('price_big_business').'</td>
-                                        </tr>';
+                                    echo '<p class="tpl_formules-acf-value">Grandes entreprises<br>>= 10 salariés : <span>'.get_field('price_big_business').'</span></p>';
                             ?>
                             <?php
                                 if (get_field('price_small_business'))
-                                    echo '<tr class="tpl_formules-acf-value">
-                                            <td>Petites entreprises<br>< 10 salariés</td>
-                                            <td >'.get_field('price_small_business').'</td>
-                                        </tr>';
+                                    echo '<p class="tpl_formules-acf-value">Petites entreprises<br>< 10 salariés : <span>'.get_field('price_small_business').'</span></p>';
                             ?>
                             <?php
                                 if (get_field('price_nonprofit_individual'))
-                                    echo '<tr class="tpl_formules-acf-value">
-                                            <td>Associations et indépendants</td>
-                                            <td >'.get_field('price_nonprofit_individual').'</td>
-                                        </tr>';
+                                    echo '<p class="tpl_formules-acf-value">Associations et indépendants : <span>'.get_field('price_nonprofit_individual').'</span></p>';
                             ?>
-                        </table>
                     </div>
                     <?php endif; ?>
                     <?php if (get_field('prepaid')) : ?>
