@@ -17,7 +17,7 @@ get_header();
 // Get variables for further use
 $page_id = get_queried_object_id();
 // Get the content outside the loop
-$page_object = get_page( $page_id );
+$page_object = get_post( $page_id );
 
 if ($page_object->post_content)
 {
@@ -64,7 +64,12 @@ if ($loop->have_posts()) :
     endwhile;
     // we unset useless vars
     wp_reset_postdata();
-    if ($page_id == 318 && (get_field('cta_label') || get_field('cta_description') || get_field('cta_destination'))) : ?>
+
+    // Check if current page title start with "Nos offres..."
+    $pattern = '/^Nos offres/';
+    preg_match($pattern, $page_object->post_title, $matches);
+    
+    if ($matches[0] && (get_field('cta_label') || get_field('cta_description') || get_field('cta_destination'))) : ?>
         <div class="tpl_formules-element-cta-container mla mra">
             <span class="cta-description"><?php echo get_field('cta_description'); ?></span>            
             <a class="btn" href="<?php echo get_field('cta_destination'); ?>"><?php echo get_field('cta_label') ?></a>
