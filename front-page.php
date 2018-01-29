@@ -129,7 +129,7 @@ get_header();
 
         $loop = new WP_Query([
             'post_type'     => 'post',
-            'category_name' => 'chantier',
+            'category_name' => 'showcase-homepage',
         ]);
         ?>
         <h2 class="entrepot-title" id="a11y_entrepotBoxTitle"><?php echo $photos->name; ?></h2>
