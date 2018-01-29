@@ -25,7 +25,7 @@ $loop = new WP_Query([
                 <article class="tpl_formules-element <?php if (get_field('is-promoted')) echo 'is-promoted'; ?>" aria-labelledby="a11y_formuleTitle_<?php the_ID(); ?>">
                     <?php
                         if (get_field('image'))
-                            echo '<div class="tpl_formules-element-image"><img src="'.the_field('image').'" alt="" title=""></div>';
+                            echo '<div class="tpl_formules-element-image"><img src="'.get_field('image').'" alt="" title=""></div>';
                     ?>
                     <h3 class="tpl_formules-element-title" id="a11y_formuleTitle_<?php the_ID(); ?>">
                         <?php the_title(); ?>
@@ -37,13 +37,13 @@ $loop = new WP_Query([
                     <?php if (get_field('purpose')) : ?>
                     <div class="tpl_formules-acf">
                         <p class="tpl_formules-acf-label">Parfait pour...</p>
-                        <p class="tpl_formules-acf-value"><?php echo the_field('purpose'); ?></p>
+                        <p class="tpl_formules-acf-value"><?php the_field('purpose'); ?></p>
                     </div><!-- .tpl_formules-element-perfectfor -->
                     <?php endif; ?>
                     <?php if (get_field('including')) : ?>
                     <div class="tpl_formules-acf">
                         <p class="tpl_formules-acf-label">Inclus...</p>
-                        <p class="tpl_formules-acf-value"><?php echo the_field('including'); ?></p>
+                        <p class="tpl_formules-acf-value"><?php the_field('including'); ?></p>
                     </div><!-- .tpl_formules-element-longdesc -->
                     <?php endif; ?>
                     <?php if (get_field('price_unique') || get_field('price_big_business') || get_field('price_small_business') || get_field('price_nonprofit_individual')) : ?>
@@ -51,32 +51,32 @@ $loop = new WP_Query([
                             <p class="tpl_formules-acf-label" colspan="2">Tarifs</p>                                   
                             <?php
                                 if (get_field('price_unique'))
-                                    echo '<p class="tpl_formules-acf-value">Tarif unique : <span>'.the_field('price_unique').'</span></p>';
+                                    echo '<p class="tpl_formules-acf-value">Tarif unique : <span>'.get_field('price_unique').'</span></p>';
                             ?>
                             <?php
                                 if (get_field('price_big_business'))
-                                    echo '<p class="tpl_formules-acf-value">Grandes entreprises<br>>= 10 salariés : <span>'.the_field('price_big_business').'</span></p>';
+                                    echo '<p class="tpl_formules-acf-value">Grandes entreprises<br>>= 10 salariés : <span>'.get_field('price_big_business').'</span></p>';
                             ?>
                             <?php
                                 if (get_field('price_small_business'))
-                                    echo '<p class="tpl_formules-acf-value">Petites entreprises<br>< 10 salariés : <span>'.the_field('price_small_business').'</span></p>';
+                                    echo '<p class="tpl_formules-acf-value">Petites entreprises<br>< 10 salariés : <span>'.get_field('price_small_business').'</span></p>';
                             ?>
                             <?php
                                 if (get_field('price_nonprofit_individual'))
-                                    echo '<p class="tpl_formules-acf-value">Associations et indépendants : <span>'.the_field('price_nonprofit_individual').'</span></p>';
+                                    echo '<p class="tpl_formules-acf-value">Associations et indépendants : <span>'.get_field('price_nonprofit_individual').'</span></p>';
                             ?>
                     </div>
                     <?php endif; ?>
                     <?php if (get_field('prepaid')) : ?>
                     <div class="tpl_formules-acf">
                         <p class="tpl_formules-acf-label">Acompte</p>
-                        <p class="tpl_formules-acf-value"><?php echo the_field('prepaid'); ?></p>
+                        <p class="tpl_formules-acf-value"><?php the_field('prepaid'); ?></p>
                     </div>                        
                     <?php endif; ?>
                     <?php if (get_field('deposit')) : ?>
                     <div class="tpl_formules-acf">
                         <p class="tpl_formules-acf-label">Caution</p>
-                        <p class="tpl_formules-acf-value"><?php echo the_field('deposit'); ?></p>
+                        <p class="tpl_formules-acf-value"><?php the_field('deposit'); ?></p>
                     </div>
                     <?php endif; ?>
                 </article>
