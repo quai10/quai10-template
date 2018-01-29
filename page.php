@@ -69,8 +69,8 @@ if ($loop->have_posts()) :
     preg_match($pattern, $page_object->post_title, $matches);    
     if ($matches[0] && (get_field('cta_label') && get_field('cta_description') && get_field('cta_destination'))) : ?>
         <div class="tpl_formules-element-cta-container mla mra">
-            <span class="cta-description"><?php echo the_field('cta_description'); ?></span>            
-            <a class="btn" href="<?php echo the_field('cta_destination'); ?>"><?php echo the_field('cta_label') ?></a>
+            <span class="cta-description"><?php the_field('cta_description'); ?></span>            
+            <a class="btn" href="<?php the_field('cta_destination'); ?>"><?php the_field('cta_label') ?></a>
         </div>
 <?php
     endif;
