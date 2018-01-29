@@ -16,10 +16,15 @@ global $reverse;
         <div class="showcase-summary" <?php if($reverse) : echo 'style="order: 2"'; endif; ?>>
             <h2 class="tpl_formules-title content-title" id="a11y_formulesTitle"><?php the_title(); ?></h2>
             <div><?php the_content(); ?></div>
-            <div class="tpl_formules-element-cta-container mla mra">
-                <span class="cta-description"><?php echo get_field('cta_description'); ?></span>            
-                <a class="btn" href="<?php echo get_field('cta_destination'); ?>"><?php echo get_field('cta_label') ?></a>
-            </div>        
+            <?php
+            if (get_field('cta_label') && get_field('cta_description') && get_field('cta_destination')) : ?>
+                <div class="tpl_formules-element-cta-container mla mra">
+                    <span class="cta-description"><?php echo the_field('cta_description'); ?></span>            
+                    <a class="btn" href="<?php echo the_field('cta_destination'); ?>"><?php echo the_field('cta_label') ?></a>
+                </div>
+            <?php
+            endif;
+            ?>
         </div>    
         <div class="swiper-container">
             <div class="swiper-wrapper">
