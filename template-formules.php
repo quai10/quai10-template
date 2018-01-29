@@ -17,7 +17,6 @@ $loop = new WP_Query([
 <section class="content-box container margin-large" aria-labelledby="a11y_formulesTitle">
     <h2 class="tpl_formules-title content-title" id="a11y_formulesTitle"><?php the_title(); ?></h2>
     <?php if (the_content()) : the_content(); endif; ?>
-    <p><?php echo the_field('commitment'); ?></p>
     <?php if ($loop->have_posts()) : ?>
         <div class="tpl_formules-list grid-<?php echo $loop->post_count; ?>">
             <?php while ($loop->have_posts()) :
