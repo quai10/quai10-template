@@ -6,7 +6,7 @@
         "theme"
     ],
     "homepage": "https://quai10.org/",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Pierre Rudloff",
