@@ -2,7 +2,6 @@
     // Wrapper
     .container {
         width: @medium-screen;
-        //padding: 0 @large-value;
     }
     // Home
     .home {
@@ -53,10 +52,17 @@
 @media screen and (max-width: @medium-screen) { // 1024px
     // Wrapper
     .container {
-        width: @small-screen;
-        padding-left: 0;
-        padding-right: 0;
+        width: 90%;
     }
+    // Main menu
+    .nav-box {
+        .nav-list {
+            justify-content: space-around;
+        }
+        .menu-item a {
+            font-size: @h6-size;
+        }
+    }    
     // Footer
     .footer-col {
         width: 100%;
@@ -153,13 +159,35 @@
             }
         }
     }
+    // Formules
+    .tpl_formules-element-title {
+        font-size: @h5-size;
+    }
+    .tpl_formules-list {
+        .grid(2);
+        margin-left: 0;
+        & .tpl_formules-element {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        & .tpl_formules-element:not(:last-child) {
+            margin-bottom: @large-value;
+        }
+        & .tpl_formules-element:not(:nth-child(2)) {
+            order: 2;
+        }
+    }
+    .tpl_formules-element-title {
+        font-size: @h3-size;
+    }
+    .tpl_section {
+        & .tpl_section-content {
+            margin-bottom: @large-value;
+        }
+    }
 }
 
 @media screen and (max-width: @small-screen) { // 768px
-    // Wrapper
-    .container {
-        width: @small-screen - 40;
-    }
     // Footer
     .footer-box .footer-container {
         .grid(1);
@@ -169,12 +197,6 @@
     }
     .footer-content, .footer-col {
         margin-left: 0;
-    }
-    // Main menu
-    .nav-box {
-        .nav-list {
-            justify-content: center
-        }
     }
     // Jumbotron
     .header-container, :not(.home) .header-container {
@@ -331,37 +353,24 @@
             padding: 5;
             border-left: 0;
         }
-    }    
+    }
     // Formules
     .tpl_formules-element-title {
-        font-size: @h5-size;
-    }
-    .tpl_formules-list {
+        font-size: @h6-size;
+    }    
+    // Showcase
+    .showcase {
         .grid(1);
-        margin-left: 0;
-        & .tpl_formules-element {
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            h3 {
-                font-size: @h3-size;
-            }
-        }
-        & .tpl_formules-element:not(:last-child) {
-            margin-bottom: @large-value;
-        }
-        & .tpl_formules-element:not(:nth-child(2)) {
-            order: 2;
-        }
     }
-    .tpl_section {
-        & .tpl_section-content {
-            margin-bottom: @large-value;
-        }
+    .showcase .showcase-summary {
+        margin: 0 auto;
+    }
+    .showcase .swiper-container {
+        display: none;
     }
 }
 
-@media screen and (min-width: @small-screen) {
+@media screen and (min-width: 576px) {
     // Main menu
     .nav-box {
         .nav-list {
@@ -370,26 +379,8 @@
     }
 }
 
-@media screen and (max-width: @tiny-screen) { // 480px
-    // Wrapper
-    .container {
-        width: 100%;
-        padding-left: @tiny-value;
-        padding-right: @tiny-value;
-    }
-    // Footer
-    .footer-box {
-        width: 100%;
-        & .footer-content {
-            padding: 0 @small-value;
-        }
-    }
-    // Header
-    .header-box {
-        margin-top: 0;
-        border-radius: 0;
-        overflow: visible; // Allow mobile menu to expand over header height on click
-    }
+// Custom breakpoint to switch to mobile menu
+@media screen and (max-width: 575px) {
     // Main menu
     .nav-box {
         position: relative;
@@ -431,6 +422,28 @@
                 }
             }
         }
+    }    
+}
+
+@media screen and (max-width: @tiny-screen) { // 480px
+    // Wrapper
+    .container {
+        width: 100%;
+        padding-left: @tiny-value;
+        padding-right: @tiny-value;
+    }
+    // Footer
+    .footer-box {
+        width: 100%;
+        & .footer-content {
+            padding: 0 @small-value;
+        }
+    }
+    // Header
+    .header-box {
+        margin-top: 0;
+        border-radius: 0;
+        overflow: visible; // Allow mobile menu to expand over header height on click
     }
     // Contact container
     .tpl_contact-container {

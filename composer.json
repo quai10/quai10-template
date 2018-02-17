@@ -6,7 +6,7 @@
         "theme"
     ],
     "homepage": "https://quai10.org/",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Pierre Rudloff",
@@ -21,14 +21,15 @@
     ],
     "type": "wordpress-theme",
     "require": {
-        "composer/installers": "~1.2.0"
+        "composer/installers": "^1.2.0"
     },
     "require-dev": {
         "symfony/var-dumper": "~3.1.0",
         "squizlabs/php_codesniffer": "~2.6.2",
-        "phpunit/phpunit": "~5.5.2",
+        "phpunit/phpunit": "~5.7.21",
         "mockery/mockery": "~0.9.5",
-        "10up/wp_mock": "~0.1.0"
+        "10up/wp_mock": "~0.2.0",
+        "phpdocumentor/phpdocumentor": "~2.9.0"
     },
     "autoload": {
         "psr-4": {
@@ -36,7 +37,7 @@
         }
     },
     "scripts": {
-        "lint": "./vendor/bin/phpcs --standard=PSR2 -n *.php lib/",
+        "lint": "phpcs --standard=PSR2 -n *.php lib/ tests/ template-parts/",
         "test": "@php -dzend_extension=xdebug.so ./vendor/bin/phpunit",
         "doc": "phpdoc --target=docs --directory=lib/,tests/"
     }

@@ -3,26 +3,26 @@
 This README explains every steps which are necessary to get this template running.
 
 ## Requirements ##
+
 * WordPress
 * WordPress Advanced Custom Fields plugin
 
 ## Technical requirements ##
-* NPM
-* Bower
+
+* Yarn
 * Gulp
 * Less
 
-## What is this repository for? ##
+## What is this repository for ##
 
 * This repository is the template of the Quai10 WordPress website.
 * Version in development v0.1
 * [Quai10](https://quai10.org)
 
-## How do I get set up? ##
+## How do I get set up ##
 
-```
-$ git clone https://github.com/quai10/quai10-template.git
-$ npm install
-$ bower install
-$ gulp
+```bash
+git clone https://github.com/quai10/quai10-template.git
+yarn install
+yarn gulp
 ```
