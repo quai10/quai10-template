@@ -541,6 +541,12 @@ detect-file@^0.1.0:
   dependencies:
     fs-exists-sync "^0.1.0"
 
+dom7@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-3.0.0.tgz#b861ce5d67a6becd7aaa3ad02942ff14b1240331"
+  dependencies:
+    ssr-window "^3.0.0-alpha.1"
+
 download@^4.0.0, download@^4.1.2:
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/download/-/download-4.4.3.tgz#aa55fdad392d95d4b68e8c2be03e0c2aa21ba9ac"
@@ -2514,6 +2520,10 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
+ssr-window@^3.0.0, ssr-window@^3.0.0-alpha.1:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-3.0.0.tgz#fd5b82801638943e0cc704c4691801435af7ac37"
+
 stat-mode@^0.2.0:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/stat-mode/-/stat-mode-0.2.2.tgz#e6c80b623123d7d80cf132ce538f346289072502"
@@ -2622,9 +2632,12 @@ svgo@^0.6.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-swiper@~3.1.0:
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-3.1.7.tgz#80c9de329c0bb16964efebf5c13a295bf598dbd3"
+swiper@~6.5.1:
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.5.1.tgz#795630e45bbebb3b3b2945d55c22ffdcf5536c1b"
+  dependencies:
+    dom7 "^3.0.0"
+    ssr-window "^3.0.0"
 
 tar-stream@^1.1.1:
   version "1.5.4"
