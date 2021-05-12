@@ -11,7 +11,7 @@
   "dependencies": {
     "knacss": "~4.3.2",
     "leaflet": "~0.7.3",
-    "swiper": "~3.1.0"
+    "swiper": "~6.5.1"
   },
   "devDependencies": {
     "gulp": "latest",
